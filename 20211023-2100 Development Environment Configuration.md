@@ -14,10 +14,10 @@ Mentor: Roy
 If you want to build software, you are going to have to know how to set up your workspace.
 
 # Timeframe
-20211023-2100 - 20211023-2300: 2 hours
+20211023-2100 - 20211030-2300: 1 week
 
 # Budget
-Free
+N/A
 
 # Objectives
 1. Set up your command line environment.
@@ -61,21 +61,22 @@ ssh-keygen -t ed25519 -C rhh@violenthellfire
 
     [Done] Set up development environment configuration
 
+## Saturday 20211023-2215 - 20211023-2230: 15 minutes
+
+    [Done] Create repositories
+        https://github.com/crosscompute/missions
+
 # Schedule
 
-    + Create repositories
-        missions
-    Clone repositories
-        crosscompute
-        crosscompute-docs
-    Work on image substitution
-        Make raw html from markdown
-        Insert images into raw html
-        Work in JupyterLab to convert the configuration file into raw html
+    Clean up plugins in vimrc
+    Review shortcuts for each plugin that we want to learn
+    Explain how to use tmux
+        Split horizontally / vertically
 
 # Tasks
 
-    Clean up plugins in vimrc
+    Show how to install JupyterLab
+    Add link to mission template
 
 # Milestones
 Highlight accomplishments.
