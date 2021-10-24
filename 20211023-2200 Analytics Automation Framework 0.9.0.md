@@ -64,16 +64,41 @@ Okay so far we identified input variables we can use to generate a single exampl
 
 The next step is to update the configuration file to specify those input variables. But I think we need to break and continue tomorrow.
 
+## Sunday 20211024-1800 - 20211024-1815: 15 minutes
+
+    mean, variance, value_count, bin_count, random_seed
+
+    + Make example configuration file
+        + Define input variables
+        + Define output variables
+
+    + Make example markdown template file
+    + Define tests/standard
+    + Define tests/batches/a
+    + Define tests/batches/b
+    + Make html from markdown
+
+I think that last time, we decided to do the variable substitution before converting the markdown to html.
+
+For the report css, should we make the css inline or make it available as a separate file? I think in this version, we should make it a separate file.
+
 # Schedule
 
-    Make example configuration file
+    Make html template
+    Download images
+    Insert images into html
+    Make end html
+
+    Work in JupyterLab to convert the configuration file into end html
+        Load input variables
+        Run notebook / script
+        Load output variables
+        Substitute variables into template
+        Render template
+            Render title
 
     Work on image substitution
-        Make example markdown
-        Make end html
-            Make html from markdown
-            Insert images into html
-        Work in JupyterLab to convert the configuration file into end html
+    Have the server serve style.css
 
 # Tasks
 
