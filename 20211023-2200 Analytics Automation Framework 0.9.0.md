@@ -298,7 +298,126 @@ We break now! Next time, we will productionize the code from the notebook into a
 
 Today I learned that you can specify a function instead of a replacement string in `re.sub`.
 
+## Wednesday 20211027-1600 - 20211027-1830: 150 minutes
+
+    number
+    image
+    table
+    table-datatable
+    video
+    audio
+    calendar-?
+    map-mapbox
+
+It seems like importlib.metadata is a replacement for stevedore.
+
+    _ Option 1:
+        - id: settlements
+          view: map
+          path: settlements.geojson
+          preview: image
+          preview_path: settlements.png
+    _ Option 2:
+        - id: settlements
+          view: image
+          path: settlements.png
+          fullview: map
+          fullview_path: settlements.geojson
+    _ Option 3:
+      serve.yml
+        - id: settlements-preview
+          view: image
+          path: settlements.png
+          href: settlements
+        - id: settlements
+          view: map
+          path: settlements.geojson
+      report.md
+        { settlements-preview }
+    _ Option 5:
+      serve.yml
+        - id: settlements-preview
+          view: image
+          path: settlements.png
+          settings:
+            id: settlements
+            # linkId: settlements
+            # hrefId: settlements
+        - id: settlements
+          view: map
+          path: settlements.geojson
+      report.md
+        { settlements-preview }
+    _ Option 6:
+      serve.yml
+        - id: settlements-preview
+          view: table
+          path: settlements-preview.csv
+
+          target_id: settlements
+          targetId: settlements
+          target: settlements
+
+          href: settlements
+          link: settlements
+
+          _ click_id: settlements
+        - id: settlements
+          view: table
+          path: settlements.csv
+      report.md
+        { settlements-preview }
+    Option 4:
+      serve.yml
+        - id: settlements-preview
+          view: image
+          path: settlements.png
+          link: settlements
+        - id: settlements
+          view: map
+          path: settlements.geojson
+      report.md
+        { settlements-preview }
+    Option 7:
+      serve.yml
+        - id: settlements-preview
+          view: image
+          path: settlements.png
+        - id: settlements-link
+          view: markdown
+          path: settlements.md
+        - id: settlements
+          view: map
+          path: settlements.geojson
+      report.md
+        { settlements-preview }
+        { settlements-link }
+
+    _ UX Option 1: Make entire preview clickable and navigate to link
+        DIS: Can click on image by mistake
+        DIS: Functionality might be too hidden unless there is a highlight
+    UX Option 2: Expose a specific button or target that is clickable and that navigates to link
+        ADV: prevents inadvertent clicking which can get annoying
+        ADV: Visually obvious
+
+    + Think through user experience for preview vs fullscreen
+
+## Wednesday 20211027-1715 - 20211027-1730: 15 minutes
+
+
 # Schedule
+
+    Run command for each batch
+    Generate output for each batch
+
+    Save our draft jupyter notebook as a script
+    Draft a script that generates the batches for the randomize-histograms example report
+
+    Experiment with importlib.metadata
+    Experiment with different design patterns for the view plugins
+
+    Continue thinking through decisions for user experience for preview vs fullscreen
+    Decide how to let the user override the default preview for a huge dataset
 
     Draft script to render input
 
