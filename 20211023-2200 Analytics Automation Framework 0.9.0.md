@@ -412,17 +412,104 @@ I think we first need to finish drafting the batch code, then put everything tog
 
 We actually do not need to load the input variables to run a batch. All we need to do is specify the input and output folders.
 
-    Review if there are any changes to subprocess
+## Friday 20211029-1500 - 20211029-1515: 15 minutes
 
-    Draft batch code
+It does not look there are any significant changes to subprocess.
+
+    + Review if there are any changes to subprocess
+
+We wrote an experiment once to capture the live subprocess output and stream it via server sent events. We should merge that functionality in this release.
+
+[There is the repeated question of whether or not to use `shell=True`](https://docs.python.org/3/library/subprocess.html#security-considerations). I think we can safely assume that the person should know whether or not to trust external code and perhaps we can offer a way for the user to run external code in sandboxes or containers if something like podman is available.
+
+    Use shell=True
+        ADV
+            if the person is running external code anyway then it does not matter
+        DIS
+            could result in shell injections
+
+I think in 0.7 we tried shell=False and in 0.8 we used shell=True because of complications while splitting the command string.
+
+To be honest, I can't think of a good reason for shell=True and it seems like shell=False is the default, so maybe we should revert to shell=False for 0.9.
+
+Actually, it looks like we can't run the following command because $(...) is a bash construct if shell=False. And I think we ended up with this syntax because we were trying overcome race conditions for jupyter lab/notebook.
+
+It is tempting to combine the template and code in the notebook, but I think separation of template and code is important.
+
+    python -c "$(jupyter nbconvert run.ipynb --to script --stdout)"
+
+    jupytext --to py notebook.ipynb --opt comment_magics=false
+    jupytext --to script notebook.ipynb --opt comment_magics=false
+    mv notebook.py notebook.ipy
+    ipython notebook.ipy
+
+I'm wary of using jupytext. Well let's experiment with it anyway. We don't really need the reverse direction of py to ipynb.
+
+I think it was a design decision mistake to make ipynb json format.
+
+Right now we are thinking about whether there is an alternative to using the bash $(...) syntax for running notebooks, which we did to enable parallel execution during report generation. The issue with writing to a file is that the file path would need to be unique. I think we need to stick with shell=True and the $(...) syntax. People should be running this system on Linux anyway.
+
+    + Check if there is a better way to run notebooks in 2021
+
+I need to restore the part about preserving some of the environment.
+
+I forgot that the environment variables need to be relative to the configuration folder or script folder. Which?
+
+Oh that is why there is the `script_folder`. Note that `batch_folder` is relative to the configuration folder.
+
+    script_folder -- relative to configuration_folder
+    batch_folder -- relative to configuration_folder
+    CROSSCOMPUTE_INPUT_FOLDER -- relative to script_folder
+
+So I do think we need to recompute relative paths.
+
+    + Test run batches/a manually
+
+We successfully ran a batch manually.
+
+    + Draft batch code
+    + Run command for each batch
+
+## Friday 20211029-1645 - 20211029-1700: 15 minutes
+
+Let's visualize the end result again. I think we are going to move the live output from the jupyterlab dialog into the browser window instead.
+
+1. User clicks the CrossCompute button in JupyterLab
+2. Run crosscompute in the same folder as the notebook
+3. Find the configuration file
+4. !! Run batches if display == output or show input form if display == input
+5. !! Wait for the server to be up and start the browser
+6. (Eventually) show live output in the browser if the batches are still running
+7. Auto download pdf batch if the user has a premium subscription
+
+Today we are going to productionize 2 through 5.
+
+    jupyter nbconvert --to script *
+
+    + Save all prototype notebooks as scripts
+    + Write pseudocode
+
+## Friday 20211029-1730 - 20211029-1745: 15 minutes
+
+	/ = index
+	/a/randomize-histograms = automation
+	/a/randomize-histograms/b/a = batch
+	/a/randomize-histograms/b/a/o/histogram-1d.png = batch file
+	/a/randomize-histograms/b/a/o/histogram-2d.png = batch file
+	/a/randomize-histograms/b/b
+
+    index
+    home
+    _ root
+
+    + Combine steps 4 to 5 into a single script
+    + Generate output for each batch
+    + Save our draft jupyter notebook as a script
+    + Draft a script that generates the batches for the randomize-histograms example report
 
 # Schedule
 
-    Run command for each batch
-    Generate output for each batch
-
-    Save our draft jupyter notebook as a script
-    Draft a script that generates the batches for the randomize-histograms example report
+    Clean up the batches script
 
     Experiment with importlib.metadata
     Experiment with different design patterns for the view plugins
@@ -456,6 +543,7 @@ We actually do not need to load the input variables to run a batch. All we need 
 
     Put link to livestream above
     Consider how to let report creator specify alternate fonts
+    Consider renaming resource to automation in docs
 
 # Milestones
 Highlight accomplishments.
