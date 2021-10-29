@@ -404,6 +404,17 @@ It seems like importlib.metadata is a replacement for stevedore.
 
 ## Wednesday 20211027-1715 - 20211027-1730: 15 minutes
 
+## Friday 20211029-0800 - 20211029-1000: 120 minutes
+
+By the end of this session, we should have a prototype script that takes the randomize histograms example report and renders the output batches linked to the index page. I also want to render a map or two. We will then take the prototype script and merge it into our open source framework.
+
+I think we first need to finish drafting the batch code, then put everything together for images. Then we can go back to maps.
+
+We actually do not need to load the input variables to run a batch. All we need to do is specify the input and output folders.
+
+    Review if there are any changes to subprocess
+
+    Draft batch code
 
 # Schedule
 
