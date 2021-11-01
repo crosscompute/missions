@@ -507,8 +507,43 @@ Today we are going to productionize 2 through 5.
     + Save our draft jupyter notebook as a script
     + Draft a script that generates the batches for the randomize-histograms example report
 
+## Monday 20211101-1600 - 20211101-1615: 15 minutes
+
+We want to keep the philosophy of minimizing our dependencies. However, I prefer pyramid over flask because pyramid apps can be building blocks for more complicated apps and that is how we are designing this framework.
+
+    + Test current state of prototype script
+    + Note next steps
+
+    + Print link to server in command line
+
+Should we launch the server before or after the batches run?
+
+    Option 1: Launch server before batches run
+        ADV - User can more easily track and preview parallel runs
+    _ Option 2: Launch server after batches run
+
+It seems that what we need to do is render the home first, then start the batch runs thread and finally launch the server. But I think debugging is easier in the main thread. So I think the script runs should be in the main thread, unless the user chooses to run the batches in parallel. And the server will be a thread or separate process.
+
+    /a/randomize-histograms
+
+    _ Option 1: see_automation returns {'automation': {'name'}}
+        ADV More resilient to future changes
+        DIS
+    Option 2: see_automation returns {'name'}
+        ADV Slightly less verbose and more consistent with REST api
+        DIS
+
+    + Show links to all batches in home
+
 # Schedule
 
+    Include CSS
+    Launch server in separate thread
+    Compute all batches
+
+# Tasks
+
+    Consider launching server before running batches
     Clean up the batches script
 
     Experiment with importlib.metadata
@@ -539,7 +574,6 @@ Today we are going to productionize 2 through 5.
 
     Review legacy code to check whether we missed anything
 
-# Tasks
 
     Put link to livestream above
     Consider how to let report creator specify alternate fonts
