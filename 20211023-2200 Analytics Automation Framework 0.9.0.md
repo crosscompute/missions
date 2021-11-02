@@ -535,19 +535,61 @@ It seems that what we need to do is render the home first, then start the batch 
 
     + Show links to all batches in home
 
+## Tuesday 20211102-1615 - 20211102-1700: 45 minutes
+
+    + Evaluate the current state of the script
+
+Let's focus on the core functionality before we get stuck in any details.
+
+    scripts
+        launch.py
+        configure.py
+        run.py
+        serve.py
+        _ initialize.py
+    macros
+    routines
+
+To simplify development, we are going to separate the functions of the command-line script into separate parts. My priority today is to add map functionality and potentially separate the functionality into the crosscompute-map-mapbox package.
+
+## Tuesday 20211102-1645 - 20211102-1700: 15 minutes
+
+We don't have a lot of time right now, so let's just focus on computing all batches.
+
+We'll write all the code first and then we can merge duplicates into functions later after we get the functionality working.
+
+```
+$ cat $(which jupyter)
+#!/home/invisibleroads/.virtualenvs/crosscompute/bin/python
+# -*- coding: utf-8 -*-
+import re
+import sys
+from jupyter_core.command import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+        sys.exit(main())
+```
+
+By examining the jupyter script, we can understand why we do not need to carry `VIRTUAL_ENV` into the subprocess environment because it is running the `python` for the virtualenv that was used to install jupyter.
+
+    #!/home/invisibleroads/.virtualenvs/crosscompute/bin/python
+
+    + Compute all batches
+
+We wrote a rough script to compute all batches.
+
 # Schedule
 
+    Add maps
+    Launch server in separate thread before running batches
+    Separate into packages
+        Experiment with importlib.metadata
+        Experiment with different design patterns for the view plugins
     Include CSS
-    Launch server in separate thread
-    Compute all batches
 
 # Tasks
 
-    Consider launching server before running batches
     Clean up the batches script
-
-    Experiment with importlib.metadata
-    Experiment with different design patterns for the view plugins
 
     Continue thinking through decisions for user experience for preview vs fullscreen
     Decide how to let the user override the default preview for a huge dataset
