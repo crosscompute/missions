@@ -578,18 +578,75 @@ By examining the jupyter script, we can understand why we do not need to carry `
 
 We wrote a rough script to compute all batches.
 
+## Wednesday 20211103-1115 - 20211103-1130: 15 minutes
+
+The main goal today is to get all the code ready for a pre-release candidate on pypi or perhaps just github.
+
+    DEBUG
+    INFO
+    WARNING
+    ERROR
+    CRITICAL
+
+    [empty] logging.ERROR
+    -v      logging.WARNING
+    -vv     logging.INFO
+    -vvv    logging.DEBUG
+
+## Wednesday 20211103-1300 - 20211103-1315: 15 minutes
+
+    _ # ~/.cache/crosscompute/randomize-histograms/runs
+    # ~/.crosscompute/randomize-histograms/runs
+
+    + Define run_batch
+    + Clean up the batches script
+    + Run notebook / script
+
+    _ normalize_path
+    _ prepare_path
+    _ clean_path
+    _ sanitize_path
+     _redact_path
+    format_path
+
+    join('~', relpath('/home/invisibleroads/Projects', expanduser('~')))
+    _ re.sub(r'^' + expanduser('~'), COMMAND_LINE_HOME, x)
+
+```
+In [1]: import re
+In [2]: from os.path import join, relpath, expanduser
+In [3]: from invisibleroads_macros_log import HOME_FOLDER_SHORT_PATH
+In [4]: x = '/home/invisibleroads/Projects'
+In [5]: re.sub(r'^' + expanduser('~'), HOME_FOLDER_SHORT_PATH, x)
+In [6]: join(HOME_FOLDER_SHORT_PATH, relpath(x, expanduser('~')))
+In [7]: timeit re.sub(r'^' + expanduser('~'), HOME_FOLDER_SHORT_PATH, x)
+9.04 µs ± 164 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+In [8]: timeit join(HOME_FOLDER_SHORT_PATH, relpath(x, expanduser('~')))
+25.3 µs ± 476 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+```
+
+I was originally thinking that join and relpath would be more platform independent if the original path is from a different platform, but I think both versions would suffer from the same problem of not being able to translate the other platform's path. So let's just revert to the faster version.
+
+    + Replace home folder with squiggly ~ for logging.info
+
+## Wednesday 20211103-1500 - 20211103-1515: 15 minutes
+
 # Schedule
+
+    Define configure_logging
+    Define configure_argument_parser_for_logging
 
     Add maps
     Launch server in separate thread before running batches
+
+    Restore forms functionality
+    Include CSS
+
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
-    Include CSS
 
 # Tasks
-
-    Clean up the batches script
 
     Continue thinking through decisions for user experience for preview vs fullscreen
     Decide how to let the user override the default preview for a huge dataset
@@ -598,7 +655,6 @@ We wrote a rough script to compute all batches.
 
     Render output
         Prepare input folder by saving data in input variable paths
-        Run notebook / script
         Load output variable definitions from output folder
 
 
