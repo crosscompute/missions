@@ -140,7 +140,7 @@ Let's think through what our input variable and output variable should look like
             id: histogram-1d
             view: image
             path: histogram-1d.png
-            data: 
+            data:
 
 Previously, we loaded image data using b64 into data.value. I don't know if we should do that again here. It was very inefficient. Ideally, it should be a regular url just like how img.src normally renders. And the server should serve the image. That means we will need to think about the url structure.
 
@@ -159,7 +159,7 @@ I want the URL to be easy to read aloud.
         output
             variables
                 - data: /a/randomize-histograms/b/a/f/histogram-1d.png
-    Option 2: 
+    Option 2:
         output
             variables
                 - data
@@ -212,7 +212,7 @@ I think we can have even more lazy loading. We should start by loading variable 
         ADV: only loads if in template
         DIS: Might load a path twice
 
-To be honest, I think the likelihood is low that a user will define lots of variables that do not render, unless those variable definitions are log or debug variables. 
+To be honest, I think the likelihood is low that a user will define lots of variables that do not render, unless those variable definitions are log or debug variables.
 
 I think previously, we had files stored in the cloud and served them directly from google cloud.
 
@@ -631,17 +631,84 @@ I was originally thinking that join and relpath would be more platform independe
 
 ## Wednesday 20211103-1500 - 20211103-1515: 15 minutes
 
+    + Define configure_logging
+    + Define configure_argument_parser_for_logging
+
+We are going to implement run and serve separately first and then combine them in launch.
+
+## Wednesday 20211103-1530 - 20211103-1545: 15 minutes
+
+    _ Option 1: Expose all waitress arguments with pass through
+        ADV Easier
+    Option 2: Cherry pick with wrapper
+        ADV Can make independent of waitress
+
+    [empty] logging.INFO
+    -qq logging.CRITICAL
+    -q logging.ERROR
+    -v logging.WARNING
+    -vv logging.DEBUG
+
+What I don't like about this arrangement is that it uses up two command line arguments. However, it is intuitive and more inline with conventions.
+
+    _ OPTION 1
+        [empty] INFO
+        -l      CRITICAL
+        -ll     ERROR
+        -lll    WARNING
+        -llll   INFO
+        -lllll  DEBUG
+
+    _ OPTION 2
+        [empty] INFO
+        -l      CRITICAL
+        -ll     ERROR
+        -lll    WARNING
+        -llll   DEBUG
+
+    _ OPTION 3
+        [empty] INFO
+        -L      CRITICAL
+        -LL     ERROR
+        -LLL    WARNING
+        -LLLL   INFO
+        -LLLLL  DEBUG
+
+    OPTION 4
+        [empty] logging.INFO
+        -qq logging.CRITICAL
+        -q logging.ERROR
+        -v logging.WARNING
+        -vv logging.DEBUG
+
+    _ OPTION 5
+        [empty] INFO
+        -i      CRITICAL
+        -ii     ERROR
+        -iii    WARNING
+        -iiii   INFO
+        -iiiii  DEBUG
+
+    serve.py -iiiii
+    serve.py -q
+    serve.py -qq
+    serve.py -v
+    serve.py -vv
+    crosscompute -iiiii
+    crosscompute -q
+    crosscompute -v
+    crosscompute -vv
+
+I think we should favor convention in this case.
+
 # Schedule
 
-    Define configure_logging
-    Define configure_argument_parser_for_logging
-
-    Add maps
     Launch server in separate thread before running batches
 
-    Restore forms functionality
+    Add maps
     Include CSS
 
+    Restore forms functionality
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
@@ -676,6 +743,8 @@ I was originally thinking that join and relpath would be more platform independe
     Put link to livestream above
     Consider how to let report creator specify alternate fonts
     Consider renaming resource to automation in docs
+
+    Consider crosscompute:// url scheme
 
 # Milestones
 Highlight accomplishments.
