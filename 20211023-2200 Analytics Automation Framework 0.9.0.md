@@ -734,8 +734,54 @@ For now, I think purely barebones is fine.
     + Restore images functionality
     + Render css
 
+## Thursday 20211104-1600 - 20211104-1700: 60 minutes
+
+    + Evaluate the current state of the serve script (5 minutes)
+
+I think the script re-runs should be on demand, not automatic because the script re-runs could be intense.
+
+I am actually very tempted to clean up the server code. But let's focus on our chosen task.
+
+    _ /e
+    /echoes
+    _ /events
+    _ /sse
+    _ /sses
+
+Should each report have its own echoes endpoint? Or should the echoes endpoint be universal? I am thinking that the endpoint should be universal because we want the framework to have a small memory footprint. Should it be enabled by default? Yes. But it can be disabled perhaps by the --static argument.
+
+    Option 1: Use messages
+        ADV: more compact, uses less data and cpu
+        DIS
+    _ Option 2: Use events
+        ADV: might be more maintainable and easier to understand
+        DIS: less compact
+
+## Thursday 20211104-1700 - 20211104-1715: 15 minutes
+
+    _ Option 1: Use innerHTML
+        ADV: easier
+    Option 2: Use data and selective update
+        ADV: more compact
+
+## Thursday 20211104-1700 - 20211104-1715: 15 minutes
+
+    + Restore server sent events endpoint toy experiment
+
+I realized that restarting the server process itself might be a little more complicated. We could potentially use mmerickel's hupper but it seems like hupper has a lot of extra functionality that we might not need.
+
 # Schedule
 
+    Define server sent events endpoint
+
+    Implement auto reload when file changes (30 minutes)
+        Use watchgod to watch for file changes
+        Restart server
+        _ Rerun script if script changes (not md, css, yml)
+
+    Move img code into crosscompute-image (30 minutes)
+
+    Clean up serve script (50 minutes)
     Restore maps functionality
     Restore forms functionality
 
@@ -745,6 +791,8 @@ For now, I think purely barebones is fine.
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
     Consider defining views as a class for renderer globals
+
+    Combine serve and run into launch
 
 # Tasks
 
