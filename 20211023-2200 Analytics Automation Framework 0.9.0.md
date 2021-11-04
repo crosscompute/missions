@@ -701,17 +701,50 @@ What I don't like about this arrangement is that it uses up two command line arg
 
 I think we should favor convention in this case.
 
+## Thursday 20211104-0800 - 20211104-0815: 15 minutes
+
+    + Restore barebones home view
+
+    /
+    /a/{automation_slug}
+    /a/{automation_slug}/b/{batch_slug}
+    /a/{automation_slug}/b/{batch_slug}/{variable_type}/{variable_path}
+
+    Decide route for serving styles
+
+    /style.css
+    /favicon.ico
+    /robots.txt
+    _ /styles.css
+    _ /~/styles.css
+    _ /~/style.css
+    _ /-/styles.css
+    _ /-/style.css
+
+    + Include CSS
+
+## Thursday 20211104-0945 - 20211104-1000: 15 minutes
+
+The question is, should we provide a default style or let the user be purely barebones?
+
+For now, I think purely barebones is fine.
+
+## Thursday 20211104-1145 - 20211104-1200: 15 minutes
+
+    + Restore images functionality
+    + Render css
+
 # Schedule
 
-    Launch server in separate thread before running batches
-
-    Add maps
-    Include CSS
-
+    Restore maps functionality
     Restore forms functionality
+
+    Launch server in separate thread before running batches
+    Reload server and page when source files change
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
+    Consider defining views as a class for renderer globals
 
 # Tasks
 
