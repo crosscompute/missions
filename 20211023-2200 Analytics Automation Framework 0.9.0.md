@@ -770,14 +770,101 @@ Should each report have its own echoes endpoint? Or should the echoes endpoint b
 
 I realized that restarting the server process itself might be a little more complicated. We could potentially use mmerickel's hupper but it seems like hupper has a lot of extra functionality that we might not need.
 
+## Friday 20211105-1515 - 20211105-1530: 15 minutes
+
+    _ Option 1: Use hupper
+        Implement wrapper around watchgod
+    Option 2: Use our own method
+        Use subprocess and terminate()
+
+```
+from pyramid.config import Configurator
+c = Configurator()
+app = c.make_wsgi_app()
+
+from waitress import serve
+serve(app, port=7000)
+
+from multiprocessing import Process
+def f():
+    print('http://127.0.0.1:7000')
+    serve(app, port=7000)
+p = Process(target=f)
+p.start()
+p.is_alive()
+p.terminate()
+p.is_alive()
+# p.kill()
+# p.is_alive()
+```
+
+It might be naive, but I think multiprocessing.Process will work for us.
+
+    + Review hupper
+    + Experiment with using multiprocessing to start and stop waitress.serve
+    + Test whether we can restart waitress.serve using either a thread or process
+
+We made such a mess yesterday that I think we will need to write the serve script from scratch again.
+
+It seems like watchgod is already using multiprocessing and has defined a run_process with restart functionality.
+
+	+ Review watchgod functionality
+
+	Option 1: Put reload functionality into automation.serve
+	_ Option 2: Make reload functionality separate
+
+I think we can safely use watchgod.run_process.
+
+	+ Reload server when any file in configuration_folder changes
+
+The problem with this implementation is the server becomes the main process. I think it is fine for now.
+
+	_ Option 1: Put our views into Automation
+	Option 2: Put our views into a separate view class
+
+	automation.views.see_home
+	_ automation._see_home
+
+What should be the degree of coupling between Automation and AutomationViews?
+
+	Option 1: style['urls']
+		content
+		style['urls']
+		style['text']
+		_ style['external_urls']
+		_ style['internal_text']
+	_ Option 2: style_urls
+		head_style
+		body_content
+	_ Option 3: stylesheet_urls
+
+## Friday 20211105-1745 - 20211105-1800: 15 minutes
+
+	_ self.views.configure(config)
+	_ config.include(self.views)  # Ideal but doesn't work
+	_ config.include(self.views.configure)
+	_ config.include(self.views.add_routes)
+	_ config.include(self.views.configure_routes_and_views)
+	_ config.include(self.views.add_routes_and_views)
+	config.include(self.views.includeme)
+
+	_ Option 1: AutomationViews(automation)
+	Option 2: AutomationViews(configuration, configuration_folder)
+	_ Option 3: AutomationViews(configuration_path)
+
+I think the strong coupling of Option 1 is acceptable here. Although Option 2 is easier to test.
+
+Currently we are stuck because we have the view defined in AutomationViews but style_urls would need to be in Automation.serve, which seems messy. Ideally the configuration of style_urls in jinja2 globals should happen within AutomationViews.
+
 # Schedule
 
     Define server sent events endpoint
-
     Implement auto reload when file changes (30 minutes)
         Use watchgod to watch for file changes
         Restart server
         _ Rerun script if script changes (not md, css, yml)
+    Launch server in separate thread or process before running batches
+    Reload server and page when source files change
 
     Move img code into crosscompute-image (30 minutes)
 
@@ -785,8 +872,6 @@ I realized that restarting the server process itself might be a little more comp
     Restore maps functionality
     Restore forms functionality
 
-    Launch server in separate thread before running batches
-    Reload server and page when source files change
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
