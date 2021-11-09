@@ -927,8 +927,11 @@ In [10]: timeit time.time()
 
 We made a bit of a mess again. We will clean it up later.
 
+## Tuesday 20211109-0930 - 20211109-0945: 15 minutes
+
 # Schedule
 
+    Check if sse event triggers onmessage and onevent
     Make a new queue for each new see_echoes
     Publish echoes when other files change
 
