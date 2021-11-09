@@ -701,17 +701,259 @@ What I don't like about this arrangement is that it uses up two command line arg
 
 I think we should favor convention in this case.
 
+## Thursday 20211104-0800 - 20211104-0815: 15 minutes
+
+    + Restore barebones home view
+
+    /
+    /a/{automation_slug}
+    /a/{automation_slug}/b/{batch_slug}
+    /a/{automation_slug}/b/{batch_slug}/{variable_type}/{variable_path}
+
+    Decide route for serving styles
+
+    /style.css
+    /favicon.ico
+    /robots.txt
+    _ /styles.css
+    _ /~/styles.css
+    _ /~/style.css
+    _ /-/styles.css
+    _ /-/style.css
+
+    + Include CSS
+
+## Thursday 20211104-0945 - 20211104-1000: 15 minutes
+
+The question is, should we provide a default style or let the user be purely barebones?
+
+For now, I think purely barebones is fine.
+
+## Thursday 20211104-1145 - 20211104-1200: 15 minutes
+
+    + Restore images functionality
+    + Render css
+
+## Thursday 20211104-1600 - 20211104-1700: 60 minutes
+
+    + Evaluate the current state of the serve script (5 minutes)
+
+I think the script re-runs should be on demand, not automatic because the script re-runs could be intense.
+
+I am actually very tempted to clean up the server code. But let's focus on our chosen task.
+
+    _ /e
+    /echoes
+    _ /events
+    _ /sse
+    _ /sses
+
+Should each report have its own echoes endpoint? Or should the echoes endpoint be universal? I am thinking that the endpoint should be universal because we want the framework to have a small memory footprint. Should it be enabled by default? Yes. But it can be disabled perhaps by the --static argument.
+
+    Option 1: Use messages
+        ADV: more compact, uses less data and cpu
+        DIS
+    _ Option 2: Use events
+        ADV: might be more maintainable and easier to understand
+        DIS: less compact
+
+## Thursday 20211104-1700 - 20211104-1715: 15 minutes
+
+    _ Option 1: Use innerHTML
+        ADV: easier
+    Option 2: Use data and selective update
+        ADV: more compact
+
+## Thursday 20211104-1700 - 20211104-1715: 15 minutes
+
+    + Restore server sent events endpoint toy experiment
+
+I realized that restarting the server process itself might be a little more complicated. We could potentially use mmerickel's hupper but it seems like hupper has a lot of extra functionality that we might not need.
+
+## Friday 20211105-1515 - 20211105-1530: 15 minutes
+
+    _ Option 1: Use hupper
+        Implement wrapper around watchgod
+    Option 2: Use our own method
+        Use subprocess and terminate()
+
+```
+from pyramid.config import Configurator
+c = Configurator()
+app = c.make_wsgi_app()
+
+from waitress import serve
+serve(app, port=7000)
+
+from multiprocessing import Process
+def f():
+    print('http://127.0.0.1:7000')
+    serve(app, port=7000)
+p = Process(target=f)
+p.start()
+p.is_alive()
+p.terminate()
+p.is_alive()
+# p.kill()
+# p.is_alive()
+```
+
+It might be naive, but I think multiprocessing.Process will work for us.
+
+    + Review hupper
+    + Experiment with using multiprocessing to start and stop waitress.serve
+    + Test whether we can restart waitress.serve using either a thread or process
+
+We made such a mess yesterday that I think we will need to write the serve script from scratch again.
+
+It seems like watchgod is already using multiprocessing and has defined a run_process with restart functionality.
+
+	+ Review watchgod functionality
+
+	Option 1: Put reload functionality into automation.serve
+	_ Option 2: Make reload functionality separate
+
+I think we can safely use watchgod.run_process.
+
+	+ Reload server when any file in configuration_folder changes
+
+The problem with this implementation is the server becomes the main process. I think it is fine for now.
+
+	_ Option 1: Put our views into Automation
+	Option 2: Put our views into a separate view class
+
+	automation.views.see_home
+	_ automation._see_home
+
+What should be the degree of coupling between Automation and AutomationViews?
+
+	Option 1: style['urls']
+		content
+		style['urls']
+		style['text']
+		_ style['external_urls']
+		_ style['internal_text']
+	_ Option 2: style_urls
+		head_style
+		body_content
+	_ Option 3: stylesheet_urls
+
+## Friday 20211105-1745 - 20211105-1800: 15 minutes
+
+	_ self.views.configure(config)
+	_ config.include(self.views)  # Ideal but doesn't work
+	_ config.include(self.views.configure)
+	_ config.include(self.views.add_routes)
+	_ config.include(self.views.configure_routes_and_views)
+	_ config.include(self.views.add_routes_and_views)
+	config.include(self.views.includeme)
+
+	_ Option 1: AutomationViews(automation)
+	Option 2: AutomationViews(configuration, configuration_folder)
+	_ Option 3: AutomationViews(configuration_path)
+
+I think the strong coupling of Option 1 is acceptable here. Although Option 2 is easier to test.
+
+Currently we are stuck because we have the view defined in AutomationViews but style_urls would need to be in Automation.serve, which seems messy. Ideally the configuration of style_urls in jinja2 globals should happen within AutomationViews.
+
+## Monday 20211108-1415 - 20211108-1430: 15 minutes
+
+By the end of today, we should have updated the serve script and integrated map-mapbox functionality.
+
+    + Review the current state of the code
+
+    Option 1: Finish auto reload
+    _ Option 2: Integrate maps
+    _ Option 3: Clean up serve script
+
+First, we will finish auto reload via server sent events. Then we will integrate maps and then clean up the serve script if we have time.
+
+Should we differentiate between server reload and file reload?
+
+It looks like FileResponse dutifully reloads the file from disk and the response is not cached.
+
+    + Check whether style.css is cached
+
+Then we need to differentiate between whether the server is in development or production mode rather than static vs dynamic because the server is still dynamic always.
+
+    _ Option 0: serve.py -d(ev)
+    _ Option 1: serve.py -d(evelop)
+    _ Option 2: serve.py -d(evelopment)
+    Option 3: serve.py --production
+
+## Monday 20211108-1430 - 20211108-1445: 15 minutes
+
+We decided to keep the thread in the main server for now. We can expose an option in launch to run before serve to make it easier for the author to debug.
+
+    _ Launch server in separate thread or process before running batches
+
+We might want to differentiate between restarting the server and sending an update event. Restarting the server only really needs to happen during development.
+
+Default behavior should be to restart the server and send both reload and update events.
+
+    --production (disables server restart)
+    --static (disables server sent events)
+
+I think that for now, the echoes endpoint can be in AutomationViews. I see no clear reason for why /echoes should be in a separate class yet.
+
+It seems wasteful to have two watch processes.
+
+We will have two watch processes for now and we can optimize later. One watch process is to restart the server and the other is to send a server sent event. In production, the server sent events server will be a separate process, in which we could potentially have a single watch thread that sends both server sent events and restarts the server. The problem is how to consolidate the two in a way that is compatible with app_iter.
+
+We could potentially have a coroutine and the app_iter blocks on the coroutine/generator.
+
+The problem with this queue implementation is that I think there are multiple instances of see_echoes, but only one of them will get it. Do we need a separate queue for each instance? That seems like exactly what was done in https://stackoverflow.com/questions/31267366/how-can-i-implement-a-pub-sub-pattern-using-multiprocessing.
+
+Maybe the complication is trying to send an event when the server is reloading. I think the better way to tackle this is to have an event handler client side that detects dropped connections and tries to reconnect and then detects whether a refresh is needed or not.
+
+I think it was a mistake to tackle this auto reload problem right now.
+
+Let's make a plan for how we will tackle this issue.
+
+```
+In [8]: timeit datetime.now().isoformat()
+2.1 µs ± 35.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [9]: import time
+
+In [10]: timeit time.time()
+168 ns ± 1.44 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+```
+
+    + Store a timestamp when the server initializes
+    + Send the timestamp when a client connects
+    + Reload server when the configuration file changes
+    + Refresh page if the timestamp has changed
+
+We made a bit of a mess again. We will clean it up later.
+
 # Schedule
 
-    Launch server in separate thread before running batches
+    Make a new queue for each new see_echoes
+    Publish echoes when other files change
 
-    Add maps
-    Include CSS
+    Test if we could have app_iter block on a coroutine
 
+    Define server sent events endpoint
+    Implement auto reload when file changes (30 minutes)
+        Use watchgod to watch for file changes
+        Restart server
+        _ Rerun script if script changes (not md, css, yml)
+    Reload server and page when source files change
+
+    Move img code into crosscompute-image (30 minutes)
+
+    Clean up serve script (50 minutes)
+    Restore maps functionality
     Restore forms functionality
+
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
+    Consider defining views as a class for renderer globals
+
+    Combine serve and run into launch
+    Let user choose to run before serve to make debugging easier
 
 # Tasks
 
