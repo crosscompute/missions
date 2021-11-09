@@ -26,7 +26,7 @@ N/A
 
 # Habits
 - Work on framework every morning from 6am to 8am EST.
-- Work on framework on live stream on Monday, Wednesday, Friday from 4pm to 5pm EST.
+- Work on framework on live stream at https://twitch.tv/crosscompute on Monday, Wednesday, Friday from 4pm to 5pm EST.
 
 # Log
 
@@ -935,21 +935,38 @@ We made a bit of a mess again. We will clean it up later.
         + Restart server
         _ Rerun script if script changes (not md, css, yml)
 
+## Tuesday 20211109-1515 - 20211109-1530: 15 minutes
+
+    + Clean up serve script (50 minutes)
+    _ Consider defining views as a class for renderer globals
+    + Put link to livestream above
+
+## Tuesday 20211109-1530 - 20211109-1545: 15 minutes
+
+## Tuesday 20211109-1645 - 20211109-1700: 15 minutes
+
 # Schedule
 
-    Move img code into crosscompute-image (30 minutes)
+## Phase 0
 
-    Clean up serve script (50 minutes)
+    Restore automation batch report route
     Restore maps functionality
     Restore forms functionality
 
-    Separate into packages
-        Experiment with importlib.metadata
-        Experiment with different design patterns for the view plugins
-    Consider defining views as a class for renderer globals
+## Phase 1
 
     Combine serve and run into launch
     Let user choose to run before serve to make debugging easier
+    Pull from repository if option is enabled
+
+## Phase 2
+
+    Move img code into crosscompute-image (30 minutes)
+    Separate into packages
+        Experiment with importlib.metadata
+        Experiment with different design patterns for the view plugins
+
+## Phase 3
 
     Check if sse event triggers onmessage and onevent
     Make a new queue for each new see_echoes
@@ -968,9 +985,7 @@ We made a bit of a mess again. We will clean it up later.
         Prepare input folder by saving data in input variable paths
         Load output variable definitions from output folder
 
-
     Decide whether to eager load or lazy load full variable definitions
-
 
     Substitute variables into template
     Render title in template
@@ -983,8 +998,6 @@ We made a bit of a mess again. We will clean it up later.
 
     Review legacy code to check whether we missed anything
 
-
-    Put link to livestream above
     Consider how to let report creator specify alternate fonts
     Consider renaming resource to automation in docs
 
