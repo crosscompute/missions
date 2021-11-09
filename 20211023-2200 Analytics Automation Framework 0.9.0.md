@@ -929,20 +929,13 @@ We made a bit of a mess again. We will clean it up later.
 
 ## Tuesday 20211109-0930 - 20211109-0945: 15 minutes
 
-# Schedule
-
-    Check if sse event triggers onmessage and onevent
-    Make a new queue for each new see_echoes
-    Publish echoes when other files change
-
-    Test if we could have app_iter block on a coroutine
-
-    Define server sent events endpoint
-    Implement auto reload when file changes (30 minutes)
-        Use watchgod to watch for file changes
-        Restart server
+    + Define server sent events endpoint
+    + Implement auto reload when file changes (30 minutes)
+        + Use watchgod to watch for file changes
+        + Restart server
         _ Rerun script if script changes (not md, css, yml)
-    Reload server and page when source files change
+
+# Schedule
 
     Move img code into crosscompute-image (30 minutes)
 
@@ -957,6 +950,12 @@ We made a bit of a mess again. We will clean it up later.
 
     Combine serve and run into launch
     Let user choose to run before serve to make debugging easier
+
+    Check if sse event triggers onmessage and onevent
+    Make a new queue for each new see_echoes
+    Publish echoes when other files change
+    Test if we could have app_iter block on a coroutine
+    Reload server and page when source files change
 
 # Tasks
 
