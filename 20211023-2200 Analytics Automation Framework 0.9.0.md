@@ -945,11 +945,15 @@ We made a bit of a mess again. We will clean it up later.
 
 ## Tuesday 20211109-1645 - 20211109-1700: 15 minutes
 
+## Wednesday 20211110-0715 - 20211110-0730: 15 minutes
+
+    + Restore automation batch report file route
+    + Restore automation batch report route
+
 # Schedule
 
 ## Phase 0
 
-    Restore automation batch report route
     Restore maps functionality
     Restore forms functionality
 
