@@ -950,15 +950,48 @@ We made a bit of a mess again. We will clean it up later.
     + Restore automation batch report file route
     + Restore automation batch report route
 
+## Wednesday 20211110-1400 - 20211110-1415: 15 minutes
+
+    + Rename automation_dictionaries to automation_definitions
+    + Rename batch_dictionaries to batch_definitions
+
+    _ Option 1: style_dictionaries
+    _ Option 2: style_uris
+    Option 3: style_definitions
+
+We need to eventually write unit tests.
+
+## Wednesday 20211110-1630 - 20211110-1645: 15 minutes
+
+Let's draft a plan for restoring maps functionality and test how to have the map display in print.
+
+'''
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
+'''
+
+    + Evaluate test map page
+    + Check how to let map be printed in firefox
+
+## Wednesday 20211110-1630 - 20211110-1645: 15 minutes
+
+    Check maps example
+    Make dynamic map example using screengridlayer
+
+    Make it possible for author to override mapbox version
+    Consider make separate option for printer friendly
+
 # Schedule
 
 ## Phase 0
 
     Restore maps functionality
-    Restore forms functionality
+    Check that map displays in print
+    Enable imports for serving multiple reports
 
 ## Phase 1
 
+    Restore forms functionality
     Combine serve and run into launch
     Let user choose to run before serve to make debugging easier
     Pull from repository if option is enabled
