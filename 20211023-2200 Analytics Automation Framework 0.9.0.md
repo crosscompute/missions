@@ -975,19 +975,95 @@ Let's draft a plan for restoring maps functionality and test how to have the map
 
 ## Wednesday 20211110-1630 - 20211110-1645: 15 minutes
 
-    Check maps example
-    Make dynamic map example using screengridlayer
+## Friday 20211112-1315 - 20211112-1330: 15 minutes
 
-    Make it possible for author to override mapbox version
-    Consider make separate option for printer friendly
+    + Check maps example
+
+    map-pydeck-screengrid
+    _ map-pydeck-screen-grid
+
+Let's get the mapbox example working today and then we can try screengridlayer afterwards.
+
+    _ Option 1: Use regular expression to match .css
+    _ Option 2: Hardcode .css into route
+    Option 3: Serve styles at /styles/x.css
+
+STYLE_ROUTE was conflicting with ECHOES_ROUTE so we put STYLE_ROUTE into a separate namespace.
+
+    + See what happens if we try to run and serve the show-maps example
+
+    _ Option 1: Put script inline after each html
+    Option 2: Gather scripts at bottom
+
+## Friday 20211112-1415 - 20211112-1430: 15 minutes
+
+    Option 1: Get view renderer instance
+        for each view renderer, generate additional styles and scripts and htmls
+    _ Option 2: Make new view renderer instance
+        use class static variables
+
+    ImageRender
+    ImageRenderer
+    ImageRendererView
+    ImageView
+    ImageViewRenderer
+
+    _ self.variable_views
+    _ self.variable_view_by_view
+    _ self.render_by_view
+    _ self.render_by_view_name
+    _ self.renderers
+    _ self.view_by_view_name
+    _ self.view_by_name
+    self.renderer_by_view
+    self.renderer_by_view_name
+    self.variable_view_by_view_name
+    self.variable_view_by_name
+
+    variable_view.render(type_name, variable_definition)
+    _ variable_view.render(variable_definition, type_name)
+
+    variable_view = self.variable_view_by_name[view_name]
+    variable_view.render(type_name, variable_definition)
+
+    variable_view.style_definitions
+    variable_view.script_definitions
 
 # Schedule
 
+    Define ImageView
+    Define MapMapboxView
+    Define MapPyDeckScreenGridView
+
+    Initialize variable_view_by_name using classes
+    Initialize variable_view_by_name using classes loaded from importlib
+    Implement variable_view.render
+    Return variable_view.style_definitions
+    Return variable_view.script_definitions
+    Consider renaming body_content to content
+
+
+
+    Separate render_variable_from into a separate method
+    Consider pre initializing views for error checking
+    Import ImageView or MapMapboxView or TextView
+    self.
+
+    Add map to render_variable_from
+
+    Make it possible for author to override mapbox version
+    Restore maps functionality
+
+    Consider make separate option for printer friendly
+    Check that map displays in print
+
+    Make it possible to navigate back from report
+    Do not show navigation in print
+
 ## Phase 0
 
-    Restore maps functionality
-    Check that map displays in print
     Enable imports for serving multiple reports
+    Make dynamic map example using screengridlayer
 
 ## Phase 1
 
@@ -1039,6 +1115,10 @@ Let's draft a plan for restoring maps functionality and test how to have the map
     Consider renaming resource to automation in docs
 
     Consider crosscompute:// url scheme
+
+    Consider how to make it possible to click on different svg elements and show information
+    Show how to center home content
+    Show how to center report content
 
 # Milestones
 Highlight accomplishments.
