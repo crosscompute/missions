@@ -1029,9 +1029,71 @@ STYLE_ROUTE was conflicting with ECHOES_ROUTE so we put STYLE_ROUTE into a separ
     variable_view.style_definitions
     variable_view.script_definitions
 
+## Monday 20211115-1600 - 20211115-1615: 15 minutes
+
+    + Check current state
+
+There seem to be two issues:
+
+1. the page is requesting styles at the old route
+2. not all style definitions have a path
+
+That is strange, I thought I fixed these issues already though. Maybe I forgot to commit changes somewhere.
+
+    + Fix issue of page requesting styles at old route
+
+    Option 1: Use get in find_item
+    _ Option 2: Specify dummy path
+
+    _ Option 1: Update find_item to support string indexing
+    _ Option 2: Define separate function
+    Option 3: Use loop
+
+    + Fix how to handle if not all style definitions have path
+
+## Monday 20211115-1645 - 20211115-1700: 15 minutes
+
+First, we will define the ImageView inside the module temporarily and we will separate the packages later.
+
+What is the purpose of defining an AbstractBaseClass? It does protect against instantiation of the default. But perhaps in this case, we want a default implementation of render?
+
+    Option 1: Make VariableView an AbstractBaseClass
+    Option 2: Make VariableView a real class
+
+What should we do when a variable view is requested but not installed?
+
+    [YES] Option 1: Log error
+    Option 2: Skip rendering
+    _ Option 3: Show variable id in brackets
+
+There might be cases where the author will want to render a report and not install all the dependencies, in which case we should gracefully skip the variable views that require the dependencies.
+
+    _ NoView
+    _ GhostView
+    _ EmptyView
+    _ HiddenView
+    _ LostView
+    _ SkippedView
+    _ DefaultView
+    _ VariableView
+    NullView
+
+    Option 1: Use dictionary
+        def render(self, type_name, variable_definition):
+    Option 2: Use keyword arguments
+        def render(self, type_name, variable_id, variable_data, variable_path):
+    _ Option 3: Use tuple
+        def render(self, type_name, (variable_id, variable_data, variable_path)):
+        def render(self, type_name, {variable_id, variable_data, variable_path}):
+
+I don't think Option 3 is supported.
+
+    + Define ImageView
+
+Okay, today we defined a dummy ImageView. Next time, we will implement a dummy MapMapboxView and MapPyDeckScreenGridView.
+
 # Schedule
 
-    Define ImageView
     Define MapMapboxView
     Define MapPyDeckScreenGridView
 
