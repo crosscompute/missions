@@ -1092,7 +1092,60 @@ I don't think Option 3 is supported.
 
 Okay, today we defined a dummy ImageView. Next time, we will implement a dummy MapMapboxView and MapPyDeckScreenGridView.
 
+## Tuesday 20211116-1630 - 20211116-1645: 15 minutes
+
+    MapMapboxView.index
+    _ MapMapboxView.__i
+    _ MapMapboxView._i
+    _ MapMapboxView.count
+    _ MapMapboxView.i
+    _ MapMapboxView.variable_count
+    _ MapMapboxView.variable_index
+
+    map-mapbox-0
+    _ map-mapbox0
+    _ map-mapbox-1
+    _ map-mapbox1
+
+    v0
+    _ variable0
+
+    Option 1: script_definitions in variable view
+    _ Option 2: script_definitions in map mapbox view
+
+    _ Option 1: Put all scripts into script_definitions
+    Option 2: Separate scripts by type
+
+    Option 1
+        script_uris
+        script_texts
+    _ Option 2:
+        script_definitions
+            uri
+            text
+
+## Tuesday 20211116-1715 - 20211116-1730: 15 minutes
+
+    + Rename body_content to content_html
+    + Rename styles to style_uris
+    + Rename scripts to script_uris
+    + Add script_texts
+
+    Option 1: initialize
+    _ Option 2: __init__ with super
+
+    _ add
+    _ merge
+    _ append
+    _ merge_inplace
+    append_once
+    _ append_uniquely
+
+It seems like the multiple initializations of the views is causing in the index.
+
 # Schedule
+
+
 
     Define MapMapboxView
     Define MapPyDeckScreenGridView
