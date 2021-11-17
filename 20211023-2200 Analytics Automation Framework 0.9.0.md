@@ -1143,6 +1143,19 @@ Okay, today we defined a dummy ImageView. Next time, we will implement a dummy M
 
 It seems like the multiple initializations of the views is causing in the index.
 
+## Wednesday 20211117-1300 - 20211117-1315: 15 minutes
+
+    _ Rendition
+    PageView
+    _ Page
+    _ page.add_style
+    _ page.add_script
+
+    page_view
+    page_view.add_style
+    page_view.add_script
+    page_view.render
+
 # Schedule
 
 
