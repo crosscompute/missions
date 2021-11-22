@@ -1156,7 +1156,12 @@ It seems like the multiple initializations of the views is causing in the index.
     page_view.add_script
     page_view.render
 
+## Monday 20211122-1045 - 20211122-1100: 15 minutes
+
 # Schedule
+
+    Let author specify style in settings
+    Pre compute center and zoom or find js code to auto frame
 
 
 
