@@ -1158,9 +1158,33 @@ It seems like the multiple initializations of the views is causing in the index.
 
 ## Monday 20211122-1045 - 20211122-1100: 15 minutes
 
+    css_uris
+    style_uris
+
+    html_text
+    _ html_txt
+    _ content_html
+    js_text
+    _ js_txt
+
+    content_text
+    html_text
+
+    + Rename style_uri to css_uri
+    + Rename script_uri to js_uri
+    + Rename content_html to html_text
+    + Rename script_text to js_text
+    + Let author specify style in settings
+
+    Option 1: Precompute bounds
+    _ Option 2: Compute bounds on the fly
+
+We should probably precompute bounds.
+
+    + Experiment with map.getSource('mysource').tileBounds.bounds (doesn't work)
+
 # Schedule
 
-    Let author specify style in settings
     Pre compute center and zoom or find js code to auto frame
 
 
