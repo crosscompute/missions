@@ -1183,35 +1183,42 @@ We should probably precompute bounds.
 
     + Experiment with map.getSource('mysource').tileBounds.bounds (doesn't work)
 
+## Friday 20211126-1245 - 20211126-1300: 15 minutes
+
+What we decided is to enable settings.path and have the script writer save variable specific settings there.
+
+    Option 1: Load settings path from server side
+    _ Option 2: Load settings path via AJAX
+
+    _ Find js code to auto frame
+    + Pre compute center and zoom
+    + Implement variable_view.render
+    + Return variable_view.style_definitions
+    + Return variable_view.script_definitions
+    _ Consider renaming body_content to content
+    + Separate render_variable_from into a separate method
+    + Add map to render_variable_from
+    + Restore maps functionality
+    + Define MapMapboxView
+
+When we come back, we will implement MapPyDeckScreenGridView and MarkdownView.
+
+It seems like we need to let the author define custom javascript code for their map.
+
 # Schedule
 
-    Pre compute center and zoom or find js code to auto frame
+    Make it possible to change fill color for geometries in MapMapboxView
 
-
-
-    Define MapMapboxView
     Define MapPyDeckScreenGridView
+    Define MarkdownView
+
+    Make it possible to serve multiple automations
 
     Initialize variable_view_by_name using classes
     Initialize variable_view_by_name using classes loaded from importlib
-    Implement variable_view.render
-    Return variable_view.style_definitions
-    Return variable_view.script_definitions
-    Consider renaming body_content to content
-
-
-
-    Separate render_variable_from into a separate method
     Consider pre initializing views for error checking
-    Import ImageView or MapMapboxView or TextView
-    self.
 
-    Add map to render_variable_from
-
-    Make it possible for author to override mapbox version
-    Restore maps functionality
-
-    Consider make separate option for printer friendly
+    Consider separate option for printer friendly
     Check that map displays in print
 
     Make it possible to navigate back from report
@@ -1245,6 +1252,8 @@ We should probably precompute bounds.
     Reload server and page when source files change
 
 # Tasks
+
+    Make it possible for author to override mapbox version
 
     Continue thinking through decisions for user experience for preview vs fullscreen
     Decide how to let the user override the default preview for a huge dataset
