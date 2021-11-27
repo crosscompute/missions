@@ -1205,24 +1205,26 @@ When we come back, we will implement MapPyDeckScreenGridView and MarkdownView.
 
 It seems like we need to let the author define custom javascript code for their map.
 
+## Saturday 20211127-1145 - 20211127-1200: 15 minutes
+
 # Schedule
 
-    Make it possible to change fill color for geometries in MapMapboxView
+    Make it possible to serve multiple automations
 
     Define MapPyDeckScreenGridView
     Define MarkdownView
-
-    Make it possible to serve multiple automations
 
     Initialize variable_view_by_name using classes
     Initialize variable_view_by_name using classes loaded from importlib
     Consider pre initializing views for error checking
 
-    Consider separate option for printer friendly
-    Check that map displays in print
-
     Make it possible to navigate back from report
     Do not show navigation in print
+
+    Make it possible to change fill color for geometries in MapMapboxView
+
+    Consider separate option for printer friendly
+    Check that map displays in print
 
 ## Phase 0
 
