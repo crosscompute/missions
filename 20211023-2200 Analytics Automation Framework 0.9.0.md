@@ -1207,13 +1207,28 @@ It seems like we need to let the author define custom javascript code for their 
 
 ## Saturday 20211127-1145 - 20211127-1200: 15 minutes
 
+## Sunday 20211128-1045 - 20211128-1100: 15 minutes
+
+What is the expected behavior for crosscompute serve.yml?
+
+    _ Option 1: Show CrossCompute Examples in title
+        /b/usa-maine
+        DIS
+            Adds inconsistency if user later adds multiple automations
+    Option 2: Show CrossCompute Examples as one of the automations
+        /a/crosscompute-examples/b/usa-maine
+    _ Option 3: Start at /a/crosscompute-examples
+        /a/crosscompute-examples/b/usa-maine
+
 # Schedule
 
     Make it possible to serve multiple automations
-
     Define MapPyDeckScreenGridView
     Define MarkdownView
 
+    Force stylesheet reload
+
+    Combine run and serve into the crosscompute command line script
     Initialize variable_view_by_name using classes
     Initialize variable_view_by_name using classes loaded from importlib
     Consider pre initializing views for error checking
