@@ -1220,9 +1220,34 @@ What is the expected behavior for crosscompute serve.yml?
     _ Option 3: Start at /a/crosscompute-examples
         /a/crosscompute-examples/b/usa-maine
 
+## Sunday 20211128-1700 - 20211128-1715: 15 minutes
+
+What if an automation has no output? I think if an automation has no output, then we can rightfully skip it.
+
+    + Decide conditions under which to skip an automation
+    + Find the place where we load automations
+
+    _ Consider renaming imports to automations
+
+    Option 1: imports
+    _ Option 2: automations
+
+I think imports is clearer than automations.
+
+Imports complicate the process of resolving stylesheets. Can the importing configuration override the stylesheet? Yes.
+
+    Option 1: Load all configurations first
+    _ Option 2: Load one at a time
+
+I think Option 1 is simpler.
+
 # Schedule
 
+    Prototype code to load automation definitions
+    Skip an automation if it has no output
+    Load automation definitions from imports
     Make it possible to serve multiple automations
+
     Define MapPyDeckScreenGridView
     Define MarkdownView
 
