@@ -1241,12 +1241,40 @@ Imports complicate the process of resolving stylesheets. Can the importing confi
 
 I think Option 1 is simpler.
 
-# Schedule
+## Monday 20211129-1415 - 20211129-1430: 15 minutes
 
-    Prototype code to load automation definitions
-    Skip an automation if it has no output
-    Load automation definitions from imports
-    Make it possible to serve multiple automations
+I have a problem. If the imports are nested, then we will need to resolve paths and other things properly. Paths are simple as they are relative to the path of the configuration folder. But what about stylesheets? Should we include the base stylesheets? Is it possible to override a stylesheet? I am thinking yes. Then for that to work, we need to load the current automation's stylesheets, then include the base stylesheets.
+
+    BASE
+    DISPLAY.STYLES
+    IMPORTS
+        import 1
+        display.styles for 1
+        imports
+            import a
+            display.styles for a
+
+    display.styles for a
+    display.styles for 1
+    DISPLAY.STYLES
+
+    _ Option 1: Store nested imports (complex to navigate)
+    Option 2: Store reference to parent
+    _ Option 3: Store absolute css uris resolved at load (redundant but fast)
+
+It seems like we can store a reference to the parent.
+
+    imports
+    _ includes
+
+## Monday 20211129-1545 - 20211129-1600: 15 minutes
+
+    + Prototype code to load automation definitions
+    + Skip an automation if it has no output
+    + Load automation definitions from imports
+    + Make it possible to serve multiple automations
+
+# Schedule
 
     Define MapPyDeckScreenGridView
     Define MarkdownView
