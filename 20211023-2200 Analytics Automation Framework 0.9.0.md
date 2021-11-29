@@ -1273,6 +1273,7 @@ It seems like we can store a reference to the parent.
     + Skip an automation if it has no output
     + Load automation definitions from imports
     + Make it possible to serve multiple automations
+    + Enable imports for serving multiple reports
 
 # Schedule
 
@@ -1291,20 +1292,19 @@ It seems like we can store a reference to the parent.
 
     Make it possible to change fill color for geometries in MapMapboxView
 
-    Consider separate option for printer friendly
+    Consider separate option for printer friendly map
     Check that map displays in print
 
 ## Phase 0
 
-    Enable imports for serving multiple reports
     Make dynamic map example using screengridlayer
+    Pull from repository if option is enabled
 
 ## Phase 1
 
     Restore forms functionality
     Combine serve and run into launch
     Let user choose to run before serve to make debugging easier
-    Pull from repository if option is enabled
 
 ## Phase 2
 
