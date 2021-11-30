@@ -1275,10 +1275,14 @@ It seems like we can store a reference to the parent.
     + Make it possible to serve multiple automations
     + Enable imports for serving multiple reports
 
+## Monday 20211129-2115 - 20211129-2130: 15 minutes
+
 # Schedule
 
     Define MapPyDeckScreenGridView
     Define MarkdownView
+
+
 
     Force stylesheet reload
 
