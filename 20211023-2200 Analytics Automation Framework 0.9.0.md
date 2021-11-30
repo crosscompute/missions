@@ -1277,14 +1277,37 @@ It seems like we can store a reference to the parent.
 
 ## Monday 20211129-2115 - 20211129-2130: 15 minutes
 
+    _ html_text
+    _ markdown_text
+    _ content_text
+    body_text
+
+    + Rename html_text to body_text
+
+## Tuesday 20211130-1645 - 20211130-1700: 15 minutes
+
+    _ def get_env_variable
+    _ def get_environment
+    _ def get_environment_variable
+    _ def get_env
+    _ def get_env_value
+    def get_environment_value
+
+## Tuesday 20211130-1745 - 20211130-1800: 15 minutes
+
+    + Define MapPyDeckScreenGridView
+
 # Schedule
 
-    Define MapPyDeckScreenGridView
     Define MarkdownView
 
+    Make example that uses view: map-pydeck-screengrid
+    Make example that uses view: markdown
 
 
+    Test that stylesheet is not reloading
     Force stylesheet reload
+
 
     Combine run and serve into the crosscompute command line script
     Initialize variable_view_by_name using classes
@@ -1293,11 +1316,13 @@ It seems like we can store a reference to the parent.
 
     Make it possible to navigate back from report
     Do not show navigation in print
+    Do not open reports in target blank
 
     Make it possible to change fill color for geometries in MapMapboxView
 
     Consider separate option for printer friendly map
     Check that map displays in print
+    Check that screengrid displays in print
 
 ## Phase 0
 
