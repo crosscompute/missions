@@ -1297,14 +1297,57 @@ It seems like we can store a reference to the parent.
 
     + Define MapPyDeckScreenGridView
 
+## Wednesday 20211201-1345 - 20211201-1400: 15 minutes
+
+```
+batches:
+  - name: {organization_name}
+    folder: batches/{organization_name | normalize_key}
+    variables:
+      - id: organization_name
+        path: datasets/organizations.txt
+```
+
+## Wednesday 20211201-1615 - 20211201-1630: 15 minutes
+
+    + Fix watchgod on current folder ''
+
+What if we want certain combinations of the variables?
+
+```
+batches:
+  - name: {organization_name}
+    folder: batches/{organization_name | normalize_key}
+    variables:
+      - id: organization_name
+        path: datasets/organizations.csv
+```
+
+Here we can assume that the column name is the id.
+
+What kind of example can we use here?
+
+For pydeck screengrid, we can get a series of locations, perhaps fire stations.
+
 # Schedule
 
-    Fix watchgod on current folder ''
+    Draft example with batches template -- report
+        make image choropleth example
+            make svg template of keyboard
+            use input of text
+    Make example that uses view: markdown -- widget
+        make thank you notes example
+    Make example that uses view: map-pydeck-screengrid -- widget
+        get fire station locations
+
+
+
+
+    Implement batches template
+    Allow commenting in batches path file
 
     Define MarkdownView
 
-    Make example that uses view: map-pydeck-screengrid
-    Make example that uses view: markdown
 
 
     Test that stylesheet is not reloading
