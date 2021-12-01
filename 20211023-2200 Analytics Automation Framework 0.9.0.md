@@ -1299,6 +1299,8 @@ It seems like we can store a reference to the parent.
 
 # Schedule
 
+    Fix watchgod on current folder ''
+
     Define MarkdownView
 
     Make example that uses view: map-pydeck-screengrid
