@@ -1329,24 +1329,48 @@ What kind of example can we use here?
 
 For pydeck screengrid, we can get a series of locations, perhaps fire stations.
 
+## Thursday 20211202-1000 - 20211202-1015: 15 minutes
+
+    + Draft configuration file serve.yml
+
+## Thursday 20211202-1515 - 20211202-1530: 15 minutes
+
+    + make svg template of keyboard
+    + use input of text
+
+## Thursday 20211202-1545 - 20211202-1600: 15 minutes
+
+    + Substitute variables into template
+    + Render template
+    + Convert the configuration file into end html (30 minutes)
+    + Have the server serve style.css (10 minutes)
+    + Work on image substitution (45 minutes)
+    + Consider how to let report creator specify alternate fonts
+    + Consider renaming resource to automation in docs
+    + Process old tasks
+    + Define test for paint-letters
+    + Define batches for paint-letters in proverbs.txt
+    
+## Thursday 20211202-1630 - 20211202-1645: 15 minutes
+
+    + Draft run.ipynb for paint-letters
+    + Make image choropleth example
+    + Draft example with batches template -- report
+
 # Schedule
 
-    Draft example with batches template -- report
-        make image choropleth example
-            make svg template of keyboard
-            use input of text
-    Make example that uses view: markdown -- widget
-        make thank you notes example
+    Map graffiti hotspots
     Make example that uses view: map-pydeck-screengrid -- widget
-        get fire station locations
 
-
-
+    Show ticker
+    Make example that uses view: markdown -- widget
 
     Implement batches template
     Allow commenting in batches path file
 
+    Make paint-letters example work with crosscompute
     Define MarkdownView
+    Make it possible to change fill color for geometries in MapMapboxView
 
 
 
@@ -1362,8 +1386,6 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
     Make it possible to navigate back from report
     Do not show navigation in print
     Do not open reports in target blank
-
-    Make it possible to change fill color for geometries in MapMapboxView
 
     Consider separate option for printer friendly map
     Check that map displays in print
@@ -1389,13 +1411,14 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
 
 ## Phase 3
 
+
+# Tasks
+
     Check if sse event triggers onmessage and onevent
     Make a new queue for each new see_echoes
     Publish echoes when other files change
     Test if we could have app_iter block on a coroutine
     Reload server and page when source files change
-
-# Tasks
 
     Make it possible for author to override mapbox version
 
@@ -1410,19 +1433,10 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
 
     Decide whether to eager load or lazy load full variable definitions
 
-    Substitute variables into template
     Render title in template
     Render description in template
-    Render template
-    Convert the configuration file into end html (30 minutes)
-
-    Have the server serve style.css (10 minutes)
-    Work on image substitution (45 minutes)
 
     Review legacy code to check whether we missed anything
-
-    Consider how to let report creator specify alternate fonts
-    Consider renaming resource to automation in docs
 
     Consider crosscompute:// url scheme
 
