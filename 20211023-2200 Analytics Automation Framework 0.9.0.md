@@ -1357,9 +1357,23 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
     + Make image choropleth example
     + Draft example with batches template -- report
 
+## Friday 20211203-1600 - 20211203-1615: 15 minutes
+
+I think we will finish the examples and then get the examples working.
+
+## Friday 20211203-1745 - 20211203-1800: 15 minutes
+
+    + Find a good open dataset
+
+I think we will use public school locations.
+
+- https://catalog.data.gov/en/dataset/public-school-locations-current
+- https://catalog.data.gov/dataset/detroit-public-libraries
+
 # Schedule
 
-    Map graffiti hotspots
+    Make smaller version of public school locations
+    Map public school locations
     Make example that uses view: map-pydeck-screengrid -- widget
 
     Show ticker
@@ -1367,12 +1381,12 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
 
     Implement batches template
     Allow commenting in batches path file
-
     Make paint-letters example work with crosscompute
+
+
+
     Define MarkdownView
     Make it possible to change fill color for geometries in MapMapboxView
-
-
 
     Test that stylesheet is not reloading
     Force stylesheet reload
