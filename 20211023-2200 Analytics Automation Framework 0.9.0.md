@@ -1370,9 +1370,20 @@ I think we will use public school locations.
 - https://catalog.data.gov/en/dataset/public-school-locations-current
 - https://catalog.data.gov/dataset/detroit-public-libraries
 
+## Saturday 20211204-0945 - 20211204-1000: 15 minutes
+
+I think we will have the script download the data if it does not exist.
+
+Let's write it in such a way that there is no dependency on GDAL.
+
+I rewrote it to not have a dependency on GDAL, but I think I will keep the dependency on invisibleroads-macros-disk
+
 # Schedule
 
     Make smaller version of public school locations
+
+
+
     Map public school locations
     Make example that uses view: map-pydeck-screengrid -- widget
 
@@ -1385,17 +1396,13 @@ I think we will use public school locations.
 
 
 
+    Define StringView
+    Define TextView
     Define MarkdownView
     Make it possible to change fill color for geometries in MapMapboxView
 
     Test that stylesheet is not reloading
     Force stylesheet reload
-
-
-    Combine run and serve into the crosscompute command line script
-    Initialize variable_view_by_name using classes
-    Initialize variable_view_by_name using classes loaded from importlib
-    Consider pre initializing views for error checking
 
     Make it possible to navigate back from report
     Do not show navigation in print
@@ -1404,6 +1411,14 @@ I think we will use public school locations.
     Consider separate option for printer friendly map
     Check that map displays in print
     Check that screengrid displays in print
+
+
+
+
+    Combine run and serve into the crosscompute command line script
+    Initialize variable_view_by_name using classes
+    Initialize variable_view_by_name using classes loaded from importlib
+    Consider pre initializing views for error checking
 
 ## Phase 0
 
@@ -1424,7 +1439,6 @@ I think we will use public school locations.
         Experiment with different design patterns for the view plugins
 
 ## Phase 3
-
 
 # Tasks
 
