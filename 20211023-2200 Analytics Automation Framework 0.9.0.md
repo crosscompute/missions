@@ -1378,36 +1378,65 @@ Let's write it in such a way that there is no dependency on GDAL.
 
 I rewrote it to not have a dependency on GDAL, but I think I will keep the dependency on invisibleroads-macros-disk
 
+## Sunday 20211205-1115 - 20211205-1130: 15 minutes
+
+    + Make smaller version of public school locations
+    + Map public school locations
+    + Make example that uses view: map-pydeck-screengrid -- widget
+
+## Sunday 20211205-1145 - 20211205-1200: 15 minutes
+
+I want to preserve the convention that plurals are lists and singulars are dictionaries.
+
+    + Rename settings to configuration
+
+I think we need a different example for markdown. Maybe we should use a simple example that does not rely on the internet. We could have a simple chat bot.
+
+    ask-question
+
+    + Make example that uses view: markdown -- widget
+
+Now the challenge is to get the examples working.
+
+## Sunday 20211205-1245 - 20211205-1300: 15 minutes
+
+## Sunday 20211205-1530 - 20211205-1545: 15 minutes
+
+    _ Option 1: Expand batch folders all at once
+    Option 2: Expand batch folders one at a time
+
+I think that in both cases, we can solve the problem by defining `yield_batches`.
+
+## Sunday 20211205-1645 - 20211205-1700: 15 minutes
+
+    _ Option 1: Use jinja2 filters
+    Option 2: Parse on our own
+
 # Schedule
 
-    Make smaller version of public school locations
+    Test that we can run paint-letters
+    Make paint-letters example work with crosscompute
 
-
-
-    Map public school locations
-    Make example that uses view: map-pydeck-screengrid -- widget
-
-    Show ticker
-    Make example that uses view: markdown -- widget
+    Make map-schools example work with crosscompute
+    Make ask-question example work with crosscompute
 
     Implement batches template
     Allow commenting in batches path file
-    Make paint-letters example work with crosscompute
-
-
 
     Define StringView
     Define TextView
     Define MarkdownView
-    Make it possible to change fill color for geometries in MapMapboxView
 
     Test that stylesheet is not reloading
     Force stylesheet reload
+
+
 
     Make it possible to navigate back from report
     Do not show navigation in print
     Do not open reports in target blank
 
+    Make it possible to change fill color for geometries in MapMapboxView
     Consider separate option for printer friendly map
     Check that map displays in print
     Check that screengrid displays in print
