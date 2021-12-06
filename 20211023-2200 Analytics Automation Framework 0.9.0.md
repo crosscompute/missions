@@ -1422,17 +1422,57 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
     + Implement batches template
     + Allow commenting in batches path file
 
+## Monday 20211206-1615 - 20211206-1630: 15 minutes
+
+    + Make map-schools example work with crosscompute
+    + Define StringView
+    + Define MarkdownView
+    + Test that stylesheet is not reloading
+    + Force stylesheet reload
+    + Make dynamic map example using screengridlayer
+    + Render output
+        + Prepare input folder by saving data in input variable paths
+        + Load output variable definitions from output folder
+
+    crosscompute
+        # Walk through new configuration
+        # Serve
+        # Run in background
+    crosscompute serve.yml
+        # Serve
+        # Run in background
+    crosscompute serve.yml --run --force
+        # Run in foreground
+    crosscompute serve.yml --debug
+        # Start debugger
+
+    + Increase watchgod debounce interval
+
+    python -m crosscompute
+
+    Option 1: Define scripts/launch.py (separate script)
+        crosscompute.scripts.launch:do
+        ADV
+            error in launch.py will not affect other submodules
+            more consistent with run.py serve.py configure.py
+        DIS
+    _ Option 2: Define scripts.launch (function in __init__)
+        ADV
+        DIS
+            less accessible when debugging
+            error in __init__ will break other submodules
+            might not be obvious place to look for other developers
+
+I think in general __init__.py files should be light.
+
 # Schedule
 
-    Make map-schools example work with crosscompute
+    Combine run and serve into the crosscompute command line script
 
-    Define StringView
-    Define TextView
-    Define MarkdownView
 
-    Test that stylesheet is not reloading
-    Force stylesheet reload
-
+    Initialize variable_view_by_name using classes
+    Initialize variable_view_by_name using classes loaded from importlib
+    Consider pre initializing views for error checking
 
 
     Make it possible to navigate back from report
@@ -1444,21 +1484,9 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
     Check that map displays in print
     Check that screengrid displays in print
 
-
-
-
-    Combine run and serve into the crosscompute command line script
-    Initialize variable_view_by_name using classes
-    Initialize variable_view_by_name using classes loaded from importlib
-    Consider pre initializing views for error checking
-
-## Phase 0
-
-    Make dynamic map example using screengridlayer
-    Pull from repository if option is enabled
-
 ## Phase 1
 
+    Pull from repository if option is enabled
     Restore forms functionality
     Combine serve and run into launch
     Let user choose to run before serve to make debugging easier
@@ -1470,9 +1498,9 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
 
-## Phase 3
-
 # Tasks
+
+    Define TextView
 
     Check if sse event triggers onmessage and onevent
     Make a new queue for each new see_echoes
@@ -1486,10 +1514,6 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
     Decide how to let the user override the default preview for a huge dataset
 
     Draft script to render input
-
-    Render output
-        Prepare input folder by saving data in input variable paths
-        Load output variable definitions from output folder
 
     Decide whether to eager load or lazy load full variable definitions
 
