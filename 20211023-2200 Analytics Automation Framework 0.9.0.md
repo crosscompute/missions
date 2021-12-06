@@ -1412,16 +1412,19 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
     _ Option 1: Use jinja2 filters
     Option 2: Parse on our own
 
+## Sunday 20211205-2130 - 20211205-2145: 15 minutes
+
+## Monday 20211206-0945 - 20211206-1000: 15 minutes
+
+    + Test that we can run paint-letters
+    + Make paint-letters example work with crosscompute
+    + Make ask-question example work with crosscompute
+    + Implement batches template
+    + Allow commenting in batches path file
+
 # Schedule
 
-    Test that we can run paint-letters
-    Make paint-letters example work with crosscompute
-
     Make map-schools example work with crosscompute
-    Make ask-question example work with crosscompute
-
-    Implement batches template
-    Allow commenting in batches path file
 
     Define StringView
     Define TextView
