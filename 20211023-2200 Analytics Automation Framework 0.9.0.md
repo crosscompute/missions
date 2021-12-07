@@ -1475,10 +1475,23 @@ I think in general __init__.py files should be light.
     _ run_if_ready(f'http://localhost:{args.port}', webbrowser.open)
     run_when_ready(f'http://localhost:{args.port}', webbrowser.open)
 
+## Tuesday 20211207-1030 - 20211207-1045: 15 minutes
+
+    + Add serve first
+    + Combine run and serve into the crosscompute command line script
+
+    Option 1:
+        setup:
+          dependencies:
+          command:
+
+    _ Option 2:
+        script:
+          dependencies:
+          setup:
+
 # Schedule
 
-    Add serve first
-    Combine run and serve into the crosscompute command line script
 
 
     Initialize variable_view_by_name using classes
