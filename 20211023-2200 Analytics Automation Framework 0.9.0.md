@@ -1465,8 +1465,19 @@ I think that in both cases, we can solve the problem by defining `yield_batches`
 
 I think in general __init__.py files should be light.
 
+## Monday 20211206-1945 - 20211206-2000: 15 minutes
+
+## Tuesday 20211207-0800 - 20211207-0815: 15 minutes
+
+    _ wait_and_run(f'http://localhost:{args.port}', webbrowser.open)
+    _ run_on_ready(f'http://localhost:{args.port}', webbrowser.open)
+    _ run_on_load(f'http://localhost:{args.port}', webbrowser.open)
+    _ run_if_ready(f'http://localhost:{args.port}', webbrowser.open)
+    run_when_ready(f'http://localhost:{args.port}', webbrowser.open)
+
 # Schedule
 
+    Add serve first
     Combine run and serve into the crosscompute command line script
 
 
