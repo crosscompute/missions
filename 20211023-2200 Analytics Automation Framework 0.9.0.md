@@ -1492,6 +1492,8 @@ I think in general __init__.py files should be light.
 
 # Schedule
 
+    Document steps need to take when creating a new automation
+
 
 
     Initialize variable_view_by_name using classes
