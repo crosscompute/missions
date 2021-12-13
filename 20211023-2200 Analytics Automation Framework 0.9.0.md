@@ -1490,8 +1490,52 @@ I think in general __init__.py files should be light.
           dependencies:
           setup:
 
+## Monday 20211213-1645 - 20211213-1700: 15 minutes
+
+Where does caching happen in a web request?
+
+- browser client (firefox, google chrome, safari, brave)
+- server proxy (nginx, apache)
+- corporate proxies (squid)
+
+    Option 1: Use current time
+    Option 2: Use content hash
+    Option 3: Use modification time
+
+    _ Option 1: Cache bust with timestamp query
+        DIS: did not seem to work with firefox
+    Option 2: Cache bust in the file name using content hash
+        DIS: could make retrieval more complicated
+    Option 3: Add response header to no-store, no-cache
+    Option 4: Add nginx options to prevent proxy caching
+
+    display
+        html
+            head
+                path
+    _ display
+        head
+        header
+
+    display
+        html
+          - head: <link rel="">
+
+    Option 1: jinja2 template
+    Option 2: section path
+    Option 3: structured injection (see above)
+        DIS: could get annoying for js
+
 # Schedule
 
+    Think of a good way for the user to specify custom html in head
+    Rewrite see style to get style path from uri match
+    Force firefox to reload stylesheet
+
+    Limit refresh event to files that actually affect the view
+    Check if file has actually changed
+    Check whether jupyter autosaves files and updates modification time
+    Prevent unnecessary file reloads because of jupyterlab autosaves
     Document steps need to take when creating a new automation
 
 
