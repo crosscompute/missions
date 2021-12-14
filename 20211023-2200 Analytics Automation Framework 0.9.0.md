@@ -1490,6 +1490,44 @@ I think in general __init__.py files should be light.
           dependencies:
           setup:
 
+## Monday 20211213-1645 - 20211213-1700: 15 minutes
+
+Where does caching happen in a web request?
+
+- browser client (firefox, google chrome, safari, brave)
+- server proxy (nginx, apache)
+- corporate proxies (squid)
+
+    Option 1: Use current time
+    Option 2: Use content hash
+    Option 3: Use modification time
+
+    _ Option 1: Cache bust with timestamp query
+        DIS: did not seem to work with firefox
+    Option 2: Cache bust in the file name using content hash
+        DIS: could make retrieval more complicated
+    Option 3: Add response header to no-store, no-cache
+    Option 4: Add nginx options to prevent proxy caching
+
+    display
+        html
+            head
+                path
+    _ display
+        head
+        header
+
+    display
+        html
+          - head: <link rel="">
+
+    Option 1: jinja2 template
+    Option 2: section path
+    Option 3: structured injection (see above)
+        DIS: could get annoying for js
+
+# Schedule
+
 ```
   File "/usr/lib64/python3.10/multiprocessing/process.py", line 315, in _bootstrap self.run()
   File "/usr/lib64/python3.10/multiprocessing/process.py", line 108, in run
@@ -1511,8 +1549,6 @@ I think in general __init__.py files should be light.
 FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crosscompute-examples/widgets/paint-letters/datasets/variables.csv'
 ```
 
-# Schedule
-
     Need to be able to re-run automation
     Need to be able to see errors
     Strip spaces from csv keys
@@ -1520,6 +1556,15 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crossc
     Start an automation from an example template
 
     Add TableView
+
+    Think of a good way for the user to specify custom html in head
+    Rewrite see style to get style path from uri match
+    Force firefox to reload stylesheet
+
+    Limit refresh event to files that actually affect the view
+    Check if file has actually changed
+    Check whether jupyter autosaves files and updates modification time
+    Prevent unnecessary file reloads because of jupyterlab autosaves
     Document steps need to take when creating a new automation
 
 
