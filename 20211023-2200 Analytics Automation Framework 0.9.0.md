@@ -1490,8 +1490,36 @@ I think in general __init__.py files should be light.
           dependencies:
           setup:
 
+```
+  File "/usr/lib64/python3.10/multiprocessing/process.py", line 315, in _bootstrap self.run()
+  File "/usr/lib64/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/k/Projects/crosscompute/crosscompute/scripts/serve.py", line 68, in serve_with
+    automation.serve(
+  File "/home/k/Projects/crosscompute/crosscompute/routines/automation.py", line 130, in serve
+    self.initialize_from_path(self.configuration_path)
+  File "/home/k/Projects/crosscompute/crosscompute/routines/automation.py", line 39, in initialize_from_path
+    automation_definitions = get_automation_definitions(
+  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 167, in get_automation_definitions
+    'batches': get_batch_definitions(automation_configuration),
+  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 206, in get_batch_definitions
+    definitions = get_batch_definitions_from_path(join(
+  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 257, in get_batch_definitions_from_path
+    for data_by_id in yield_data_by_id(path, variable_definitions):
+  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 465, in yield_data_by_id_from_csv
+    with open(path, 'rt') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crosscompute-examples/widgets/paint-letters/datasets/variables.csv'
+```
+
 # Schedule
 
+    Need to be able to re-run automation
+    Need to be able to see errors
+    Strip spaces from csv keys
+    Redirect to root if 404 on refresh
+    Start an automation from an example template
+
+    Add TableView
     Document steps need to take when creating a new automation
 
 
