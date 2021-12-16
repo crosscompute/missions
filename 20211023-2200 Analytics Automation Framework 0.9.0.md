@@ -1604,7 +1604,30 @@ We have to make modifications in two places:
     + Handle file not found in yield_data_by_id
     + Strip spaces from csv keys
 
+## Thursday 20211216-1030 - 20211216-1045: 15 minutes
+
+    + Check whether we can attach a tmux inside a jupyterlab terminal
+        Yes we can
+
+We have at least 1-2 months of development before we can consider the package production ready.
+
+We should get the backend working first.
+
+    + Experiment with using a multiprocessing queue to run a worker
+
+    runner
+    _ worker
+
+I actually like runner better than worker now.
+
 # Schedule
+
+    Put job on runner_queue or run_queue or worker_queue or automation_queue
+
+    Prepare run folder using prepare_batch_folder
+
+
+    Define POST /a/{automation_slug}.json
 
     Get forms working using multiprocessing queue for the self contained server
         POST /a/{automation_slug}.json
