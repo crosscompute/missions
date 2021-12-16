@@ -1596,15 +1596,22 @@ We have to make modifications in two places:
     + Change get_display_configuration to define uri using hash
     + Experiment with content hash in filename
     + Fix cache busting for stylesheets somehow
+    + Rewrite see style to get style path from uri match
+    + Force firefox to reload stylesheet
 
 ## Wednesday 20211215-2300 - 20211215-2315: 15 minutes
 
+    + Handle file not found in yield_data_by_id
+    + Strip spaces from csv keys
+
 # Schedule
 
-    Handle file not found in yield_data_by_id
-    Strip spaces from csv keys
-
     Get forms working using multiprocessing queue for the self contained server
+        POST /a/{automation_slug}.json
+            put job on queue
+        launch process that works through queue
+            runs (how to specify folder)
+    Render form
 
 # Tasks
 
@@ -1619,11 +1626,11 @@ We have to make modifications in two places:
     Redirect to root if 404 on refresh
     Start an automation from an example template
 
+    Restore upload functionality
+
     Add TableView
 
     Think of a good way for the user to specify custom html in head
-    Rewrite see style to get style path from uri match
-    Force firefox to reload stylesheet
 
     Limit refresh event to files that actually affect the view
     Check if file has actually changed
