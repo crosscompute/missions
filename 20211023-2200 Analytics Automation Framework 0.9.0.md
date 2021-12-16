@@ -1504,10 +1504,10 @@ Where does caching happen in a web request?
 
     _ Option 1: Cache bust with timestamp query
         DIS: did not seem to work with firefox
-    Option 2: Cache bust in the file name using content hash
+    _ Option 2: Cache bust in the file name using content hash
         DIS: could make retrieval more complicated
     Option 3: Add response header to no-store, no-cache
-    Option 4: Add nginx options to prevent proxy caching
+    _ Option 4: Add nginx options to prevent proxy caching
 
     display
         html
@@ -1522,36 +1522,100 @@ Where does caching happen in a web request?
           - head: <link rel="">
 
     Option 1: jinja2 template
-    Option 2: section path
-    Option 3: structured injection (see above)
+    _ Option 2: section path
+    _ Option 3: structured injection (see above)
         DIS: could get annoying for js
+
+## Wednesday 20211215-1615 - 20211215-1630: 15 minutes
+
+Here are my main goals today:
+
+1. finish the cache busting for stylesheets by adding no cache response headers
+2. get forms working using multiprocessing queue for the self contained server
+3. get the jupyterlab button working to re-run the automation and start the server
+
+How about allowing preconnect?
+
+    display:
+        path: base.jinja2
+
+    display:
+        base:
+            path: base.jinja2
+
+I think the base template option is nice, but I think it would be even better to have some simple fallback in case the user doesn't want to create a separate base template. Let me think about it.
+
+    Option A
+        display:
+            links:
+                - rel: preconnect
+                  href: https://fonts.googleapis.com
+                - rel: preconnect
+                  href: https://fonts.gstatic.com
+                  crossorigin
+            js:
+                path: x.js
+    Option B
+        display:
+            base:
+                path: base.jinja2
+            head:
+                path: head.jinja2
+
+I guess this could work as an alternative to specifying a derived base template.
+
+I actually think it would be good to support both options.
+
+    _ Remove support for display.styles.uri
+
+## Wednesday 20211215-1645 - 20211215-1700: 15 minutes
+
+I think in order not to be distracted, I should just implement display.base.path, handle file not found in yield_data_by_id
+
+I also want to think through a good way to show live output. I don't really want to send data over server side events, though we could. If we do, we would probably need to keep track of all the listeners. Here is where the architecture of nodejs shines because the code for echoes is much simpler.
+
+## Wednesday 20211215-1800 - 20211215-1815: 15 minutes
+
+I think we should go with the content hash.
+
+    + Combine serve and run into launch
+    + Let user choose to run before serve to make debugging easier
+
+I think caching is fine. We just want to break the cache in certain situations.
+
+    _ Experiment with no cache response header
+
+## Wednesday 20211215-1830 - 20211215-1845: 15 minutes
+
+We have to make modifications in two places:
+
+    + see_style
+    get_display_configuration
+
+    + Change see_style to match style to file based on uri
+    + Change get_display_configuration to define uri using hash
+    + Experiment with content hash in filename
+    + Fix cache busting for stylesheets somehow
+
+## Wednesday 20211215-2300 - 20211215-2315: 15 minutes
 
 # Schedule
 
-```
-  File "/usr/lib64/python3.10/multiprocessing/process.py", line 315, in _bootstrap self.run()
-  File "/usr/lib64/python3.10/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/k/Projects/crosscompute/crosscompute/scripts/serve.py", line 68, in serve_with
-    automation.serve(
-  File "/home/k/Projects/crosscompute/crosscompute/routines/automation.py", line 130, in serve
-    self.initialize_from_path(self.configuration_path)
-  File "/home/k/Projects/crosscompute/crosscompute/routines/automation.py", line 39, in initialize_from_path
-    automation_definitions = get_automation_definitions(
-  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 167, in get_automation_definitions
-    'batches': get_batch_definitions(automation_configuration),
-  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 206, in get_batch_definitions
-    definitions = get_batch_definitions_from_path(join(
-  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 257, in get_batch_definitions_from_path
-    for data_by_id in yield_data_by_id(path, variable_definitions):
-  File "/home/k/Projects/crosscompute/crosscompute/routines/configuration.py", line 465, in yield_data_by_id_from_csv
-    with open(path, 'rt') as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crosscompute-examples/widgets/paint-letters/datasets/variables.csv'
-```
-
-    Need to be able to re-run automation
-    Need to be able to see errors
+    Handle file not found in yield_data_by_id
     Strip spaces from csv keys
+
+    Get forms working using multiprocessing queue for the self contained server
+
+# Tasks
+
+    Get the jupyterlab button working to re-run the automation and start the server
+    Need to be able to re-run automation from jupyterlab
+
+    Implement support for display.base.path
+    Restore parallel runs
+    Show live log output
+
+    Need to be able to see errors
     Redirect to root if 404 on refresh
     Start an automation from an example template
 
@@ -1567,12 +1631,9 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crossc
     Prevent unnecessary file reloads because of jupyterlab autosaves
     Document steps need to take when creating a new automation
 
-
-
     Initialize variable_view_by_name using classes
     Initialize variable_view_by_name using classes loaded from importlib
     Consider pre initializing views for error checking
-
 
     Make it possible to navigate back from report
     Do not show navigation in print
@@ -1587,8 +1648,6 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crossc
 
     Pull from repository if option is enabled
     Restore forms functionality
-    Combine serve and run into launch
-    Let user choose to run before serve to make debugging easier
 
 ## Phase 2
 
@@ -1596,8 +1655,6 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/k/Projects/crossc
     Separate into packages
         Experiment with importlib.metadata
         Experiment with different design patterns for the view plugins
-
-# Tasks
 
     Define TextView
 
