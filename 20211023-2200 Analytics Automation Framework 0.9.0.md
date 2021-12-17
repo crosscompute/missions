@@ -1620,10 +1620,14 @@ We should get the backend working first.
 
 I actually like runner better than worker now.
 
+## Friday 20211217-1100 - 20211217-1115: 15 minutes
+
+
+
 # Schedule
 
+    Draft automation_queue
     Put job on runner_queue or run_queue or worker_queue or automation_queue
-
     Prepare run folder using prepare_batch_folder
 
 
