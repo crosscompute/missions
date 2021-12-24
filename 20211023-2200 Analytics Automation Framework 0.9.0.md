@@ -1622,25 +1622,67 @@ I actually like runner better than worker now.
 
 ## Friday 20211217-1100 - 20211217-1115: 15 minutes
 
+## Friday 20211224-1015 - 20211224-1030: 15 minutes
 
+Today we are going to build the mini worker queue that people can use while prototyping their automation.
+
+The idea is to make a self-contained package for prototyping automations.
+
+Where do we define the automation_queue?
+
+    _ Option 1: Pass into Automation
+        DIS: I don't think this is the right place to put it
+    Option 2: Pass into serve and get_app
+    _ Option 3: Define within Automation
+        DIS: Does not allow for using a differently defined queue
+
+## Friday 20211224-1115 - 20211224-1130: 15 minutes
+
+    + Draft automation_queue
+    + Prepare run folder using prepare_batch_folder
+
+    Option 1: Put runs in runs
+    _ Option 2: Put runs in batches
+
+My feeling is that the two should be separate.
+
+    add-integers
+        batches
+        tests
+        runs
+
+The runs folder can either be inside the configuration folder or it can be an absolute path.
+
+    _ Option 1: Enumerate run ids
+    Option 2: Randomize run ids
+
+## Friday 20211224-1115 - 20211224-1130: 15 minutes
+
+I forgot how to load a POST request in pyramid.
+
+    + Define dummy POST /a/{automation_slug}.json
+    + Put job on runner_queue or run_queue or worker_queue or automation_queue
+
+I removed the exists check. I think I put that there in case the user modifies batch parameters manually. I wanted to preserve the manually modified batch parameters. But I think that won't happen very much if at all.
+
+    + POST /a/{automation_slug}.json
+        put job on queue
+    + launch process that works through queue
+        runs (how to specify folder)
+    + Separate runs folder
+    + Randomize run ids
+
+## Friday 20211224-1445 - 20211224-1500: 15 minutes
 
 # Schedule
 
-    Draft automation_queue
-    Put job on runner_queue or run_queue or worker_queue or automation_queue
-    Prepare run folder using prepare_batch_folder
-
-
-    Define POST /a/{automation_slug}.json
-
-    Get forms working using multiprocessing queue for the self contained server
-        POST /a/{automation_slug}.json
-            put job on queue
-        launch process that works through queue
-            runs (how to specify folder)
     Render form
+    Submit post request
+    Get forms working for the self contained server
 
 # Tasks
+
+    Handle http errors using add_exception_view
 
     Get the jupyterlab button working to re-run the automation and start the server
     Need to be able to re-run automation from jupyterlab
