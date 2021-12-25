@@ -1680,11 +1680,26 @@ An interesting question is whether to require batches as an initial starting poi
 
 ## Saturday 20211225-0745 - 20211225-0800: 15 minutes
 
+## Saturday 20211225-0945 - 20211225-1000: 15 minutes
+
+I am debating whether to allow input and output variables to appear in the same template.
+
+    { x | input }
+
+The question is how to gather and submit. Maybe that could be custom js. But I do think it is useful to have a class for all input.
+
+I think we decided to have render_input and render_output in the view class. After that, the view class will mostly be finalized and we can begin to split them into packages.
+
 # Schedule
+
+    Define render_input
+    Define render_output
 
     Render form
     Submit post request
     Get forms working for the self contained server
+    Define input and output template filters
+    Allow input and output variables in the same template by allowing { x | input }
 
 # Tasks
 
