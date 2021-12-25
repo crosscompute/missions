@@ -1674,6 +1674,12 @@ I removed the exists check. I think I put that there in case the user modifies b
 
 ## Friday 20211224-1445 - 20211224-1500: 15 minutes
 
+## Friday 20211224-2030 - 20211224-2045: 15 minutes
+
+An interesting question is whether to require batches as an initial starting point or whether it is allowed to have an automation without any batches. I think for now we will require batches.
+
+## Saturday 20211225-0745 - 20211225-0800: 15 minutes
+
 # Schedule
 
     Render form
