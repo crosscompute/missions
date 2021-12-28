@@ -1690,16 +1690,62 @@ The question is how to gather and submit. Maybe that could be custom js. But I d
 
 I think we decided to have render_input and render_output in the view class. After that, the view class will mostly be finalized and we can begin to split them into packages.
 
+## Tuesday 20211228-1415 - 20211228-1430: 15 minutes
+
+Today we need to get markdown forms working, then split the views. We will also work on the analytics content draft for tomorrow.
+
+    _ Option 1: parse in get_batch_definitions_from_path
+    Option 2: parse in yield_data_by_id
+
+    data_by_id = parse_data_by_id(data_by_id, variable_definitions)
+
+    + Parse using view in data_by_id
+    + Update all views using new render and parse specs
+
+## Tuesday 20211228-1600 - 20211228-1615: 15 minutes
+
+    + Render form
+    + Add link for input to template
+    _ Define input and output template filters
+    _ Allow input and output variables in the same template by allowing { x | input }
+
+The way that we retrieve the variable data depends on the view that was used to render the variable.
+
+    _ Option 1: Store data in value
+        DIS: may result in invalid html
+    _ Option 2: Store data in data attributes
+        DIS: requires duplicating values to data
+    Option 3: Use custom js depending on the variable view to retrieve the data
+        I think this is the solution.
+
+```
+1. For each input element, get view class and call get_{view_name}_data.
+
+get_number_data
+get_string_data
+get_image_data
+
+2. Send POST request.
+3. Redirect to either log or debug or output.
+4. Let the creator customize the above behavior with a js override.
+```
+
+## Tuesday 20211228-1630 - 20211228-1645: 15 minutes
+
+How do we let the creator customize the above behavior?
+
+    <button class="run">Run</button>
+
+Should we let the creator customize the above behavior?
+
+Well for now, let's just show a simple run button that redirects to the output page. We could define this as a web component but for now let's stick to vanilla js.
+
+We are returning to vanilla js because of a profound dislike of the sluggishness of react.
+
 # Schedule
 
-    Define render_input
-    Define render_output
-
-    Render form
     Submit post request
     Get forms working for the self contained server
-    Define input and output template filters
-    Allow input and output variables in the same template by allowing { x | input }
 
 # Tasks
 
