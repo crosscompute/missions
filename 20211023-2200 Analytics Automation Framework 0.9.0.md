@@ -1745,14 +1745,52 @@ We are returning to vanilla js because of a profound dislike of the sluggishness
 ## Tuesday 20211228-2330 - 20211228-2345: 15 minutes
 
     Option 1: Put everything in form
-    Option 2: Assemble request dynamically
+    _ Option 2: Assemble request dynamically
+
+    + Submit post request
+    + Get forms working for the self contained server
+
+## Wednesday 20211229-1100 - 20211229-1115: 15 minutes
+
+I am debating whether to put everything in a form or assemble the request dynamically.
+
+I am thinking that we should use forms, to keep things simple.
+
+The first problem that I want to fix is the page not refreshing properly. What is happening is that the render happens before the variables is written but the refresh trigger is sent before the page finishes loading, with the consequence that the signal is not sent.
+
+What needs to happen is that we need to check whether stuff has changed as soon as the socket connects.
+
+    /streams
+    /echoes
+    /sockets
+
+    _ see_echoes
+    see_streams
+        yield_message
+    see_sockets
+
+What we could do is keep a running log of changes as soon as a view is requested. Then on connection with timestamp, send catch up messages and if there are no pending views, reset the running log.
+
+Another option is to simply have a flag to indicate whether stuff has changed since the last view load.
+
+I think for now, we can set the timestamp on page render.
+
+    _ Have yield_stream accept timestamp
+    _ Use dictionary for change log
+
+Using event-stream is more efficient than long polling and the current ping method is simpler than keeping track of queues for each listener. It will do for now.
+
+As to whether we should use forms or the current javascript method, I am thinking that the current javascript method could be more flexible. We still have access to all of the input types.
+
+Forms require wrapping everything in form and having a name for each input. We could do that too.
+
+We could use the old technology of form with post and redirect in post request. Or we could use json. The old technique would be clunky if there are form errors.
 
 # Schedule
 
-    Submit post request
-    Get forms working for the self contained server
-
 # Tasks
+
+    Rename echo to stream
 
     Handle http errors using add_exception_view
 
