@@ -1742,6 +1742,11 @@ Well for now, let's just show a simple run button that redirects to the output p
 
 We are returning to vanilla js because of a profound dislike of the sluggishness of react.
 
+## Tuesday 20211228-2330 - 20211228-2345: 15 minutes
+
+    Option 1: Put everything in form
+    Option 2: Assemble request dynamically
+
 # Schedule
 
     Submit post request
