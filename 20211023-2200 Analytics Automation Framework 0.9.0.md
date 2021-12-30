@@ -1786,7 +1786,24 @@ Forms require wrapping everything in form and having a name for each input. We c
 
 We could use the old technology of form with post and redirect in post request. Or we could use json. The old technique would be clunky if there are form errors.
 
+## Thursday 20211230-1545 - 20211230-1600: 15 minutes
+
+To get the email tool working, we need a couple of functions:
+
+- Rewrite script to get information from environment variables
+- Implement PasswordView
+- Pass secure information via environment variables
+- Separate views into separate packages
+- Release on PyPI
+
 # Schedule
+
+    Rewrite script to get information from environment variables
+    Draft configuration file
+    Implement PasswordView
+    Pass secure information via environment variables
+    Separate views into separate packages
+    Release on PyPI
 
 # Tasks
 
