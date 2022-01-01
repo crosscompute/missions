@@ -1796,13 +1796,46 @@ To get the email tool working, we need a couple of functions:
 - Separate views into separate packages
 - Release on PyPI
 
+## Friday 20211231-0030 - 20211231-0045: 15 minutes
+
+    Option 1
+        path: ENVIRONMENT
+    _ Option 2
+        environment: SMTP_URL
+    _ Option 3
+        env: SMTP_URL
+    _ Option 4:
+        uri: environment://SMTP_URL
+
+    variables:
+      - id: smtp_url
+        path: ENVIRONMENT
+      - id: smtp_url
+        environment: SMTP_URL
+      - id: smtp_url
+        env: SMTP_URL
+      - id: smtp_url
+        uri: environment://SMTP_URL
+      - id: smtp_url
+        location: environment
+
+## Friday 20211231-1315 - 20211231-1330: 15 minutes
+
+    + Rewrite script to get information from environment variables
+    + Draft configuration file
+    + Fix TextView
+    _ Rename StringView to TextView
+    _ Rename TextView to TextAreaView
+    + Implement PasswordView
+    + Implement EmailView
+
 # Schedule
 
-    Rewrite script to get information from environment variables
-    Draft configuration file
-    Implement PasswordView
     Pass secure information via environment variables
-    Separate views into separate packages
+    Test
+    Deploy
+
+    Separate views into packages
     Release on PyPI
 
 # Tasks
