@@ -1922,6 +1922,26 @@ The reasoning is that if the underlying api does not change much (like the html 
     variable_view.render(element_id, filter_names, request_path)
     variable_view.parse(variable_data)
 
+## Tuesday 20220104-1330 - 20220104-1345: 15 minutes
+
+We had started a rewrite of VariableView over the weekend in order to simplify its usage. Let's try to finish the rewrite and then work on the analytics content for this week.
+
+    a,b,#
+    1,2,
+    3,4,?
+
+    a,b,?
+    1,2,
+    3,4,#
+
+    a,b,#
+    1,2,
+    3,4,#
+
+    a,b,#
+    1,2,
+    3,4,x
+
 # Schedule
 
     Use VariableView(variable_definition)
