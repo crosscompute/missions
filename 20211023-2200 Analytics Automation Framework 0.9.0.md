@@ -1350,7 +1350,7 @@ For pydeck screengrid, we can get a series of locations, perhaps fire stations.
     + Process old tasks
     + Define test for paint-letters
     + Define batches for paint-letters in proverbs.txt
-    
+
 ## Thursday 20211202-1630 - 20211202-1645: 15 minutes
 
     + Draft run.ipynb for paint-letters
@@ -1829,9 +1829,104 @@ To get the email tool working, we need a couple of functions:
     + Implement PasswordView
     + Implement EmailView
 
+## Saturday 20220101-0030 - 20220101-0045: 15 minutes
+
+    + Pass secure information via environment variables
+
+## Saturday 20220101-0930 - 20220101-0945: 15 minutes
+
+## Saturday 20220101-1030 - 20220101-1045: 15 minutes
+
+    _ variables.d
+    _ variables.jsond
+    _ variables.json-d
+    _ variables.json
+    _ variables.dict
+    _ variables.json-dictionary
+    variables.dictionary
+
+## Saturday 20220101-1200 - 20220101-1215: 15 minutes
+
+We have a problem where the markdown in textarea is being converted. One solution is to use asynchronous loading.
+
+## Saturday 20220101-1700 - 20220101-1715: 15 minutes
+
+    + Use variables.dictionary
+
+## Saturday 20220101-1700 - 20220101-1715: 15 minutes
+
+    _ variable_view = VariableView.get(variable_definition)
+    _ variable_view = VariableView.match(variable_definition)
+    _ variable_view = VariableView.load(variable_definition)
+    variable_view = VariableView.load_from(variable_definition)
+    _ variable_view = VariableView.initialize(variable_definition)
+
+## Saturday 20220101-1915 - 20220101-1930: 15 minutes
+
+    _ bit
+    _ slice
+    _ zone
+    _ type
+    _ page
+    _ piece
+    part
+
+    automation batch part
+
+## Saturday 20220101-1945 - 20220101-2000: 15 minutes
+
+    crosscompute-views-standard
+    _ crosscompute-views-common
+    _ crosscompute-views-basic
+
+## Monday 20220103-0915 - 20220103-0930: 15 minutes
+
+    _ crosscompute-jupyterlab-extensions
+    _ crosscompute-views-electricity-network
+    _ crosscompute-views-map
+    crosscompute-electricity-network
+    crosscompute-jupyterlab
+    crosscompute-map
+
+    crosscompute
+        VariableView
+        StringView
+        NumberView
+        PasswordView
+        EmailView
+        TextView
+        MarkdownView
+        ImageView
+    crosscompute-map
+        MapMapboxView
+        MapPyDeckScreenGridView
+
+The reasoning is that if the underlying api does not change much (like the html dom), then we can put it in the base package. Otherwise, we should put it in a separate package that can update independently.
+
+## Monday 20220103-1630 - 20220103-1645: 15 minutes
+
+    _ variable_data
+    _ get_variable_data
+    load_variable_data
+
+    VariableView.load_from(variable_definition, batch_folder)
+    _ VariableView.load_from(variable_definition)
+    _ variable_view.render(element_id, batch_folder, request_path)
+
+    load_from
+    prepare_from
+    get_from
+
+    variable_view = VariableView.get_from(variable_definition)
+    variable_view.load(absolute_batch_folder)
+    variable_view.render(element_id, filter_names, request_path)
+    variable_view.parse(variable_data)
+
 # Schedule
 
-    Pass secure information via environment variables
+    Use VariableView(variable_definition)
+    Load TextView asynchronously
+
     Test
     Deploy
 
