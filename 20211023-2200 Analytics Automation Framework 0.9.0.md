@@ -1942,6 +1942,27 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
     1,2,
     3,4,x
 
+## Wednesday 20220105-1330 - 20220105-1345: 15 minutes
+
+    Option 1: Validate configuration first
+        ADV: More efficient if the loading functions can be called many times
+    _ Option 2: Validate while loading
+        ADV: More efficient if the loading functions are called once
+
+    _ automation.paths
+    _ get_paths(automation)
+    _ automation.hash_by_path
+    _ get_hash_by_path(automation)
+    _ automation.hash_by_path
+    _ automation.paths
+    _ automation.get_hash_by_path
+
+    automation.get_paths
+    get_hash_by_path(paths)
+
+    /streams/a/add-numbers
+    /streams/{path}
+
 # Schedule
 
     Use VariableView(variable_definition)
