@@ -1963,98 +1963,99 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
     /streams/a/add-numbers
     /streams/{path}
 
+## Thursday 20220106-1400 - 20220106-1415: 15 minutes
+
+    _ crosscompute-electricity-network
+    _ crosscompute-map
+    crosscompute-views-electricity-network
+    crosscompute-views-map
+
+## Thursday 20220106-1445 - 20220106-1500: 15 minutes
+
+    + Use VariableView(variable_definition)
+    + Separate views into packages
+    + Rename echo to stream
+    _ Implement support for display.base.path
+    + Start an automation from an example template
+    + Think of a good way for the user to specify custom html in head
+    + Limit refresh event to files that actually affect the view
+    _ Check if file has actually changed
+    _ Check whether jupyter autosaves files and updates modification time
+    + Prevent unnecessary file reloads because of jupyterlab autosaves
+    + Initialize variable_view_by_name using classes
+    + Initialize variable_view_by_name using classes loaded from importlib
+    _ Consider pre initializing views for error checking
+    + Do not open reports in target blank
+    + Restore forms functionality
+    _ Move img code into crosscompute-image (30 minutes)
+    + Separate into packages
+        + Experiment with importlib.metadata
+        + Experiment with different design patterns for the view plugins
+    + Define TextView
+    _ Make a new queue for each new see_echoes
+    _ Check if sse event triggers onmessage and onevent
+    + Publish echoes when other files change
+    _ Test if we could have app_iter block on a coroutine
+    + Reload server and page when source files change
+    + Continue thinking through decisions for user experience for preview vs fullscreen
+    _ Decide how to let the user override the default preview for a huge dataset
+    + Draft script to render input
+    + Decide whether to eager load or lazy load full variable definitions
+    _ Render title in template
+    _ Render description in template
+    _ Show how to center home content
+    _ Show how to center report content
+    + Redirect to root if 404 on refresh
+    + Show live log output
+
+## Thursday 20220106-1515 - 20220106-1530: 15 minutes
+
+    Option 1: Load TextView asynchronously
+    _ Option 2: Load synchronously using js
+
+    /a/send-emails/b/example/i/variables.dictionary
+    /a/send-emails/b/example/i/body
+    /a/send-emails/b/example/o/messages_sent_count
+    /a/send-emails/b/example/o/messages_total_count
+    /a/send-emails/b/example/i/body/v/text
+
+## Thursday 20220106-1700 - 20220106-1715: 15 minutes
+
+    + Load TextView asynchronously
+
 # Schedule
 
-    Use VariableView(variable_definition)
-    Load TextView asynchronously
-
-    Test
+    Test all examples
+    Test email automation
     Deploy
-
-    Separate views into packages
     Release on PyPI
 
 # Tasks
 
-    Rename echo to stream
-
-    Handle http errors using add_exception_view
-
-    Get the jupyterlab button working to re-run the automation and start the server
-    Need to be able to re-run automation from jupyterlab
-
-    Implement support for display.base.path
-    Restore parallel runs
-    Show live log output
-
-    Need to be able to see errors
-    Redirect to root if 404 on refresh
-    Start an automation from an example template
-
+    Get the jupyterlab button working to re-run the automation
+    Restore TableView
     Restore upload functionality
 
-    Add TableView
+    Restore parallel runs
+    Handle http errors using add_exception_view
 
-    Think of a good way for the user to specify custom html in head
-
-    Limit refresh event to files that actually affect the view
-    Check if file has actually changed
-    Check whether jupyter autosaves files and updates modification time
-    Prevent unnecessary file reloads because of jupyterlab autosaves
+    Need to be able to see errors
     Document steps need to take when creating a new automation
-
-    Initialize variable_view_by_name using classes
-    Initialize variable_view_by_name using classes loaded from importlib
-    Consider pre initializing views for error checking
 
     Make it possible to navigate back from report
     Do not show navigation in print
-    Do not open reports in target blank
 
     Make it possible to change fill color for geometries in MapMapboxView
     Consider separate option for printer friendly map
     Check that map displays in print
     Check that screengrid displays in print
 
-## Phase 1
-
     Pull from repository if option is enabled
-    Restore forms functionality
-
-## Phase 2
-
-    Move img code into crosscompute-image (30 minutes)
-    Separate into packages
-        Experiment with importlib.metadata
-        Experiment with different design patterns for the view plugins
-
-    Define TextView
-
-    Check if sse event triggers onmessage and onevent
-    Make a new queue for each new see_echoes
-    Publish echoes when other files change
-    Test if we could have app_iter block on a coroutine
-    Reload server and page when source files change
 
     Make it possible for author to override mapbox version
-
-    Continue thinking through decisions for user experience for preview vs fullscreen
-    Decide how to let the user override the default preview for a huge dataset
-
-    Draft script to render input
-
-    Decide whether to eager load or lazy load full variable definitions
-
-    Render title in template
-    Render description in template
-
     Review legacy code to check whether we missed anything
-
     Consider crosscompute:// url scheme
-
-    Consider how to make it possible to click on different svg elements and show information
-    Show how to center home content
-    Show how to center report content
+    Make it possible to click on different svg elements and show information
 
 # Milestones
 Highlight accomplishments.
