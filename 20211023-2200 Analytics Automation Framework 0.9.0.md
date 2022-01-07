@@ -2023,9 +2023,18 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
 
     + Load TextView asynchronously
 
+## Thursday 20220106-2100 - 20220106-2115: 15 minutes
+
+## Thursday 20220106-2215 - 20220106-2230: 15 minutes
+
+    _ Option 1: Load input asynchronously and output synchronously for markdown
+    _ Option 2: Make both async but preconvert file on async response
+    Option 3: Make both synchronous and figure out how to prevent markdown
+
+    + Test all examples
+
 # Schedule
 
-    Test all examples
     Test email automation
     Deploy
     Release on PyPI
@@ -2035,6 +2044,10 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
     Get the jupyterlab button working to re-run the automation
     Restore TableView
     Restore upload functionality
+
+    Consider how to let user choose auto formatted input and output templates
+        display.layout = auto (default)
+        display.layout = none
 
     Restore parallel runs
     Handle http errors using add_exception_view
