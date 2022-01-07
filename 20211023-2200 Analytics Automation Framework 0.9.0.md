@@ -2033,11 +2033,16 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
 
     + Test all examples
 
+## Friday 20220107-0745 - 20220107-0800: 15 minutes
+
+    + Test email automation
+    + Deploy
+
 # Schedule
 
-    Test email automation
-    Deploy
+    Tag release
     Release on PyPI
+    Update documentation
 
 # Tasks
 
