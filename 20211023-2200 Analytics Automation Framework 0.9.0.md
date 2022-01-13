@@ -2038,13 +2038,16 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
     + Test email automation
     + Deploy
 
+## Tuesday 20220111-1300 - 20220111-1315: 15 minutes
+
+    + Tag release
+    + Release on PyPI
+
 # Schedule
 
-    Tag release
-    Release on PyPI
-    Update documentation
-
 # Tasks
+
+    Update documentation
 
     Get the jupyterlab button working to re-run the automation
     Restore TableView
