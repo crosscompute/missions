@@ -2043,7 +2043,13 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
     + Tag release
     + Release on PyPI
 
+## Friday 20220114-1615 - 20220114-1630: 15 minutes
+
+    + Show circles in mapbox
+
 # Schedule
+
+    LinkView or DownloadView
 
 # Tasks
 
