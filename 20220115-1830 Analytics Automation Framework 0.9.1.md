@@ -56,18 +56,42 @@ N/A
     _ class CrossComputeRequest
     _ class RenderRequest
     _ class RenderingRequest
-    class ModeRequest
-    class BatchRequest
-    class AutomationRequest
+    _ class ModeRequest
+    _ class BatchRequest
+    _ class AutomationRequest
+    _ mode_request = ModeRequest()
 
-    mode_request = ModeRequest()
+## Tuesday 20220118-0915 - 20220118-0930: 15 minutes
+
+    + Support /a/A/b/B/o?p
+    + Make it possible to signal whether a page is being printed
+
+    _ HrefView
+    _ HyperLinkView
+    _ DownloadView
+    LinkView
+
+    view: download
+    configuration:
+        text: about our products
+
+    view: link
+    configuration:
+        text: about our products
+        download: x.csv
+
+    id: places
+    view: link
+    configuration:
+        text: about our products
+        download: places.csv
+
+    + Implement LinkView
 
 # Schedule
 
-    Support /a/A/b/B/o?p&t=TOKEN
-    Make it possible to signal whether a page is being printed
+    Document LinkView
 
-    Implement LinkView
     Restore the table output view to render a CSV or JSON table; decide whether to accept both CSV and JSON or only one
     Implement TableView
     Consider allowing alt text for ImageView
