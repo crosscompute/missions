@@ -20,9 +20,9 @@ The CrossCompute Analytics Automation Framework makes it easy to transform your 
 N/A
 
 # Objectives
-1. Implement crosscompute-image.
-2. Implement crosscompute-map-mapbox.
-2. Implement crosscompute-markdown.
+1. [Done] Implement crosscompute-image.
+2. [Done] Implement crosscompute-map-mapbox.
+2. [Done] Implement crosscompute-markdown.
 
 # Habits
 - Work on framework every morning from 6am to 8am EST.
@@ -2049,43 +2049,14 @@ We had started a rewrite of VariableView over the weekend in order to simplify i
 
 # Schedule
 
-    LinkView or DownloadView
-
 # Tasks
 
-    Update documentation
-
-    Get the jupyterlab button working to re-run the automation
-    Restore TableView
-    Restore upload functionality
-
-    Consider how to let user choose auto formatted input and output templates
-        display.layout = auto (default)
-        display.layout = none
-
-    Restore parallel runs
-    Handle http errors using add_exception_view
-
-    Need to be able to see errors
-    Document steps need to take when creating a new automation
-
-    Make it possible to navigate back from report
-    Do not show navigation in print
-
-    Make it possible to change fill color for geometries in MapMapboxView
-    Consider separate option for printer friendly map
-    Check that map displays in print
-    Check that screengrid displays in print
-
-    Pull from repository if option is enabled
-
-    Make it possible for author to override mapbox version
-    Review legacy code to check whether we missed anything
-    Consider crosscompute:// url scheme
-    Make it possible to click on different svg elements and show information
-
 # Milestones
-Highlight accomplishments.
+
+- Released crosscompute 0.9.0 on PyPI on 20220110.
+- Released crosscompute-views-map 0.0.1 on PyPI on 20220110.
 
 # Lessons
-Give feedback on how we can do better next time.
+
+- Drafting the documentation before implementation helped improve the design.
+- It took almost three months to produce this release. I would like to have shorter release cycles.
