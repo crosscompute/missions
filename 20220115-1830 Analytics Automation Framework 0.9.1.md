@@ -87,10 +87,15 @@ N/A
         download: places.csv
 
     + Implement LinkView
+    + Document LinkView
+
+## Thursday 20220120-1430 - 20220120-1445: 15 minutes
 
 # Schedule
 
-    Document LinkView
+    Redirect to log if it is defined
+    Redirect to output once variables.dictionary exists in debug_folder
+        execution_time_in_seconds
 
     Restore the table output view to render a CSV or JSON table; decide whether to accept both CSV and JSON or only one
     Implement TableView
@@ -146,4 +151,5 @@ N/A
     Make it possible to click on different svg elements and show information
 
 # Milestones
+
 # Lessons
