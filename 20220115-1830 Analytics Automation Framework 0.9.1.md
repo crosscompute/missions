@@ -91,14 +91,22 @@ N/A
 
 ## Thursday 20220120-1430 - 20220120-1445: 15 minutes
 
+## Friday 20220121-2030 - 20220121-2045: 15 minutes
+
+    + Restore the table output view to render JSON
+    + Implement TableView
+
+## Monday 20220124-1700 - 20220124-1715: 15 minutes
+
 # Schedule
+
+    Document TableView
+    Consider caching a run if caching is enabled in configuration
 
     Redirect to log if it is defined
     Redirect to output once variables.dictionary exists in debug_folder
         execution_time_in_seconds
 
-    Restore the table output view to render a CSV or JSON table; decide whether to accept both CSV and JSON or only one
-    Implement TableView
     Consider allowing alt text for ImageView
 
     Update the framework so we can specify a custom base and root template
