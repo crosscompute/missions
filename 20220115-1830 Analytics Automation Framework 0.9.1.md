@@ -158,6 +158,8 @@ N/A
     Consider crosscompute:// url scheme
     Make it possible to click on different svg elements and show information
 
+    Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
+
 # Milestones
 
 # Lessons
