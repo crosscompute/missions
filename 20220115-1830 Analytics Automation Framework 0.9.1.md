@@ -117,6 +117,7 @@ N/A
 
 # Tasks
 
+    Move render options into element_options or variable_options or render_options
     Support { x | label }
     Support display.layout = auto
 
