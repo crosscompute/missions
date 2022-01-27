@@ -117,6 +117,7 @@ N/A
 
 # Tasks
 
+    Move render options into element_options or variable_options or render_options
     Support { x | label }
     Support display.layout = auto
 
@@ -159,6 +160,7 @@ N/A
     Make it possible to click on different svg elements and show information
 
     Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
+    Consider cookiecutter
 
 # Milestones
 
