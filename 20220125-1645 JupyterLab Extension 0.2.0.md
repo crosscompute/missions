@@ -81,9 +81,18 @@ We need to walk the dog.
 
 We cannot append widgets to dom nodes but we can put widgets in panels.
 
+## Friday 20220128-1130 - 20220128-1145: 15 minutes
+
+Kashfi says to make the side panel pay attention to which automation we are in the file browser.
+
+    + Connect the Launch switch with a server route (POST)
+
 # Schedule
 
-    Connect the Launch switch with a server route (POST)
+    Say automation name and version in sidebar based on where in side panel
+
+    Change switch color to green
+    Add description captions on hover over switch
 
 # Tasks
 
