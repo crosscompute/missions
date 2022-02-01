@@ -81,10 +81,36 @@ We need to walk the dog.
 
 We cannot append widgets to dom nodes but we can put widgets in panels.
 
+## Friday 20220128-1030 - 20220128-1045: 15 minutes
+
+    + Connect the Launch switch with a server route (POST)
+
+It seems there are two ways to get the file browser path:
+
+```javascript
+function getFileBrowserPath(): string {
+  try {
+    let leftSidebarItems = shell.widgets('left');
+    let fileBrowser = leftSidebarItems.next();
+    while (fileBrowser.id !== 'filebrowser') {
+      fileBrowser = leftSidebarItems.next();
+    }
+  return (fileBrowser as any).model.path;
+  } catch (err) {}
+}
+
+const basePath =
+((args['basePath'] as string) ||
+(args['cwd'] as string) ||
+browserFactory?.defaultBrowser.model.path) ??
+'';
+```
+
+    _ Option 1: [Get file browser widget and access model](https://github.com/jupyterlab/jupyterlab-git/blob/f2abd5250f22657427a73e0b11340033917320bf/src/gitMenuCommands.ts#L44-L71)
+    Option 2: [Use browser factory](https://github.com/jupyterlab/jupyterlab/blob/master/packages/console-extension/src/index.ts#L559)
+
 # Schedule
 
-    Connect the Launch switch with a server route (POST)
+    Update the server route to start the crosscompute self-contained server
 
 # Tasks
-
-    Update the server route to start the crosscompute self-contained server
