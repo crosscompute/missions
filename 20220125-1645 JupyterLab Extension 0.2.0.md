@@ -87,10 +87,28 @@ Kashfi says to make the side panel pay attention to which automation we are in t
 
     + Connect the Launch switch with a server route (POST)
 
+## Monday 20220131-1815 - 20220131-1830: 15 minutes
+
+    + Disable render and deploy for now
+
+## Tuesday 20220201-0915 - 20220201-0930: 15 minutes
+
+    + See if we can load the jupyterlab settings
+    + Get value for ServerApp.ip
+    + Update to use python to launch
+
+## Tuesday 20220201-1015 - 20220201-1030: 15 minutes
+
+    + Get randomly available port
+    + Check that we can properly launch an automation
+
+## Tuesday 20220201-1230 - 20220201-1245: 15 minutes
+
 # Schedule
 
-    Say automation name and version in sidebar based on where in side panel
+    Check that we can properly stop the automation server
 
+    Say automation name and version in sidebar based on where in side panel
     Change switch color to green
     Add description captions on hover over switch
 
