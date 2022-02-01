@@ -109,8 +109,36 @@ browserFactory?.defaultBrowser.model.path) ??
     _ Option 1: [Get file browser widget and access model](https://github.com/jupyterlab/jupyterlab-git/blob/f2abd5250f22657427a73e0b11340033917320bf/src/gitMenuCommands.ts#L44-L71)
     Option 2: [Use browser factory](https://github.com/jupyterlab/jupyterlab/blob/master/packages/console-extension/src/index.ts#L559)
 
+## Friday 20220128-1130 - 20220128-1145: 15 minutes
+
+Kashfi says to make the side panel pay attention to which automation we are in the file browser.
+
+    + Connect the Launch switch with a server route (POST)
+
+## Monday 20220131-1815 - 20220131-1830: 15 minutes
+
+    + Disable render and deploy for now
+
+## Tuesday 20220201-0915 - 20220201-0930: 15 minutes
+
+    + See if we can load the jupyterlab settings
+    + Get value for ServerApp.ip
+    + Update to use python to launch
+
+## Tuesday 20220201-1015 - 20220201-1030: 15 minutes
+
+    + Get randomly available port
+    + Check that we can properly launch an automation
+
+## Tuesday 20220201-1230 - 20220201-1245: 15 minutes
+
+## Tuesday 20220201-1300 - 20220201-1315: 15 minutes
+
 # Schedule
 
-    Update the server route to start the crosscompute self-contained server
+    Check that we can properly stop the automation server
+    Say automation name and version in sidebar based on where in side panel
+    Change switch color to green
+    Add description captions on hover over switch
 
 # Tasks

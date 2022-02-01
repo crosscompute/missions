@@ -98,28 +98,56 @@ N/A
 
 ## Monday 20220124-1700 - 20220124-1715: 15 minutes
 
+## Monday 20220131-1815 - 20220131-1830: 15 minutes
+
+    render_input(options)
+    render_input(d)
+
+    o = Option(id='')
+    d = D(id='')
+    o = Options(id='')
+
+    RenderingOptions
+    RenderingDictionary
+
+I see that besides collections.namedtuple, there is now typing.NamedTuple and dataclass. We will use dataclass.
+
+```
+@dataclass
+class RenderingConfiguration
+class RenderingOptions
+class RenderingDictionary
+class ElementConfiguration
+_ class ElementDictionary
+_ class RenderConfiguration
+
+view.render(c)
+view.render(e)
+view.render(o)
+
+web_element
+dom_element
+```
+
+    + Move render options into x: VariableElement
+
 # Schedule
 
-    Document TableView
-    Consider caching a run if caching is enabled in configuration
-
-    Redirect to log if it is defined
-    Redirect to output once variables.dictionary exists in debug_folder
-        execution_time_in_seconds
-
-    Consider allowing alt text for ImageView
-
-    Update the framework so we can specify a custom base and root template
     Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
     Restore running batches in parallel using ThreadPoolExecutor
-
-    Update documentation
+    Support { x | label }
+    Support display.layout = auto
 
 # Tasks
 
-    Move render options into element_options or variable_options or render_options
-    Support { x | label }
-    Support display.layout = auto
+    Document TableView
+    Consider caching a run if caching is enabled in configuration
+    Redirect to log if it is defined
+    Redirect to output once variables.dictionary exists in debug_folder
+        execution_time_in_seconds
+    Consider allowing alt text for ImageView
+    Update the framework so we can specify a custom base and root template
+    Update documentation
 
     Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
     Consider using cookie prefixes for secure authentication
