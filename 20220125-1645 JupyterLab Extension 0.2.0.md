@@ -134,9 +134,49 @@ Kashfi says to make the side panel pay attention to which automation we are in t
 
 ## Tuesday 20220201-1300 - 20220201-1315: 15 minutes
 
+    + Revert to serving crosscompute directly instead of via subprocess
+
+    _ Option 1: Render error by directly modifying div
+    Option 2: Use lumino signal
+    Option 3: Use react
+
+Lumino signaling is based on callbacks while React is based on declarative state. I think in this case, React will be better.
+
+In the previous version, we listened to server sent events to update the log component.
+
+I don't think I can use React in JupyterLab to communicate across widgets though. I think we will need to use lumino signaling.
+
+## Tuesday 20220201-1745 - 20220201-1800: 15 minutes
+
+I have two options on how to implement panel.
+
+    Option 1: Implement panel as ReactWidget + UseSignal on pathChanged or modelChanged event
+        DIS: cannot use lumino switch widget
+    _ Option 2: Update panel in the modelChanged callback and use the ui-components/switch widget
+
+    pathChanged
+        update model
+        signal refresh
+    error from fetch
+        update model
+        signal refresh
+    success from fetch
+        update model
+        signal refresh
+
+I want to do a fetch on pathChanged to get the automation information, including the path to the batch configuration. I think that if I eventually want to add more user experience enhancements to the panel in the future (such as renaming the automation), it would be better to use the ReactWidget.
+
+That means that we are going to change the panel to be a ReactWidget. We are going to define a signal in the widget so that other events can update the model.
+
 # Schedule
 
+    Render error
+
+    Revert to running crosscompute directly instead of via subprocess
+
+    Check how we can subscribe to filebrowser updates
     Check that we can properly stop the automation server
+
     Say automation name and version in sidebar based on where in side panel
     Change switch color to green
     Add description captions on hover over switch

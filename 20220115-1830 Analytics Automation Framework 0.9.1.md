@@ -14,7 +14,7 @@ Computational Engineer: Roy
 The framework is a self-contained server that analysts can use to prototype their automations before publishing them to the marketplace.
 
 # Timeframe
-20220115-1845 - 2022
+20220115-1845 - 20220215-1845: 1 month
 
 # Budget
 N/A
@@ -22,7 +22,7 @@ N/A
 # Objectives
 1. Pre-compile notebooks to scripts.
 2. Accept custom root template.
-3. Signal to a variable whether it is being printed.
+3. [Done] Signal to a variable whether it is being printed.
 
 # Habits
 - Work on the system from 6am to 8am everyday.
@@ -131,14 +131,24 @@ dom_element
 
     + Move render options into x: VariableElement
 
+## Tuesday 20220201-1315 - 20220201-1330: 15 minutes
+
+    + Expand variables in configure_with
+    + Expand variables in serve_with
+    + Expand variables in run_with
+
 # Schedule
 
+    Split batches.csv into variables.dictionary for each batch
+    Update run-onsset example to read from variables.dictionary
+
+# Tasks
+
     Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
+
     Restore running batches in parallel using ThreadPoolExecutor
     Support { x | label }
     Support display.layout = auto
-
-# Tasks
 
     Document TableView
     Consider caching a run if caching is enabled in configuration
