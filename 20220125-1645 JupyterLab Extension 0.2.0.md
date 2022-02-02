@@ -168,7 +168,12 @@ I want to do a fetch on pathChanged to get the automation information, including
 
 That means that we are going to change the panel to be a ReactWidget. We are going to define a signal in the widget so that other events can update the model.
 
+## Tuesday 20220201-1930 - 20220201-1945: 15 minutes
+
 # Schedule
+
+    Load configuration on each path change
+
 
     Render error
 
