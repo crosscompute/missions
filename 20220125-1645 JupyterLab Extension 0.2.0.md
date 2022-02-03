@@ -170,18 +170,18 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
 
 ## Tuesday 20220201-1930 - 20220201-1945: 15 minutes
 
+## Wednesday 20220202-2215 - 20220202-2230: 15 minutes
+
+    + Load configuration on each path change
+    + Define automationBody.onUpdate
+    + Check how we can subscribe to filebrowser updates
+    + Say automation name and version in sidebar based on file browser path
+
 # Schedule
 
-    Load configuration on each path change
-
     Render error
-
     Revert to running crosscompute directly instead of via subprocess
-
-    Check how we can subscribe to filebrowser updates
     Check that we can properly stop the automation server
-
-    Say automation name and version in sidebar based on where in side panel
     Change switch color to green
     Add description captions on hover over switch
 
