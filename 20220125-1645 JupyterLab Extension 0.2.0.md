@@ -177,14 +177,32 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
     + Check how we can subscribe to filebrowser updates
     + Say automation name and version in sidebar based on file browser path
 
+## Thursday 20220203-1215 - 20220203-1230: 15 minutes
+
+    Edit Configuration
+    Edit Batches
+    _ Edit Automation Configuration
+    _ Edit Batches Configuration
+    _ Edit Batch Configuration
+
+    + Render error
+    + Debug "format not supported for configuration"
+    + Get automation to show on load
+    + Show default message if configuration not found
+    _ Change switch color to green
+    _ Add description captions on hover over launch button
+
+## Thursday 20220203-1530 - 20220203-1545: 15 minutes
+
+    + Add launch button
+    + Implement Edit Batches
+
 # Schedule
 
-    Render error
     Revert to running crosscompute directly instead of via subprocess
     Check that we can properly stop the automation server
-    Change switch color to green
-    Add description captions on hover over switch
 
 # Tasks
 
+    Add link to edit configuration if there is a configuration error
     pip install jupyterlab-spreadsheet-editor
