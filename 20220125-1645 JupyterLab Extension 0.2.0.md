@@ -174,7 +174,6 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
 
     Load configuration on each path change
 
-
     Render error
 
     Revert to running crosscompute directly instead of via subprocess
@@ -187,3 +186,5 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
     Add description captions on hover over switch
 
 # Tasks
+
+    pip install jupyterlab-spreadsheet-editor
