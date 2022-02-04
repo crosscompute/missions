@@ -197,7 +197,15 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
     + Add launch button
     + Implement Edit Batches
 
+## Friday 20220204-1230 - 20220204-1245: 15 minutes
+
+    + Use flex for launch button
+    + Implement mock experience for launch button
+    + Make uri clickable
+
 # Schedule
+
+    Fix daemonic process error
 
     Revert to running crosscompute directly instead of via subprocess
     Check that we can properly stop the automation server
