@@ -141,6 +141,7 @@ dom_element
 
     Split batches.csv into variables.dictionary for each batch
     Update run-onsset example to read from variables.dictionary
+    Make tutorial example for Kashfi tutorial
 
 # Tasks
 
