@@ -203,10 +203,55 @@ That means that we are going to change the panel to be a ReactWidget. We are goi
     + Implement mock experience for launch button
     + Make uri clickable
 
+## Saturday 20220205-1130 - 20220205-1145: 15 minutes
+
+```
+45689─45691─┬─45693
+            ├─45695─┬─45697
+            │       ├─{45698} waitress thread
+            │       ├─{45699} waitress thread
+            │       ├─{45700} waitress thread
+            │       └─{45701} waitress thread
+            └─{45696}
+```
+
+I feel like there are too many processes in the command line script. Let's identify which one is doing what.
+
+```
+2022-02-05 12:11:13 .macros.process DEBUG started serve process 51217
+2022-02-05 12:11:13 .macros.process DEBUG started run process 51218
+2022-02-05 12:11:13 .macros.process DEBUG started browser daemon process 51219
+2022-02-05 12:11:13 .macros.process DEBUG started server process 51221
+2022-02-05 12:11:13 .macros.process DEBUG started worker daemon process 51222
+
+root (51215)─┬─serve (51217)─┬─ browser daemon (51219)
+             │               ├─ server (51221)─┬─ worker daemon (51222)
+             │               │                 ├─ waitress {thread} (51224)
+             │               │                 ├─ waitress {thread} (51225)
+             │               │                 ├─ waitress {thread} (51226)
+             │               │                 └─ waitress {thread} (51227)
+             │               └─ watch {thread via watchgod.main.awatch} (51223)
+             └─run (51218)
+```
+
+I learned about different process start methods:
+- https://stackoverflow.com/questions/63424251/multiprocessing-in-python-what-gets-inherited-by-forkserver-process-from-paren
+- http://www.bnikolic.co.uk/blog/python/parallelism/2019/11/13/python-forkserver-preload.html
+- https://pythonspeed.com/articles/python-multiprocessing/
+
+The conclusion is that there are currently 3 ways that multiprocessing can start a process: 
+- fork (does not copy threads into child process)
+- spawn (copies everything but is slow)
+- forkserver (specify what to copy into the child process with `set_forkserver_preload`)
+
+## Saturday 20220205-1430 - 20220205-1445: 15 minutes
+
 # Schedule
 
+	See how we can kill the child processes
+		Try using subprocess
+		Record child process ids
     Fix daemonic process error
-
     Revert to running crosscompute directly instead of via subprocess
     Check that we can properly stop the automation server
 
