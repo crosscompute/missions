@@ -137,14 +137,77 @@ dom_element
     + Expand variables in serve_with
     + Expand variables in run_with
 
+## Sunday 20220206-1945 - 20220206-2000: 15 minutes
+
+    _ template.folder
+    _ cookiecutter.folder
+    _ base.folder
+    reference.folder
+
+```
+REJECTED
+batches:
+  - name: {country_name}
+    folder: batches/{country_name | slug}
+    configuration:
+      folder: batches/djibouti
+      path: datasets/batches.csv
+  - name: {country_name}
+    folder: batches/{country_name | slug}
+    configuration:
+      reference:
+        folder: batches/djibouti
+      path: datasets/batches.csv
+  - name: {country_name}
+    folder: batches/{country_name | slug}
+    reference:
+      folder: batches/djibouti
+    variables:
+      - id: population_growth_rate
+        data:
+          python: __import__('numpy').arange(0, 1, 0.1)
+      - id: population_growth_rate
+        generator: __import__('numpy').arange(0, 1, 0.1)
+      - id: population_growth_rate
+        python: __import__('numpy').arange(0, 1, 0.1)
+      - id: population_growth_rate
+        data: __import__('numpy').arange(0, 1, 0.1)
+
+ACCEPTED
+batches:
+  - name: {country_name}
+    folder: batches/{country_name | slug}
+    reference:
+      folder: batches/djibouti
+    variables:
+      - id: population_growth_rate
+        code: __import__('numpy').arange(0, 1, 0.1)
+      - id: urban_rural_ratio
+        code: [0.1, 0.4, 0.7, 1.0]
+  - name: {country_name}
+    folder: batches/{country_name | slug}
+    reference:
+      folder: batches/djibouti
+    configuration:
+      path: datasets/batches.csv
+```
+
+## Monday 20220207-0915 - 20220207-0930: 15 minutes
+
+I think I found a browser quirk. It seems like sometimes the refresh uses the cache. Sometimes the cached file is the css file. Sometimes the cache file is the html file. And it leads to unpredictable behavior. Server-side everything is fine. The solution I think is to specify cache-control for development mode.
+
+    + Check why updating font-size in the css was not working
+    + Specify cache-control header if in development mode
+
 # Schedule
 
-    Split batches.csv into variables.dictionary for each batch
+    Split batches.csv into variables.dictionary for each batch using reference.folder
+    Implement variables.id, variables.code
     Update run-onsset example to read from variables.dictionary
-    Make tutorial example for Kashfi tutorial
 
 # Tasks
 
+    Make tutorial example for Kashfi tutorial
     Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
 
     Restore running batches in parallel using ThreadPoolExecutor

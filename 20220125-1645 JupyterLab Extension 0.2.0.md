@@ -246,14 +246,18 @@ The conclusion is that there are currently 3 ways that multiprocessing can start
 
 ## Saturday 20220205-1430 - 20220205-1445: 15 minutes
 
+## Sunday 20220206-1045 - 20220206-1100: 15 minutes
+
+	+ See how we can kill the child processes
+		+ Try using subprocess
+		_ Record child process ids
+    + Fix daemonic process error
+    _ Revert to running crosscompute directly instead of via subprocess
+    + Check that we can properly stop the automation server
+
 # Schedule
 
-	See how we can kill the child processes
-		Try using subprocess
-		Record child process ids
-    Fix daemonic process error
-    Revert to running crosscompute directly instead of via subprocess
-    Check that we can properly stop the automation server
+    Implement print
 
 # Tasks
 
