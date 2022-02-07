@@ -199,6 +199,15 @@ I think I found a browser quirk. It seems like sometimes the refresh uses the ca
     + Check why updating font-size in the css was not working
     + Specify cache-control header if in development mode
 
+## Monday 20220207-1430 - 20220207-1445: 15 minutes
+
+    execution_time_in_seconds
+    _ execution_time_in_milliseconds
+
+    + Decide format of debug/variables.dictionary
+        execution_time_in_seconds
+        return_code
+
 # Schedule
 
     Split batches.csv into variables.dictionary for each batch using reference.folder

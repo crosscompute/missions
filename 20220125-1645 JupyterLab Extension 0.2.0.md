@@ -255,11 +255,38 @@ The conclusion is that there are currently 3 ways that multiprocessing can start
     _ Revert to running crosscompute directly instead of via subprocess
     + Check that we can properly stop the automation server
 
+## Monday 20220207-1430 - 20220207-1445: 15 minutes
+
+I am thinking that we should reuse the repository crosscompute-prints.
+
+    _ crosscompute-prints
+    _ crosscompute-printer
+    crosscompute-printers
+
+We decided to use puppeteer instead of pyppeteer because of lagging changes in puppeteer.
+
+    + Write a script that prints a page given a url and a target path
+    + Get the url and the target path from the command line
+
+```bash
+curl -X POST localhost:8718/api/users -d "id=a&token=bc"
+```
+
+    + Write a script that starts a server and prints the POST parameters
+    + Update framework to update variables.dictionary in `debug_folder`
+
 # Schedule
 
+    Write a script that gets the output url for each batch
+    Write a script that checks whether log has execution_time_in_seconds
+    Save pdfs as zip
+    Update extension to show render button
+    Update extension to show download url
     Implement print
 
 # Tasks
 
     Add link to edit configuration if there is a configuration error
     pip install jupyterlab-spreadsheet-editor
+    Rename crosscompute-prints to crosscompute-renderers
+    Consider implementing crosscompute --render pdf
