@@ -208,11 +208,20 @@ I think I found a browser quirk. It seems like sometimes the refresh uses the ca
         execution_time_in_seconds
         return_code
 
+## Tuesday 20220208-1515 - 20220208-1530: 15 minutes
+
+    _ Use itertools.product for variables
+
 # Schedule
+
+    Use reference for default values if defined
+    Use configuration path for specific value sets
 
     Split batches.csv into variables.dictionary for each batch using reference.folder
     Implement variables.id, variables.code
     Update run-onsset example to read from variables.dictionary
+
+    Consider warning if batch folder or name is not unique -- then auto name folder and name so that they are
 
 # Tasks
 
