@@ -212,6 +212,11 @@ I think I found a browser quirk. It seems like sometimes the refresh uses the ca
 
     _ Use itertools.product for variables
 
+## Tuesday 20220208-2200 - 20220208-2215: 15 minutes
+
+    _ Option 1: Load variables in order
+    Option 2: Load backwards and only use folder and reference if missing
+
 # Schedule
 
     Use reference for default values if defined
