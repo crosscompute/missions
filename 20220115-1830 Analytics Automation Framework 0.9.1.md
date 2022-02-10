@@ -217,6 +217,10 @@ I think I found a browser quirk. It seems like sometimes the refresh uses the ca
     _ Option 1: Load variables in order
     Option 2: Load backwards and only use folder and reference if missing
 
+## Wednesday 20220209-2130 - 20220209-2145: 15 minutes
+
+It is not for the view to decide whether the data is asynchronous. The data may or may not be asynchronous and the view will need to decide how to handle it.
+
 # Schedule
 
     Use reference for default values if defined
