@@ -226,6 +226,20 @@ It is not for the view to decide whether the data is asynchronous. The data may 
     + Add title text to each html route
     + Check templates
 
+## Friday 20220211-0100 - 20220211-0115: 15 minutes
+
+- Automation definition defines an automation
+- Automation configuration configures one or more automations & file does the configuring
+- Batch definition defines a batch
+- Batch configuration configures one or more batches & file does the configuring
+- Variable definition defines a variable
+- Variable configuration configures a variable & file does the configuring
+- Template definition defines a template
+
+## Friday 20220211-0700 - 20220211-0715: 15 minutes
+
+# Schedule
+
     Check routes
         automation
         stream
@@ -237,8 +251,6 @@ It is not for the view to decide whether the data is asynchronous. The data may 
         log.py
         validation.py
         variable.py
-
-# Schedule
 
     Use reference for default values if defined
     Use configuration path for specific value sets
