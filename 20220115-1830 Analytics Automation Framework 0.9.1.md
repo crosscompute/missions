@@ -221,6 +221,23 @@ I think I found a browser quirk. It seems like sometimes the refresh uses the ca
 
 It is not for the view to decide whether the data is asynchronous. The data may or may not be asynchronous and the view will need to decide how to handle it.
 
+## Thursday 20220210-1630 - 20220210-1645: 15 minutes
+
+    + Add title text to each html route
+    + Check templates
+
+    Check routes
+        automation
+        stream
+    Check routines
+        automation.py
+        batch.py
+        configuration.py
+        interface.py
+        log.py
+        validation.py
+        variable.py
+
 # Schedule
 
     Use reference for default values if defined
