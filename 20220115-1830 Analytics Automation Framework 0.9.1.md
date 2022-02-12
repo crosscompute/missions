@@ -238,11 +238,24 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
 ## Friday 20220211-0700 - 20220211-0715: 15 minutes
 
+## Friday 20220211-1315 - 20220211-1330: 15 minutes
+
+    + Use reference for default values if defined
+    + Use configuration path for specific value sets
+    + Consider warning if batch folder or name is not unique
+    + Consider how to handle format_path not handling Path
+    + Restore routines/configuration.py
+
 # Schedule
+
+    Check automation_definition
+    Check template_definition
+    Check variable_definition
+    Check batch_definition
 
     Check routes
         automation
-        stream
+        + stream
     Check routines
         automation.py
         batch.py
@@ -252,14 +265,11 @@ It is not for the view to decide whether the data is asynchronous. The data may 
         validation.py
         variable.py
 
-    Use reference for default values if defined
-    Use configuration path for specific value sets
-
     Split batches.csv into variables.dictionary for each batch using reference.folder
     Implement variables.id, variables.code
     Update run-onsset example to read from variables.dictionary
 
-    Consider warning if batch folder or name is not unique -- then auto name folder and name so that they are
+    Check unique automation name and uri
 
 # Tasks
 
