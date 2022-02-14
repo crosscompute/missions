@@ -246,30 +246,32 @@ It is not for the view to decide whether the data is asynchronous. The data may 
     + Consider how to handle format_path not handling Path
     + Restore routines/configuration.py
 
+## Saturday 20220212-1900 - 20220212-1915: 15 minutes
+
+## Monday 20220214-1745 - 20220214-1800: 15 minutes
+
+    + Check automation_definition
+    + Check batch_definition
+    + Check template_definition
+    + Check variable_definition
+    + Check routes
+        + automation
+        + stream
+    + Check routines
+        + automation.py
+        + batch.py
+        + configuration.py
+        + interface.py
+        + log.py
+        + variable.py
+    _ Implement variables.id, variables.code
+    + Check unique automation name and uri
+
 # Schedule
 
-    Check automation_definition
-    Check template_definition
-    Check variable_definition
-    Check batch_definition
-
-    Check routes
-        automation
-        + stream
-    Check routines
-        automation.py
-        batch.py
-        configuration.py
-        interface.py
-        log.py
-        validation.py
-        variable.py
-
+    Test each example
     Split batches.csv into variables.dictionary for each batch using reference.folder
-    Implement variables.id, variables.code
     Update run-onsset example to read from variables.dictionary
-
-    Check unique automation name and uri
 
 # Tasks
 
