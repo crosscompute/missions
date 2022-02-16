@@ -267,10 +267,13 @@ It is not for the view to decide whether the data is asynchronous. The data may 
     _ Implement variables.id, variables.code
     + Check unique automation name and uri
 
+## Tuesday 20220215-1300 - 20220215-1315: 15 minutes
+
+    + Split batches.csv into variables.dictionary for each batch using reference.folder
+
 # Schedule
 
     Test each example
-    Split batches.csv into variables.dictionary for each batch using reference.folder
     Update run-onsset example to read from variables.dictionary
 
 # Tasks
