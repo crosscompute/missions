@@ -275,8 +275,30 @@ curl -X POST localhost:8718/api/users -d "id=a&token=bc"
     + Write a script that starts a server and prints the POST parameters
     + Update framework to update variables.dictionary in `debug_folder`
 
+## Wednesday 20220216-1100 - 20220216-1115: 15 minutes
+
+    _ Option 1: Define oldFolder in model
+        DIS: Seems oldFolder is more UI than data
+    Option 2: Define oldFolder in AutomationControl
+        DIS: Need to pass either browser folder or current folder
+
+Let's try modelling both approaches. I think we need to use Option 2 because it is possible that openFolder is used in different ways.
+
+It seems like browser.model.cd does not accept absolute paths.
+
+    _ Option 1: Compute relpath in browser
+
+Actually, it seems like the definition of '/' is with respect to the folder where we started JupyterLab.
+
+    + Make it possible to go back after jumping to a batch folder
+
+## Wednesday 20220216-1230 - 20220216-1245: 15 minutes
+
+## Wednesday 20220216-1445 - 20220216-1500: 15 minutes
+
 # Schedule
 
+    Render stdout and stderr for launch
     Write a script that gets the output url for each batch
     Write a script that checks whether log has execution_time_in_seconds
     Save pdfs as zip

@@ -20,8 +20,8 @@ The framework is a self-contained server that analysts can use to prototype thei
 N/A
 
 # Objectives
-1. Pre-compile notebooks to scripts.
-2. Accept custom root template.
+1. [Done] Pre-compile notebooks to scripts.
+2. [Done] Accept custom root template.
 3. [Done] Signal to a variable whether it is being printed.
 
 # Habits
@@ -271,10 +271,32 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
     + Split batches.csv into variables.dictionary for each batch using reference.folder
 
+## Wednesday 20220216-1045 - 20220216-1100: 15 minutes
+
+    + Randomize Histograms
+    + Compute Logarithms
+    + Show Maps
+    + Map Schools
+    + Add Numbers
+    + Ask Question
+    + Send Emails
+    + Find Places
+    + Paint Letters
+    + Gather Locations
+    + Manage Locations
+    + Test each example
+
+## Wednesday 20220216-1445 - 20220216-1500: 15 minutes
+
+    + Accept custom root template
+    + Pre-compile notebooks to scripts
+
 # Schedule
 
-    Test each example
+    Save variables.dictionary for extra variables
+    Check why settlements.csv is not saving
     Update run-onsset example to read from variables.dictionary
+    Run OnSSET
 
 # Tasks
 
