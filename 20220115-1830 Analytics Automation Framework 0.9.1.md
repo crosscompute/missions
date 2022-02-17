@@ -291,6 +291,14 @@ It is not for the view to decide whether the data is asynchronous. The data may 
     + Accept custom root template
     + Pre-compile notebooks to scripts
 
+## Wednesday 20220216-2345 - 20220217-0000: 15 minutes
+
+    _ Option 1: Have crosscompute serve the logs and use server sent events
+    _ Option 2: Get the logs from subprocess and use server sent events
+    Option 3: Save the logs to disk and poll periodically
+
+## Thursday 20220217-0730 - 20220217-0745: 15 minutes
+
 # Schedule
 
     Save variables.dictionary for extra variables
