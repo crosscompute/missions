@@ -296,9 +296,22 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
 ## Wednesday 20220216-1445 - 20220216-1500: 15 minutes
 
+## Thursday 20220217-1000 - 20220217-1015: 15 minutes
+
+    _ automationModel.launch.text
+    _ automationModel.launch.log
+    automationModel.launch.log.text
+
+    + Define temporary folder for logs
+    + Delete temporary folder on exit
+    + Save stdout and stderr to log file
+    + Define LogHandler.get
+    + Poll LogHandler.get on launch
+    + Populate automationModel.launch.log.text
+    + Render stdout and stderr for launch
+
 # Schedule
 
-    Render stdout and stderr for launch
     Write a script that gets the output url for each batch
     Write a script that checks whether log has execution_time_in_seconds
     Save pdfs as zip
