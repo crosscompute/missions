@@ -310,6 +310,10 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
     + Populate automationModel.launch.log.text
     + Render stdout and stderr for launch
 
+## Friday 20220218-1015 - 20220218-1030: 15 minutes
+
+    + Use proxy if https
+
 # Schedule
 
     Write a script that gets the output url for each batch

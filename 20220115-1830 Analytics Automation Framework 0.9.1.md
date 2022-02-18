@@ -299,7 +299,19 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
 ## Thursday 20220217-0730 - 20220217-0745: 15 minutes
 
+## Friday 20220218-1000 - 20220218-1015: 15 minutes
+
+    + Try increasing default waitress threads
+
+There is a problem with the way that waitress is handling the event streams. It is not closing the connections.
+
+I am thinking that maybe we should just revert to long polling.
+
+## Friday 20220218-1100 - 20220218-1115: 15 minutes
+
 # Schedule
+
+    Revert to long polling
 
     Save variables.dictionary for extra variables
     Check why settlements.csv is not saving
@@ -364,6 +376,7 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
     Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
     Consider cookiecutter
+    Consider compatibility with gunicorn
 
 # Milestones
 
