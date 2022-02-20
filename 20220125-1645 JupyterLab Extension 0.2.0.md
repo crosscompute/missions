@@ -314,10 +314,14 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
     + Use proxy if https
 
+## Saturday 20220219-0845 - 20220219-0900: 15 minutes
+
+    + Revert namespace to jupyterlab-crosscompute
+
 # Schedule
 
     Write a script that gets the output url for each batch
-    Write a script that checks whether log has execution_time_in_seconds
+    Write a script that checks whether debug has execution_time_in_seconds
     Save pdfs as zip
     Update extension to show render button
     Update extension to show download url

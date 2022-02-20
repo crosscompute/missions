@@ -309,9 +309,39 @@ I am thinking that maybe we should just revert to long polling.
 
 ## Friday 20220218-1100 - 20220218-1115: 15 minutes
 
+## Saturday 20220219-0815 - 20220219-0830: 15 minutes
+
+The problem with server sent events is that it ties up waitress resources. I do think the most universally supported method is simple polling. And we are only creating this version for the development of automations, not their use.
+
+    _ /s/abc/_
+    _ /s/abc/-
+    _ /s/abc/~
+    /s/abc/crosscompute
+    _ /s/abc/c
+
+    _ /-
+    _ /~
+    _ /polls
+    _ /states
+    _ /updates
+    _ /changes
+    /mutations
+
+    / = root
+    /- = poll mirror
+
+    _ Consider whether to substitute '' if environment variable is missing
+
+## Sunday 20220220-0830 - 20220220-0845: 15 minutes
+
+    + Update run to continue with next automation despite exception
+
 # Schedule
 
-    Revert to long polling
+    Stick with EventSource for now but remove loop
+
+    Consider specifying empty environment variables for send-emails
+    Revert to polling
 
     Save variables.dictionary for extra variables
     Check why settlements.csv is not saving
