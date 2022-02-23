@@ -299,6 +299,25 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
 ## Thursday 20220217-0730 - 20220217-0745: 15 minutes
 
+## Wednesday 20220223-0945 - 20220223-1000: 15 minutes
+
+```
+scripts:
+  - command:
+    folder:
+  - path:
+    folder:
+```
+
+I think that for each batch, we will run all of the scripts in sequence. Another question is whether each of the scripts will share the same input and output folders. I think they should.
+
+## Wednesday 20220223-1215 - 20220223-1230: 15 minutes
+
+## Wednesday 20220223-1300 - 20220223-1315: 15 minutes
+
+    + Convert all examples so that scripts is a list
+    + Make it possible for scripts to be a list
+
 # Schedule
 
     Save variables.dictionary for extra variables
@@ -307,6 +326,8 @@ It is not for the view to decide whether the data is asynchronous. The data may 
     Run OnSSET
 
 # Tasks
+
+    Create example with multiple scripts
 
     Make tutorial example for Kashfi tutorial
     Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
