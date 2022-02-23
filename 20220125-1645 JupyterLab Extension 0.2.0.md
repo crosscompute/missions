@@ -331,10 +331,13 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
     + Render automation information
     + Restore batch information
 
-# Schedule
+## Tuesday 20220222-2230 - 20220222-2245: 15 minutes
 
-    Restore launch control
-    
+    + Restore launch control
+    + Add link to edit configuration if there is a configuration error
+    + Fix issue with concurrent logs
+
+# Schedule
 
     Write a script that gets the output url for each batch
     Write a script that checks whether debug has execution_time_in_seconds
@@ -345,7 +348,6 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
 # Tasks
 
-    Add link to edit configuration if there is a configuration error
     pip install jupyterlab-spreadsheet-editor
     Rename crosscompute-prints to crosscompute-renderers
     Consider implementing crosscompute --render pdf

@@ -337,11 +337,12 @@ The problem with server sent events is that it ties up waitress resources. I do 
     + Update run to continue with next automation despite exception
     _ Stick with EventSource for now but remove loop
 
+## Tuesday 20220222-2230 - 20220222-2245: 15 minutes
+
+    + Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
+    + Revert to polling
+
 # Schedule
-
-
-    Consider specifying empty environment variables for send-emails
-    Revert to polling
 
     Save variables.dictionary for extra variables
     Check why settlements.csv is not saving
@@ -350,8 +351,8 @@ The problem with server sent events is that it ties up waitress resources. I do 
 
 # Tasks
 
+    Consider specifying empty environment variables for send-emails
     Make tutorial example for Kashfi tutorial
-    Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
 
     Restore running batches in parallel using ThreadPoolExecutor
     Support { x | label }
