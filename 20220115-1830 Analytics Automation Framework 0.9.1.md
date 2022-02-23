@@ -335,10 +335,10 @@ The problem with server sent events is that it ties up waitress resources. I do 
 ## Sunday 20220220-0830 - 20220220-0845: 15 minutes
 
     + Update run to continue with next automation despite exception
+    _ Stick with EventSource for now but remove loop
 
 # Schedule
 
-    Stick with EventSource for now but remove loop
 
     Consider specifying empty environment variables for send-emails
     Revert to polling

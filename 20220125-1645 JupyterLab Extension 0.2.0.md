@@ -318,7 +318,23 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
     + Revert namespace to jupyterlab-crosscompute
 
+## Tuesday 20220222-0715 - 20220222-0730: 15 minutes
+
+    + Restart from cookiecutter
+    + Use dirdiff to review differences
+    + Test cookiecutter version
+    + Restore side panel
+    + Render updated path
+
+## Tuesday 20220222-1100 - 20220222-1115: 15 minutes
+
+    + Render automation information
+    + Restore batch information
+
 # Schedule
+
+    Restore launch control
+    
 
     Write a script that gets the output url for each batch
     Write a script that checks whether debug has execution_time_in_seconds
