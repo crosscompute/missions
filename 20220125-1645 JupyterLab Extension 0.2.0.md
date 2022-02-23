@@ -296,11 +296,51 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
 ## Wednesday 20220216-1445 - 20220216-1500: 15 minutes
 
+## Thursday 20220217-1000 - 20220217-1015: 15 minutes
+
+    _ automationModel.launch.text
+    _ automationModel.launch.log
+    automationModel.launch.log.text
+
+    + Define temporary folder for logs
+    + Delete temporary folder on exit
+    + Save stdout and stderr to log file
+    + Define LogHandler.get
+    + Poll LogHandler.get on launch
+    + Populate automationModel.launch.log.text
+    + Render stdout and stderr for launch
+
+## Friday 20220218-1015 - 20220218-1030: 15 minutes
+
+    + Use proxy if https
+
+## Saturday 20220219-0845 - 20220219-0900: 15 minutes
+
+    + Revert namespace to jupyterlab-crosscompute
+
+## Tuesday 20220222-0715 - 20220222-0730: 15 minutes
+
+    + Restart from cookiecutter
+    + Use dirdiff to review differences
+    + Test cookiecutter version
+    + Restore side panel
+    + Render updated path
+
+## Tuesday 20220222-1100 - 20220222-1115: 15 minutes
+
+    + Render automation information
+    + Restore batch information
+
+## Tuesday 20220222-2230 - 20220222-2245: 15 minutes
+
+    + Restore launch control
+    + Add link to edit configuration if there is a configuration error
+    + Fix issue with concurrent logs
+
 # Schedule
 
-    Render stdout and stderr for launch
     Write a script that gets the output url for each batch
-    Write a script that checks whether log has execution_time_in_seconds
+    Write a script that checks whether debug has execution_time_in_seconds
     Save pdfs as zip
     Update extension to show render button
     Update extension to show download url
@@ -308,7 +348,6 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
 # Tasks
 
-    Add link to edit configuration if there is a configuration error
     pip install jupyterlab-spreadsheet-editor
     Rename crosscompute-prints to crosscompute-renderers
     Consider implementing crosscompute --render pdf

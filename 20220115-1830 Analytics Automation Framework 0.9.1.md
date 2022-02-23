@@ -299,6 +299,7 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
 ## Thursday 20220217-0730 - 20220217-0745: 15 minutes
 
+<<<<<<< HEAD
 ## Wednesday 20220223-0945 - 20220223-1000: 15 minutes
 
 ```
@@ -317,6 +318,49 @@ I think that for each batch, we will run all of the scripts in sequence. Another
 
     + Convert all examples so that scripts is a list
     + Make it possible for scripts to be a list
+=======
+## Friday 20220218-1000 - 20220218-1015: 15 minutes
+
+    + Try increasing default waitress threads
+
+There is a problem with the way that waitress is handling the event streams. It is not closing the connections.
+
+I am thinking that maybe we should just revert to long polling.
+
+## Friday 20220218-1100 - 20220218-1115: 15 minutes
+
+## Saturday 20220219-0815 - 20220219-0830: 15 minutes
+
+The problem with server sent events is that it ties up waitress resources. I do think the most universally supported method is simple polling. And we are only creating this version for the development of automations, not their use.
+
+    _ /s/abc/_
+    _ /s/abc/-
+    _ /s/abc/~
+    /s/abc/crosscompute
+    _ /s/abc/c
+
+    _ /-
+    _ /~
+    _ /polls
+    _ /states
+    _ /updates
+    _ /changes
+    /mutations
+
+    / = root
+    /- = poll mirror
+
+    _ Consider whether to substitute '' if environment variable is missing
+
+## Sunday 20220220-0830 - 20220220-0845: 15 minutes
+
+    + Update run to continue with next automation despite exception
+    _ Stick with EventSource for now but remove loop
+
+## Tuesday 20220222-2230 - 20220222-2245: 15 minutes
+
+    + Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
+    + Revert to polling
 
 # Schedule
 
@@ -329,8 +373,8 @@ I think that for each batch, we will run all of the scripts in sequence. Another
 
     Create example with multiple scripts
 
+    Consider specifying empty environment variables for send-emails
     Make tutorial example for Kashfi tutorial
-    Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
 
     Restore running batches in parallel using ThreadPoolExecutor
     Support { x | label }
@@ -385,6 +429,7 @@ I think that for each batch, we will run all of the scripts in sequence. Another
 
     Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
     Consider cookiecutter
+    Consider compatibility with gunicorn
 
 # Milestones
 
