@@ -362,6 +362,10 @@ The problem with server sent events is that it ties up waitress resources. I do 
     + Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
     + Revert to polling
 
+## Thursday 20220224-1030 - 20220224-1045: 15 minutes
+
+It seems that if a variable is changed in one process, it does not automatically change in the other process.
+
 # Schedule
 
     Save variables.dictionary for extra variables
