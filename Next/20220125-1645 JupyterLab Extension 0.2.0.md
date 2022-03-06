@@ -339,12 +339,14 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
 
 # Schedule
 
-    Write a script that gets the output url for each batch
-    Write a script that checks whether debug has execution_time_in_seconds
-    Save pdfs as zip
-    Update extension to show render button
-    Update extension to show download url
-    Implement print
+- [ ] Write a script that gets the output url for each batch
+- [ ] Write a script that checks whether debug has execution_time_in_seconds
+- [ ] Save pdfs as zip
+- [ ] Update extension to show render button
+- [ ] Update extension to show download url
+- [ ] Implement print
+
+- [ ] Restore running batches in parallel using ThreadPoolExecutor
 
 # Tasks
 
