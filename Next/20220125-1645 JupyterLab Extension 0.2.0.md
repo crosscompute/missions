@@ -337,11 +337,18 @@ Actually, it seems like the definition of '/' is with respect to the folder wher
     + Add link to edit configuration if there is a configuration error
     + Fix issue with concurrent logs
 
+## Sunday 20220306-1630 - 20220306-1645: 15 minutes
+
+I believe we can get the output url for each batch from the automation definition. Then I want to check that each output url is active and that the script has finished running. Next, we will print each url. Finally, we will gather the pdfs in a zip and trigger a download if possible or render a link.
+
+The first step is to write this simple script. Technically, I think this script could be written in nodejs.
+
 # Schedule
 
 - [ ] Write a script that gets the output url for each batch
 - [ ] Write a script that checks whether debug has execution_time_in_seconds
 - [ ] Save pdfs as zip
+
 - [ ] Update extension to show render button
 - [ ] Update extension to show download url
 - [ ] Implement print
