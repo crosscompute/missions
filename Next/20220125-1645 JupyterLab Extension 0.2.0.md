@@ -343,14 +343,50 @@ I believe we can get the output url for each batch from the automation definitio
 
 The first step is to write this simple script. Technically, I think this script could be written in nodejs.
 
+## Monday 20220307-0445 - 20220307-0500: 15 minutes
+
+We decided to use nodejs because puppeteer is better supported than pyppeteer. In the future, we could have an alternate plugin that uses pyppeteer. I think both implementations could be in a package called crosscompute-renderers-pdf. Or we could have separate packages called crosscompute-renderers-pdf-puppeteer and crosscompute-renderers-pdf-pyppeteer. For now, I think we can simply have crosscompute-renderers-pdf. I do not see the need for split packages. Or it could even just be in crosscompute-renderers.
+
+We also decided that the node script will take a CSV or json file and render the pdfs to a folder. The csv or json has the batch names and uris. We will also add a route that lists all batch names and uris, perhaps as a json. The node script will check each debug uri and if the batch is finished, then it will generate a pdf of the output uri. We may also need to revive the page number footer. Finally, we will need to integrate the code with the extension. Option 1 is to have the render button duplicate the launch. Option 2 is to have the render button require a successful launch. I think we should go with option 1, because the render requires different settings than launch, such as no auto refresh.
+
+## Monday 20220307-0515 - 20220307-0530: 15 minutes
+
+Actually, I do not think it needs to be a route.
+
+- [Cancelled] Define route /batches.json that gets all batch names and uris
+- [Done] Write a python script that gets all batch names and uris
+
+## Monday 20220307-0530 - 20220307-0545: 15 minutes
+
+Why call it renderers anyway? Why not just return to the old name printers? Let's stick with printers. The reason is that it has fewer syllables.
+
+- [Cancelled] Rename crosscompute-printers to crosscompute-renderers
+
+Another option is that we can make the nodejs script super lightweight as a server. Specify an output folder when starting the folder. Then make requests that specify the uri and name.
+
+## Monday 20220307-0730 - 20220307-0745: 15 minutes
+
+- [Done] Write a nodejs script that is a basic server that generates pdfs given a uri and a name
+
+## Monday 20220307-0800 - 20220307-0815: 15 minutes
+
+I don't think puppeteer can really be used asynchronously.
+
+## Monday 20220307-1130 - 20220307-1145: 15 minutes
+
+- [Done] Write a python script that checks whether debug has return_code
+- [Done] Write a python script that takes batches.json and checks debug then prints output
+
+## Monday 20220307-1145 - 20220307-1200: 15 minutes
+
+- [Done] Rename crosscompute-printers to crosscompute-printers-pdf
+- [Done] Implement crosscompute --print pdf --prints-folder /tmp/a
+
 # Schedule
 
-- [ ] Write a script that gets the output url for each batch
-- [ ] Write a script that checks whether debug has execution_time_in_seconds
-- [ ] Save pdfs as zip
-
+- [ ] Add support for page numbers
 - [ ] Update extension to show render button
-- [ ] Update extension to show download url
+- [ ] Update extension to show render uri
 - [ ] Implement print
 
 - [ ] Restore running batches in parallel using ThreadPoolExecutor
@@ -358,5 +394,4 @@ The first step is to write this simple script. Technically, I think this script 
 # Tasks
 
     pip install jupyterlab-spreadsheet-editor
-    Rename crosscompute-prints to crosscompute-renderers
-    Consider implementing crosscompute --render pdf
+    Consider implementing crosscompute --print pdf
