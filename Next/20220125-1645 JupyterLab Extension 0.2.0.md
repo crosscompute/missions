@@ -394,4 +394,3 @@ I don't think puppeteer can really be used asynchronously.
 # Tasks
 
     pip install jupyterlab-spreadsheet-editor
-    Consider implementing crosscompute --print pdf

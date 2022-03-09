@@ -366,14 +366,32 @@ The problem with server sent events is that it ties up waitress resources. I do 
 
 It seems that if a variable is changed in one process, it does not automatically change in the other process.
 
+- [Done] Get the jupyterlab button working to re-run the automation
+
+## Tuesday 20220308-1045 - 20220308-1100: 15 minutes
+
+## Tuesday 20220308-2030 - 20220308-2045: 15 minutes
+
+- [Done] Test links with texts with single quotes
+- [Done] Prototype js refreshVariable(variableId)
+- [Cancelled] Prototype js refreshTemplate(templateId)
+- [Done] Prototype js refresh for each view
+
 # Schedule
+
+- [0] Prototype lookup table of variable_path to uri + variable_id
+- [0] Prototype lookup table of template_path to uri + template_id
+
+- [0] Implement see_mutation to use lookup table to signal refresh
+
+- [0] Refresh selectively for variables
+
+# Tasks
 
     Save variables.dictionary for extra variables
     Check why settlements.csv is not saving
     Update run-onsset example to read from variables.dictionary
     Run OnSSET
-
-# Tasks
 
     Create example with multiple scripts
 
@@ -404,7 +422,6 @@ It seems that if a variable is changed in one process, it does not automatically
     Implement programmable forms with progressive disclosure in the framework 
     Create a checkbox input view
 
-    Get the jupyterlab button working to re-run the automation
     Restore upload functionality
 
     Consider how to let user choose auto formatted input and output templates
