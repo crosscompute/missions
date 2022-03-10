@@ -377,14 +377,19 @@ It seems that if a variable is changed in one process, it does not automatically
 - [Cancelled] Prototype js refreshTemplate(templateId)
 - [Done] Prototype js refresh for each view
 
+## Tuesday 20220308-2030 - 20220308-2045: 15 minutes
+
+## Tuesday 20220308-2200 - 20220308-2215: 15 minutes
+
+- [Done] Prototype lookup table of variable_path to uri + variable_id
+- [Done] Prototype lookup table of template_path to uri + template_id
+
+## Wednesday 20220309-1545 - 20220309-1600: 15 minutes
+
+- [Done] Implement see_mutation to use lookup table to signal refresh
+- [Done] Refresh selectively for variables
+
 # Schedule
-
-- [0] Prototype lookup table of variable_path to uri + variable_id
-- [0] Prototype lookup table of template_path to uri + template_id
-
-- [0] Implement see_mutation to use lookup table to signal refresh
-
-- [0] Refresh selectively for variables
 
 # Tasks
 

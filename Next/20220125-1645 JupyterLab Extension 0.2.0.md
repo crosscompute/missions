@@ -384,13 +384,12 @@ I don't think puppeteer can really be used asynchronously.
 
 # Schedule
 
-- [ ] Add support for page numbers
-- [ ] Update extension to show render button
-- [ ] Update extension to show render uri
+- [2] Add support for page numbers
+- [3] Update extension to show render button
+- [3] Update extension to show render uri
 - [ ] Implement print
-
-- [ ] Restore running batches in parallel using ThreadPoolExecutor
 
 # Tasks
 
-    pip install jupyterlab-spreadsheet-editor
+- [ ] Restore running batches in parallel using ThreadPoolExecutor
+- [ ] Document `pip install jupyterlab-spreadsheet-editor`
