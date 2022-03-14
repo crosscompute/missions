@@ -391,7 +391,9 @@ It seems that if a variable is changed in one process, it does not automatically
 
 # Schedule
 
-    Restore select view
+- [2] Add support for page numbers
+- [2] Add support for page breaks
+- [ ] Restore select view
 
 # Tasks
 

@@ -384,7 +384,6 @@ I don't think puppeteer can really be used asynchronously.
 
 # Schedule
 
-- [2] Add support for page numbers
 - [3] Update extension to show render button
 - [3] Update extension to show render uri
 - [ ] Implement print
