@@ -391,6 +391,8 @@ It seems that if a variable is changed in one process, it does not automatically
 
 # Schedule
 
+    Restore select view
+
 # Tasks
 
     Save variables.dictionary for extra variables
