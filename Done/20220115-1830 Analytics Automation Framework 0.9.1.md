@@ -299,26 +299,6 @@ It is not for the view to decide whether the data is asynchronous. The data may 
 
 ## Thursday 20220217-0730 - 20220217-0745: 15 minutes
 
-<<<<<<< HEAD
-## Wednesday 20220223-0945 - 20220223-1000: 15 minutes
-
-```
-scripts:
-  - command:
-    folder:
-  - path:
-    folder:
-```
-
-I think that for each batch, we will run all of the scripts in sequence. Another question is whether each of the scripts will share the same input and output folders. I think they should.
-
-## Wednesday 20220223-1215 - 20220223-1230: 15 minutes
-
-## Wednesday 20220223-1300 - 20220223-1315: 15 minutes
-
-    + Convert all examples so that scripts is a list
-    + Make it possible for scripts to be a list
-=======
 ## Friday 20220218-1000 - 20220218-1015: 15 minutes
 
     + Try increasing default waitress threads
@@ -362,6 +342,25 @@ The problem with server sent events is that it ties up waitress resources. I do 
     + Add support for script.path = abc.ipynb and pre-compile abc.ipynb to abc.py before running batches
     + Revert to polling
 
+## Wednesday 20220223-0945 - 20220223-1000: 15 minutes
+
+```
+scripts:
+  - command:
+    folder:
+  - path:
+    folder:
+```
+
+I think that for each batch, we will run all of the scripts in sequence. Another question is whether each of the scripts will share the same input and output folders. I think they should.
+
+## Wednesday 20220223-1215 - 20220223-1230: 15 minutes
+
+## Wednesday 20220223-1300 - 20220223-1315: 15 minutes
+
+    + Convert all examples so that scripts is a list
+    + Make it possible for scripts to be a list
+
 ## Thursday 20220224-1030 - 20220224-1045: 15 minutes
 
 It seems that if a variable is changed in one process, it does not automatically change in the other process.
@@ -391,76 +390,10 @@ It seems that if a variable is changed in one process, it does not automatically
 
 # Schedule
 
-- [2] Add support for page numbers
-- [2] Add support for page breaks
-- [ ] Restore select view
-
 # Tasks
-
-    Save variables.dictionary for extra variables
-    Check why settlements.csv is not saving
-    Update run-onsset example to read from variables.dictionary
-    Run OnSSET
-
-    Create example with multiple scripts
-
-    Consider specifying empty environment variables for send-emails
-    Make tutorial example for Kashfi tutorial
-
-    Restore running batches in parallel using ThreadPoolExecutor
-    Support { x | label }
-    Support display.layout = auto
-
-    Document TableView
-    Consider caching a run if caching is enabled in configuration
-    Redirect to log if it is defined
-    Redirect to output once variables.dictionary exists in debug_folder
-        execution_time_in_seconds
-    Consider allowing alt text for ImageView
-    Update the framework so we can specify a custom base and root template
-    Update documentation
-
-    Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
-    Consider using cookie prefixes for secure authentication
-        https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
-
-    Load the token from a cookie or from the url
-    Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-
-    Update the framework to make it possible to define a script.schedule
-    Implement programmable forms with progressive disclosure in the framework 
-    Create a checkbox input view
-
-    Restore upload functionality
-
-    Consider how to let user choose auto formatted input and output templates
-        display.layout = auto (default)
-        display.layout = none
-
-    Restore parallel runs
-    Handle http errors using add_exception_view
-
-    Need to be able to see errors
-    Document steps for creating a new automation
-
-    Make it possible to navigate back from report
-    Do not show navigation in print
-
-    Consider separate option for printer friendly map
-    Check that map displays in print
-    Check that screengrid displays in print
-
-    Pull from repository if option is enabled
-
-    Make it possible for author to override mapbox version
-    Review legacy code to check whether we missed anything
-    Consider crosscompute:// url scheme
-    Make it possible to click on different svg elements and show information
-
-    Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
-    Consider cookiecutter
-    Consider compatibility with gunicorn
 
 # Milestones
 
 # Lessons
+
+- Make functions that are easy to test.
