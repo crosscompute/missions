@@ -67,16 +67,20 @@ print:
 - [Cancelled] Add support for page breaks
 - [Done] Test that adding page numbers works
 
-- [ ] Add page number option
+## Wednesday 20220316-1545 - 20220316-1600: 15 minutes
 
-- [ ] Update appa-automations
+- [Done] Add page number option
+- [Done] Update appa-automations
+- [Done] Add support for page numbers
 
 # Schedule
 
-- [2] Add support for page numbers
-- [ ] Restore select view
+- [ ] Remove crosscompute 0.9.1.5 from PyPI
+- [ ] Remove crosscompute-printers-pdf 0.3.0 from PyPI
 
 # Tasks
+
+- [ ] Restore select view
 
     Save variables.dictionary for extra variables
     Check why settlements.csv is not saving
