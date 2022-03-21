@@ -73,10 +73,12 @@ print:
 - [Done] Update appa-automations
 - [Done] Add support for page numbers
 
-# Schedule
+## Saturday 20220319-0700 - 20220319-0715: 15 minutes
 
-- [ ] Remove crosscompute 0.9.1.5 from PyPI
-- [ ] Remove crosscompute-printers-pdf 0.3.0 from PyPI
+- [Done] Remove crosscompute 0.9.1.5 from PyPI
+- [Done] Remove crosscompute-printers-pdf 0.3.0 from PyPI
+
+# Schedule
 
 # Tasks
 
