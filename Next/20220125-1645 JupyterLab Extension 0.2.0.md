@@ -384,8 +384,8 @@ I don't think puppeteer can really be used asynchronously.
 
 # Schedule
 
-- [3] Update extension to show render button
-- [3] Update extension to show render uri
+- [30] Update extension to show render button
+- [30] Update extension to show render uri
 - [ ] Implement print
 
 # Tasks
