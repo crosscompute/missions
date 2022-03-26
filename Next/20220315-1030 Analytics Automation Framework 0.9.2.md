@@ -80,6 +80,8 @@ print:
 
 # Schedule
 
+- [ ] Release invisibleroads-macros-log 1.0.6
+
 # Tasks
 
 - [ ] Restore select view
