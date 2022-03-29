@@ -111,16 +111,33 @@ I think that each field should potentially have an attached label. Or perhaps on
 
     _ Option 3: Show label by default for some views like string but not table
         DIS: inconsistent behavior between views
-
-    Option 4: layout: auto vs manual in display
+    _ Option 4: layout: auto vs manual in display
     Option 5: layout: auto vs manual in input or output
-    Option 6: layout: auto if not templates otherwise manual
+    _ Option 6: layout: auto if not templates otherwise manual
 
 I think the person will usually want the label for input but not for output. The question is also what to show for the label.
 
     Option 1: Show raw variable id
     Option 2: Show variable id with normalize key and title
     Option 3: Show only label defined in configuration
+
+## Tuesday 20220329-1630 - 20220329-1645: 15 minutes
+
+    configuration:
+      download-name: x.txt
+      link-text: people
+
+    configuration:
+      download-filename:
+      link-text:
+
+    configuration:
+      file-name:
+      href-text:
+
+    configuration:
+      file-name:
+      link-text:
 
 # Schedule
 
