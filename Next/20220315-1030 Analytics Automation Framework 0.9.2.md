@@ -1,29 +1,30 @@
 # Vision
-Describe your long-term goal for the project.
+Become the standard for analytics automation.
 
 # Mission
-Define a short-term goal that you can complete within two weeks.
+Release 0.9.2 of the CrossCompute Analytics Automation Framework.
 
 # Owner
-State your name.
+Roy Hyunjin Han
 
 # Roles
-Identify who is responsible for what.
+Computational Engineer: Roy
 
 # Context
-Explain why the mission is important.
+The framework is a self-contained server that analysts can use to prototype their automations before publishing them to the marketplace.
 
 # Timeframe
-Set estimated and actual dates for when you start and finish.
+20220315 - 20220415: 1 month
 
 # Budget
-Itemize estimated and actual costs including compensation.
+N/A
 
 # Objectives
-Specify at most three goals that must be achieved for the mission to be successful.
+1. Restrict visible automations and batches and change script behavior using cookies.
+2. Implement script.schedule.
+3. Restore upload functionality.
 
 # Habits
-Detail what, when, where you will practice progress toward objectives.
 
 # Log
 
@@ -78,23 +79,62 @@ print:
 - [Done] Remove crosscompute 0.9.1.5 from PyPI
 - [Done] Remove crosscompute-printers-pdf 0.3.0 from PyPI
 
+## Saturday 20220326-1245 - 20220326-1300: 15 minutes
+
+- [Cancelled] Make tutorial example for Kashfi tutorial
+- [Cancelled] Update run-onsset example to read from variables.dictionary
+- [Cancelled] Run OnSSET
+- [Cancelled] Check why settlements.csv is not saving
+
+## Monday 20220328-1200 - 20220328-1215: 15 minutes
+
+I think that each field should potentially have an attached label. Or perhaps only input fields. The label should be able to be turned off or on. The question is whether the label shows by default or not.
+
+    Option 1: Show label by default for input and not for output and use flex layout by default for input
+        ADV: better default user experience with less work
+        DIS: inconsistent behavior between input and output
+
+        id: SMTP_PASSWORD
+        view: password
+        configuration:
+          label:
+
+    Option 2: Require activation to show label
+        ADV: more control
+        ADV: consistent behavior between input and output
+        DIS: slightly more verbose configuration files
+
+        id: SMTP_PASSWORD
+        view: password
+        configuration:
+          label: SMTP Password
+
+    _ Option 3: Show label by default for some views like string but not table
+        DIS: inconsistent behavior between views
+
+    Option 4: layout: auto vs manual in display
+    Option 5: layout: auto vs manual in input or output
+    Option 6: layout: auto if not templates otherwise manual
+
+I think the person will usually want the label for input but not for output. The question is also what to show for the label.
+
+    Option 1: Show raw variable id
+    Option 2: Show variable id with normalize key and title
+    Option 3: Show only label defined in configuration
+
 # Schedule
 
-- [ ] Release invisibleroads-macros-log 1.0.6
+- [4] Release invisibleroads-macros-log 1.0.6
+- [2] Implement checkbox view
+- [5] Review issues for crosscompute
 
 # Tasks
 
 - [ ] Restore select view
 
     Save variables.dictionary for extra variables
-    Check why settlements.csv is not saving
-    Update run-onsset example to read from variables.dictionary
-    Run OnSSET
-
     Create example with multiple scripts
-
     Consider specifying empty environment variables for send-emails
-    Make tutorial example for Kashfi tutorial
 
     Restore running batches in parallel using ThreadPoolExecutor
     Support { x | label }
@@ -112,7 +152,6 @@ print:
     Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
     Consider using cookie prefixes for secure authentication
         https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
-
     Load the token from a cookie or from the url
     Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
 
@@ -150,9 +189,5 @@ print:
     Consider cookiecutter
     Consider compatibility with gunicorn
 
-
 # Milestones
-Highlight accomplishments.
-
 # Lessons
-Give feedback on how we can do better next time.
