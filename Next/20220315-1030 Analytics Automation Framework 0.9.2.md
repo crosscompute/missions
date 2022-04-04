@@ -139,21 +139,93 @@ I think the person will usually want the label for input but not for output. The
       file-name:
       link-text:
 
+## Friday 20220401-1245 - 20220401-1300: 15 minutes
+
+- [Done] Release invisibleroads-macros-log 1.0.6
+
+```
+OLD
+run_automation
+    DiskAutomation.run logs on exception
+    print_with raises then logs on exception in do
+
+_run_batch
+    run_automation raises on exception
+    work logs on exception
+
+NEW
+execute _run_batch in parallel
+
+Option 1:
+raise exception in _run_batch
+handle in result
+
+Option 2:
+log in _run_batch
+return error dictionary
+
+Option 3:
+return error dictionary
+
+Option 4:
+raise exception in _run_batch if we could not run the script
+log if we could run but there was an error in the script
+handle in result
+print only if there were no exceptions
+```
+
+## Friday 20220401-1500 - 20220401-1515: 15 minutes
+
+```
+environment:
+  _ execution: process
+  _ execution: thread
+  _ execution: single
+  _ concurrency: process
+  _ concurrency: thread
+  _ concurrency: single
+  _ pool: process
+  _ pool: thread
+  _ pool: none
+  batch: process
+  batch: thread
+  batch: single
+```
+
+## Friday 20220401-1830 - 20220401-1845: 15 minutes
+
+## Monday 20220404-1400 - 20220404-1415: 15 minutes
+
+- [Done] Restore running batches in parallel using ThreadPoolExecutor
+
+## Monday 20220404-1530 - 20220404-1545: 15 minutes
+
+It seems like double quotes in the downloaded file name are simply not supported in certain browsers.
+
+- [Done] Check why double quotes not working in link name
+- [Done] Update view: link examples
+- [Done] Update link configuration
+
 # Schedule
 
-- [4] Release invisibleroads-macros-log 1.0.6
-- [2] Implement checkbox view
-- [5] Review issues for crosscompute
+- [0] Implement label
+- [0] Implement form css unless input.layout = raw
+- [0] Implement checkbox view
+- [1] Restrict visible automations and batches and change script behavior using cookies
+
+- [30] Implement script.schedule
+- [40] Restore upload functionality
 
 # Tasks
 
+- [ ] Implement ipynb forms
+- [ ] Review issues for crosscompute
 - [ ] Restore select view
 
     Save variables.dictionary for extra variables
     Create example with multiple scripts
     Consider specifying empty environment variables for send-emails
 
-    Restore running batches in parallel using ThreadPoolExecutor
     Support { x | label }
     Support display.layout = auto
 
