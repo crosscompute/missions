@@ -206,13 +206,31 @@ It seems like double quotes in the downloaded file name are simply not supported
 - [Done] Update view: link examples
 - [Done] Update link configuration
 
+## Wednesday 20220406-1400 - 20220406-1415: 15 minutes
+
+```
+configuration:
+  name:
+  text:
+
+configuration:
+  file-name:
+  link-text:
+
+configuration:
+  label:
+
+configuration:
+  label-text:
+```
+
 # Schedule
 
 - [0] Implement label
 - [0] Implement form css unless input.layout = raw
 - [0] Implement checkbox view
-- [1] Restrict visible automations and batches and change script behavior using cookies
 
+- [1] Restrict visible automations and batches and change script behavior using cookies
 - [30] Implement script.schedule
 - [40] Restore upload functionality
 
