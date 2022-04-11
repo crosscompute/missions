@@ -224,18 +224,177 @@ configuration:
   label-text:
 ```
 
+## Wednesday 20220406-2015 - 20220406-2030: 15 minutes
+
+## Thursday 20220407-0930 - 20220407-0945: 15 minutes
+
+    _ title_conservatively
+    _ title_cautiously
+    _ title_safely
+    title_simply
+
+- [Done] Consider adding process_text to normalize_key
+- [Done] Implement label-text
+
+## Thursday 20220407-1015 - 20220407-1030: 15 minutes
+
+    _ with_label
+    _ use_label
+    add_label
+    label
+    label_html
+    add_label_html
+
+## Friday 20220408-0830 - 20220408-0845: 15 minutes
+
+    class
+    _ layout
+    _ css-class
+    _ css
+
+    _ class: auto-layout
+    _ class: flex
+    _ class: raw-layout
+    _ class: vertical
+    _ class: vertical-layout
+    _ class: layout-auto
+    _ class: layout-flex
+    _ class: l-vertical
+    _ class: flex-vertical
+    class:
+    class: layout-vertical
+
+## Friday 20220408-1145 - 20220408-1200: 15 minutes
+
+## Friday 20220408-2245 - 20220408-2300: 15 minutes
+
+```
+input:
+  layout: auto
+
+display:
+  layouts:
+    - mode: input
+      type: raw
+
+display:
+  layouts:
+    - input: raw
+```
+
+## Saturday 20220409-0900 - 20220409-0915: 15 minutes
+
+I think that all the modes should have a consistent layout of auto, with labels and vertical flex, unless specified otherwise. I think that layouts belong in the display section.
+
+Layout is auto by default. That includes labels and vertical flex. Layout of raw has no labels or vertical flex. Or maybe our layouts could correspond to form, tool, widget, dashboard, report.
+
+## Saturday 20220409-1315 - 20220409-1330: 15 minutes
+
+```
+display:
+  styles:
+  templates:
+  pages:
+    - id: automation
+      configuration:
+        design: input
+        design: output
+        design: none
+        _ main: input
+        _ main: output
+        _ main: batches
+        _ main: output batches
+        _ main: input batches
+        _ content: input
+        _ content: output
+        _ content: batches
+        _ content: output batches
+        _ content: input batches
+        _ body: input
+        _ body: output
+        _ body: batches
+        _ body: output batches
+        _ body: input batches
+    - id: input
+      configuration:
+        _ label: true
+        _ labelled: true
+        _ labelling: true
+        _ design-name: flex-vertical
+        _ layout-name: flex-vertical
+        _ theme-name: flex-vertical
+        _ theme: flex-vertical
+        _ layout: flex-vertical
+        _ with-labels: true
+        design: flex-vertical
+    - id: output
+      configuration:
+        design: none
+        _ with-labels: false
+    - id: log
+      configuration:
+    - id: debug
+      configuration:
+
+_ display:
+  layouts:
+    - id: automation
+    - id: input
+    - id: output
+    - id: log
+    - id: debug
+
+_ display:
+  designs:
+    - id: automation
+    - id: input
+    - id: output
+    - id: log
+    - id: debug
+
+_ display:
+  modes:
+    - id: automation
+    - id: input
+    - id: output
+    - id: log
+    - id: debug
+```
+
+The default design is flex-vertical. The user can set the default design to none.
+
+When design is none, there are no labels unless explicitly specified. The flex-vertical design includes labels.
+
+- [Cancelled] Implement display.pages configuration.main
+
+## Saturday 20220409-1445 - 20220409-1500: 15 minutes
+
+## Saturday 20220409-1530 - 20220409-1545: 15 minutes
+
+- [Done] Implement dataset links
+
+Use design flex-vertical by default, in which cases labels are on (unless overridden) and we have flex css for main. But if design is none, then omit the css and labels.
+
+- [Done] Handle display.pages id=input design=none
+- [Done] Handle display.pages id=output design=none
+- [Done] Handle display.pages id=input design=flex-vertical
+- [Done] Handle display.pages id=output design=flex-vertical
+- [Done] Include form css unless design=none
+
 # Schedule
 
-- [0] Implement label
-- [0] Implement form css unless input.layout = raw
-- [0] Implement checkbox view
+- [ ] Handle display.pages id=automation design=none
+- [ ] Handle display.pages id=automation design=input
+- [ ] Handle display.pages id=automation design=output
+- [ ] Implement display.pages configuration.design
 
+- [0] Implement checkbox view
 - [1] Restrict visible automations and batches and change script behavior using cookies
 - [30] Implement script.schedule
-- [40] Restore upload functionality
 
 # Tasks
 
+- [40] Restore upload functionality
 - [ ] Implement ipynb forms
 - [ ] Review issues for crosscompute
 - [ ] Restore select view
@@ -295,6 +454,9 @@ configuration:
     Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
     Consider cookiecutter
     Consider compatibility with gunicorn
+
+- [ ] Autogenerate datasets/batches.csv if requested during configure
+- [ ] Implement count/index variables
 
 # Milestones
 # Lessons
