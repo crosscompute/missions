@@ -381,19 +381,32 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
 - [Done] Handle display.pages id=output design=flex-vertical
 - [Done] Include form css unless design=none
 
-# Schedule
+## Tuesday 20220412-1500 - 20220412-1515: 15 minutes
 
-- [ ] Handle display.pages id=automation design=none
-- [ ] Handle display.pages id=automation design=input
-- [ ] Handle display.pages id=automation design=output
-- [ ] Implement display.pages configuration.design
+- [Done] Handle display.pages id=automation design=none
+- [Done] Handle display.pages id=automation design=input
+- [Done] Handle display.pages id=automation design=output
+- [Done] Implement display.pages configuration.design
+
+- [Cancelled] Support { x | label }
+- [Cancelled] Support display.layout = auto
+- [Done] Update the framework so we can specify a custom base and root template
+- [Done] Consider how to let user choose auto formatted input and output templates
+- [Done] Restore parallel runs
+- [Done] Make it possible to navigate back from report
+- [Done] Do not show navigation in print
+- [Done] Consider separate option for printer friendly map
+- [Done] Check that map displays in print
+- [Done] Check that screengrid displays in print
+
+# Schedule
 
 - [0] Implement checkbox view
 - [1] Restrict visible automations and batches and change script behavior using cookies
-- [30] Implement script.schedule
 
 # Tasks
 
+- [30] Implement script.schedule
 - [40] Restore upload functionality
 - [ ] Implement ipynb forms
 - [ ] Review issues for crosscompute
@@ -403,16 +416,12 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
     Create example with multiple scripts
     Consider specifying empty environment variables for send-emails
 
-    Support { x | label }
-    Support display.layout = auto
-
     Document TableView
     Consider caching a run if caching is enabled in configuration
     Redirect to log if it is defined
     Redirect to output once variables.dictionary exists in debug_folder
         execution_time_in_seconds
     Consider allowing alt text for ImageView
-    Update the framework so we can specify a custom base and root template
     Update documentation
 
     Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
@@ -427,22 +436,10 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
 
     Restore upload functionality
 
-    Consider how to let user choose auto formatted input and output templates
-        display.layout = auto (default)
-        display.layout = none
-
-    Restore parallel runs
     Handle http errors using add_exception_view
 
     Need to be able to see errors
     Document steps for creating a new automation
-
-    Make it possible to navigate back from report
-    Do not show navigation in print
-
-    Consider separate option for printer friendly map
-    Check that map displays in print
-    Check that screengrid displays in print
 
     Pull from repository if option is enabled
 
@@ -455,8 +452,8 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
     Consider cookiecutter
     Consider compatibility with gunicorn
 
-- [ ] Autogenerate datasets/batches.csv if requested during configure
-- [ ] Implement count/index variables
+    Autogenerate datasets/batches.csv if requested during configure
+    Implement count/index variables
 
 # Milestones
 # Lessons
