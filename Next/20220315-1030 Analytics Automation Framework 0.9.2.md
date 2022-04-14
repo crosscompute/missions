@@ -399,7 +399,16 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
 - [Done] Check that map displays in print
 - [Done] Check that screengrid displays in print
 
+## Tuesday 20220412-1730 - 20220412-1745: 15 minutes
+
+- [Done] Release crosscompute 0.9.2
+- [Done] Release crosscompute-views-map
+- [Done] Release jupyterlab-crosscompute
+
 # Schedule
+
+- [ ] Search for available port unless specified, starting with the default
+- [ ] Implement qrcode view
 
 - [0] Implement checkbox view
 - [1] Restrict visible automations and batches and change script behavior using cookies
