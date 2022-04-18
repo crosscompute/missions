@@ -405,18 +405,20 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
 - [Done] Release crosscompute-views-map
 - [Done] Release jupyterlab-crosscompute
 
+## Monday 20220418-1600 - 20220418-1615: 15 minutes
+
+- [Done] Search for available port unless specified, starting with the default
+
 # Schedule
 
-- [ ] Search for available port unless specified, starting with the default
-- [ ] Implement qrcode view
-
-- [0] Implement checkbox view
-- [1] Restrict visible automations and batches and change script behavior using cookies
+- [10] Restrict visible automations and batches and change script behavior using cookies
+- [20] Implement script.schedule
+- [30] Restore upload functionality
 
 # Tasks
 
-- [30] Implement script.schedule
-- [40] Restore upload functionality
+- [ ] Implement qrcode view
+- [ ] Implement checkbox view
 - [ ] Implement ipynb forms
 - [ ] Review issues for crosscompute
 - [ ] Restore select view

@@ -382,13 +382,15 @@ I don't think puppeteer can really be used asynchronously.
 - [Done] Rename crosscompute-printers to crosscompute-printers-pdf
 - [Done] Implement crosscompute --print pdf --prints-folder /tmp/a
 
-# Schedule
+## Monday 20220418-1200 - 20220418-1215: 15 minutes
 
-- [30] Update extension to show render button
-- [30] Update extension to show render uri
-- [ ] Implement print
+- [Done] Restore running batches in parallel using ThreadPoolExecutor
+
+# Schedule
 
 # Tasks
 
-- [ ] Restore running batches in parallel using ThreadPoolExecutor
+- [ ] Update extension to show render button
+- [ ] Update extension to show render uri
+- [ ] Implement print
 - [ ] Document `pip install jupyterlab-spreadsheet-editor`
