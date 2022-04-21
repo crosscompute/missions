@@ -409,6 +409,87 @@ Use design flex-vertical by default, in which cases labels are on (unless overri
 
 - [Done] Search for available port unless specified, starting with the default
 
+## Thursday 20220421-1230 - 20220421-1245: 15 minutes
+
+```
+ACCEPT
+DROP
+REJECT
+
+authorizations:
+  - id: automation
+  - id: batch
+authorization:
+  authorization:
+  default:
+  root:
+  automation: run, see
+  batch:
+  run:
+  mode:
+  variable:
+  style:
+permissions
+clearances:
+authorization:
+  default: DROP
+  configuration:
+    see-automation:
+    see-batch: 
+    run-batch: 
+
+POST /authorizations.json
+    data_by_id = {} => {token}
+
+see root or not
+see automation or not
+see batch or not
+see run or not
+see mode or not
+see variable or not (protected by see batch)
+see style or not
+see mutations or not
+```
+
+If a token is passed via cookie, bearer or _token get parameter, then put into authorization folder for script.
+
+- Authorize see batch -- check whether token variable value matches batch variable value
+- whether it is listed
+- whether it is rendered
+- whether can run
+
+```
+_ Option 1: { variables: {} }
+Option 2: { aa, bb }
+```
+
+- secure by ip
+- secure by variable value
+
+```
+firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.0.111' reject"
+
+_ zone
+group
+
+authorization:
+  groups:
+    - id: gods
+    - id: leaders
+    - id: members
+    - id: spectators
+  default:
+    source:
+      address: *
+      action: reject
+    source:
+      address: 192.168.0.111
+      action: accept
+  configuration:
+    see-batch:
+      group: spectators
+```
+
 # Schedule
 
 - [10] Restrict visible automations and batches and change script behavior using cookies
