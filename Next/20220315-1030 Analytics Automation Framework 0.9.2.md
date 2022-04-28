@@ -458,10 +458,8 @@ If a token is passed via cookie, bearer or _token get parameter, then put into a
 - whether it is rendered
 - whether can run
 
-```
-_ Option 1: { variables: {} }
-Option 2: { aa, bb }
-```
+    _ Option 1: { variables: {} }
+    Option 2: { aa, bb }
 
 - secure by ip
 - secure by variable value
@@ -469,8 +467,8 @@ Option 2: { aa, bb }
 ```
 firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.0.111' reject"
 
-_ zone
-group
+    _ zone
+    group
 
 authorization:
   groups:
