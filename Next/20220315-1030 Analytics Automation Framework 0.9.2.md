@@ -451,7 +451,7 @@ see style or not
 see mutations or not
 ```
 
-If a token is passed via cookie, bearer or _token get parameter, then put into authorization folder for script.
+If a token is passed via cookie, bearer or `_token` get parameter, then put into authorization folder for script.
 
 - Authorize see batch -- check whether token variable value matches batch variable value
 - whether it is listed
@@ -467,8 +467,8 @@ If a token is passed via cookie, bearer or _token get parameter, then put into a
 ```
 firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.0.111' reject"
 
-    _ zone
-    group
+_ zone
+group
 
 authorization:
   groups:
@@ -487,6 +487,12 @@ authorization:
     see-batch:
       group: spectators
 ```
+
+## Thursday 20220428-2045 - 20220428-2100: 15 minutes
+
+## Thursday 20220428-2300 - 20220428-2315: 15 minutes
+
+I am thinking that the top-level authorization should override imported authorizations.
 
 # Schedule
 
