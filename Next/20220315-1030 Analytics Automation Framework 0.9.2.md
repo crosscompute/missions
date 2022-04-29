@@ -494,6 +494,14 @@ authorization:
 
 I am thinking that the top-level authorization should override imported authorizations.
 
+## Friday 20220429-1130 - 20220429-1145: 15 minutes
+
+## Friday 20220429-1130 - 20220429-1145: 15 minutes
+
+Use auth configuration if it is defined, otherwise check parent.
+
+I am thinking that maybe we should use something other than crontab syntax for the schedule.
+
 # Schedule
 
 - [10] Restrict visible automations and batches and change script behavior using cookies
