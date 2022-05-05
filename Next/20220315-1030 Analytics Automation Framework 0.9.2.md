@@ -494,24 +494,111 @@ authorization:
 
 I am thinking that the top-level authorization should override imported authorizations.
 
+## Friday 20220429-1845 - 20220429-1900: 15 minutes
+
+I am now thinking that instead of script.schedule we can have script.interval = 5 minutes. The question is where to implement the interval.
+
+    Option 1: environment.interval
+    _ Option 2: script.interval
+
+    script.interval = 5 minutes
+    script.interval = 1 minute
+    script.interval = 1 week
+    script.interval = 1 day
+    script.interval = 2 days
+    environment.interval = 1 minute
+
+    _ Option 1: Use schedule
+    Option 2: Roll our own schedule
+
+I think that if I can just finish environment.interval during this flight, then it will be a success.
+
+- [Cancelled] Save variables.dictionary for extra variables
+
+## Sunday 20220501-1230 - 20220501-1245: 15 minutes
+
+```
+https://github.com/crosscompute/crosscompute-examples/tree/1db460a1d9adf11ca28732b4e7fea7aa0890d264
+add-integers
+compare-timestamps
+convert-timestamps
+count-words
+find-primes
+find-primes-scala
+flip-wkt
+multiply-integers
+scala/find-primes
+transform coordinates
+https://github.com/crosscompute/crosscompute-examples/tree/b341994d9353206fe0ee6b69688e70999bc2196e
+reports/google-trends
+reports/load-profiles
+add-columns
+add-numbers
+add-watermark-pdf
+compare-datestamps
+convert-timestamps
+count-assets
+count-geometries
+count-words
+encrypt-pdf
+extract-images-pdf
+extract-pdf-pages
+find-primes
+flip-wkt
+map-addresses
+onsset-test
+remove-password-pdf
+set-points
+shift-timezones
+subset-features
+survey-infrastructure
+test-errors
+transform-coordinates
+https://github.com/crosscompute/crosscompute-examples/tree/31536cfd33acbd79a18ed5059941c83250bb95e9
+./forms/encourage-creativity/automate.yml
+./forms/encourage-exercise/automate.yml
+./widgets/watch-ram/automate.yml
+./widgets/watch-cpu/automate.yml
+./widgets/paint-letters/automate.yml
+./widgets/watch-cpu-history/automate.yml
+./widgets/watch-ram-history/automate.yml
+./reports/randomize-histograms/automate.yml
+./reports/show-maps/automate.yml
+./reports/run-onsset/automate.yml
+./reports/compute-logarithms/automate.yml
+./reports/map-schools/automate.yml
+./automate.yml
+./dashboards/watch-machine/automate.yml
+./tools/find-places/automate.yml
+./tools/send-emails/automate.yml
+./tools/add-numbers/automate.yml
+./tools/ask-question/automate.yml
+```
+
+- [Done] Identify past examples
+
+## Monday 20220502-0815 - 20220502-0830: 15 minutes
+
+- [ ] Restore and test watch cpu example
+
 # Schedule
 
-- [10] Restrict visible automations and batches and change script behavior using cookies
-- [20] Implement script.schedule
-- [30] Restore upload functionality
+- [ ] Restore missing examples
+- [ ] Test environment.interval
+- [10] Implement environment.interval
 
 # Tasks
 
+- [20] Restrict visible automations and batches and change script behavior using cookies
+- [30] Restore upload functionality
 - [ ] Implement qrcode view
 - [ ] Implement checkbox view
 - [ ] Implement ipynb forms
 - [ ] Review issues for crosscompute
 - [ ] Restore select view
 
-    Save variables.dictionary for extra variables
     Create example with multiple scripts
     Consider specifying empty environment variables for send-emails
-
     Document TableView
     Consider caching a run if caching is enabled in configuration
     Redirect to log if it is defined
@@ -519,35 +606,25 @@ I am thinking that the top-level authorization should override imported authoriz
         execution_time_in_seconds
     Consider allowing alt text for ImageView
     Update documentation
-
     Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
     Consider using cookie prefixes for secure authentication
         https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
     Load the token from a cookie or from the url
     Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-
     Update the framework to make it possible to define a script.schedule
     Implement programmable forms with progressive disclosure in the framework 
     Create a checkbox input view
-
-    Restore upload functionality
-
     Handle http errors using add_exception_view
-
     Need to be able to see errors
     Document steps for creating a new automation
-
     Pull from repository if option is enabled
-
     Make it possible for author to override mapbox version
     Review legacy code to check whether we missed anything
     Consider crosscompute:// url scheme
     Make it possible to click on different svg elements and show information
-
     Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
     Consider cookiecutter
     Consider compatibility with gunicorn
-
     Autogenerate datasets/batches.csv if requested during configure
     Implement count/index variables
 
