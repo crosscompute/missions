@@ -1220,6 +1220,10 @@ What is the expected behavior for crosscompute serve.yml?
     _ Option 3: Start at /a/crosscompute-examples
         /a/crosscompute-examples/b/usa-maine
 
+## Sunday 20211128-1115 - 20211128-1130: 15 minutes
+
+The question is how to deal with styles when the children also have stylesheets.
+
 ## Sunday 20211128-1700 - 20211128-1715: 15 minutes
 
 What if an automation has no output? I think if an automation has no output, then we can rightfully skip it.
