@@ -527,76 +527,75 @@ I think that if I can just finish environment.interval during this flight, then 
 
 ```
 https://github.com/crosscompute/crosscompute-examples/tree/1db460a1d9adf11ca28732b4e7fea7aa0890d264
-add-integers
++ add-integers
 compare-timestamps
 convert-timestamps
 count-words
 find-primes
 find-primes-scala
 flip-wkt
-multiply-integers
-scala/find-primes
 transform coordinates
 https://github.com/crosscompute/crosscompute-examples/tree/b341994d9353206fe0ee6b69688e70999bc2196e
 reports/google-trends
 reports/load-profiles
-add-columns
-add-numbers
-add-watermark-pdf
-compare-datestamps
-convert-timestamps
-count-assets
-count-geometries
-count-words
-encrypt-pdf
-extract-images-pdf
-extract-pdf-pages
-find-primes
-flip-wkt
-map-addresses
-onsset-test
-remove-password-pdf
-set-points
-shift-timezones
-subset-features
-survey-infrastructure
-test-errors
-transform-coordinates
+tools/add-columns
++ tools/add-numbers
+tools/add-watermark-pdf
+tools/compare-datestamps
+tools/convert-timestamps
+tools/count-assets
+tools/count-geometries
+tools/count-words
+tools/encrypt-pdf
+tools/extract-images-pdf
+tools/extract-pdf-pages
+tools/find-primes
+tools/flip-wkt
+tools/map-addresses
+tools/onsset-test
+tools/remove-password-pdf
+tools/set-points
+tools/shift-timezones
+tools/subset-features
+tools/survey-infrastructure
+tools/test-errors
+tools/transform-coordinates
 https://github.com/crosscompute/crosscompute-examples/tree/31536cfd33acbd79a18ed5059941c83250bb95e9
-./forms/encourage-creativity/automate.yml
-./forms/encourage-exercise/automate.yml
-./widgets/watch-ram/automate.yml
-./widgets/watch-cpu/automate.yml
-./widgets/paint-letters/automate.yml
-./widgets/watch-cpu-history/automate.yml
-./widgets/watch-ram-history/automate.yml
-./reports/randomize-histograms/automate.yml
-./reports/show-maps/automate.yml
-./reports/run-onsset/automate.yml
-./reports/compute-logarithms/automate.yml
-./reports/map-schools/automate.yml
-./automate.yml
-./dashboards/watch-machine/automate.yml
-./tools/find-places/automate.yml
-./tools/send-emails/automate.yml
-./tools/add-numbers/automate.yml
-./tools/ask-question/automate.yml
+automate.yml
+dashboards/watch-machine/automate.yml
+forms/encourage-creativity/automate.yml
+forms/encourage-exercise/automate.yml
+reports/compute-logarithms/automate.yml
+reports/map-schools/automate.yml
+reports/randomize-histograms/automate.yml
+reports/run-onsset/automate.yml
+reports/show-maps/automate.yml
++ tools/add-numbers/automate.yml
+tools/ask-question/automate.yml
+tools/find-places/automate.yml
+tools/send-emails/automate.yml
++ widgets/paint-letters/automate.yml
+widgets/watch-cpu-history/automate.yml
++ widgets/watch-cpu/automate.yml
+widgets/watch-ram-history/automate.yml
+widgets/watch-ram/automate.yml
 ```
 
 - [Done] Identify past examples
 
 ## Monday 20220502-0815 - 20220502-0830: 15 minutes
 
-- [ ] Restore and test watch cpu example
+## Friday 20220506-1245 - 20220506-1300: 15 minutes
 
 # Schedule
 
-- [ ] Restore missing examples
+- [ ] Restore and test watch cpu example
 - [ ] Test environment.interval
 - [10] Implement environment.interval
 
 # Tasks
 
+- [ ] Restore missing examples
 - [20] Restrict visible automations and batches and change script behavior using cookies
 - [30] Restore upload functionality
 - [ ] Implement qrcode view
