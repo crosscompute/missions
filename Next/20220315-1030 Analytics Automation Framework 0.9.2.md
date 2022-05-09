@@ -587,13 +587,13 @@ https://github.com/crosscompute/crosscompute-examples/tree/31536cfd33acbd79a18ed
 
 ## Monday 20220502-0815 - 20220502-0830: 15 minutes
 
-- [ ] Restore and test watch cpu example
+- [Done] Restore and test watch cpu example
+- [Done] Test environment.interval
+- [Done] Implement environment.interval
 
 # Schedule
 
 - [ ] Restore missing examples
-- [ ] Test environment.interval
-- [10] Implement environment.interval
 
 # Tasks
 
@@ -635,6 +635,8 @@ https://github.com/crosscompute/crosscompute-examples/tree/31536cfd33acbd79a18ed
     Consider compatibility with gunicorn
     Autogenerate datasets/batches.csv if requested during configure
     Implement count/index variables
+
+- [ ] Make it possible to make a tool from a spreadsheet
 
 # Milestones
 # Lessons
