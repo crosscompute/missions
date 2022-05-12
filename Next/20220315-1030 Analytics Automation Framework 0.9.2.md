@@ -597,6 +597,7 @@ widgets/watch-ram/automate.yml
 
 # Schedule
 
+- [ ] Consider making it possible to set break-inside auto for table label and table
 - [20] Restrict visible automations and batches and change script behavior using cookies
 
 # Tasks
