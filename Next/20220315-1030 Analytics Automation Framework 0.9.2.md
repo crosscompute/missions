@@ -591,18 +591,100 @@ widgets/watch-ram/automate.yml
 
 ## Friday 20220506-1245 - 20220506-1300: 15 minutes
 
+## Thursday 20220512-1745 - 20220512-1800: 15 minutes
+
+```
+routines/batch.py:46:        variable_data = load_variable_data(path, variable_id)
+routines/automation.py:151:  process_data=load_variable_data)
+routines/automation.py:179:  process_data = load_variable_data
+routines/automation.py:190:  process_data = load_variable_data
+routines/variable.py:434:    variable_data = load_variable_data(folder / variable_path, variable_id)
+routines/variable.py:517:    def load_variable_data(path, variable_id):
+```
+
+## Sunday 20220515-0030 - 20220515-0045: 15 minutes
+
+- It looks like `load_file_data` loads the value only if the suffix is a dictionary and it can be loaded as a dictionary. I found a possible error.
+- It looks like `get_value` is used in StringView and all StringView derivatives.
+- Let's map the current flows of what happens when the path suffix is txt and how returning {value} instead of {path} will affect each flow.
+
+    batch.get_data
+        see_automation_batch_mode_variable
+            case 1: txt {path}
+                return file response
+            case 2: txt {value}
+                return value response directly
+        StringView.get_value
+            StringView.render_input: NumberView, PasswordView, EmailView
+                case 1: txt {path}
+                    load from FILE_TEXT_CACHE
+                case 2: txt {value}
+                    return directly
+            StringView.render_output: NumberView, PasswordView, EmailView
+                case 1: txt {path}
+                    load from FILE_TEXT_CACHE
+                case 2: txt {value}
+                    return directly
+    _process_batch loads variables after running a batch
+        _run_batch
+            work
+            _run_automation_single
+            _run_automation_multiple
+    get_data_by_id_from_folder loads data_by_id from a batch folder
+        get_batch_definitions for reference_data_by_id
+        get_data_by_id
+            get_batch_dictionaries
+                print_with
+
+    Option 1: Return txt value if file is small or path if file is large
+    _ Option 2: Return txt value always
+    _ Option 3: Return txt path always (current)
+
+- [Done] See where load_variable_data is used
+
+## Monday 20220516-1200 - 20220516-1215: 15 minutes
+
+    Option 3: Return txt path always (current)
+        batch.get_data
+            see_automation_batch_mode_variable will load from disk for both large and small
+        StringView.get_value
+            StringView will load from file text cache for both large and small
+        _process_batch will load path for text but the values are not really used
+        get_data_by_id_from_folder loads data_by_id from a batch folder and needs a patch to load text values, used when variables are used in folder names or file names
+
+However, if we go by option 2 to return txt value always, then data_by_id could get very large for large text files.
+
+I think that Option 1 could give a good mix between speed and memory optimization.
+
+The maximum file name length on most operating systems is 255.
+
+    _ Option 1: Stick to selective patch for get_data_by_id_from_folder
+    Option 2: Modify load_file_data and remove FILE_TEXT_CACHE
+
+Right now the issue is that StringView could still get very large and be stuffed in FILE_TEXT_CACHE. I think we should remove FILE_TEXT_CACHE and only cache small files.
+
+Then the question is what defines a small file. The maximum size in bytes of a utf8 character is 4 bytes.
+
+```
+For example, UTF-8 is based on 8-bit code units. Therefore, each character can be 8 bits (1 byte), 16 bits (2 bytes), 24 bits (3 bytes), or 32 bits (4 bytes). Likewise, UTF-16 is based on 16-bit code units. Therefore, each character can be 16 bits (2 bytes) or 32 bits (4 bytes).
+
+-- https://www.ibm.com/docs/en/db2-for-zos/12?topic=unicode-utfs
+```
+
 # Schedule
 
-- [ ] Restore missing examples
+- [1] Update load_file_data and remove FILE_TEXT_CACHE
+- [2] Write test for load_file_data
+- [4] Restrict visible automations and batches and change script behavior using cookies
 
 # Schedule
 
-- [ ] Consider making it possible to set break-inside auto for table label and table
-- [20] Restrict visible automations and batches and change script behavior using cookies
+- [30] Restore upload functionality
 
 # Tasks
 
-- [30] Restore upload functionality
+- [ ] Restore missing examples
+- [ ] Consider making it possible to set break-inside auto for table label and table
 - [ ] Implement qrcode view
 - [ ] Implement checkbox view
 - [ ] Implement ipynb forms
