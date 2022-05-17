@@ -671,10 +671,13 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 -- https://www.ibm.com/docs/en/db2-for-zos/12?topic=unicode-utfs
 ```
 
+## Tuesday 20220517-1100 - 20220517-1115: 15 minutes
+
+- [Done] Update load_file_data and remove FILE_TEXT_CACHE
+- [Done] Write test for load_file_data
+
 # Schedule
 
-- [1] Update load_file_data and remove FILE_TEXT_CACHE
-- [2] Write test for load_file_data
 - [4] Restrict visible automations and batches and change script behavior using cookies
 
 # Schedule
@@ -696,7 +699,7 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 - [ ] Document TableView
 - [ ] Consider caching a run if caching is enabled in configuration
 - [ ] Redirect to log if it is defined
-- [ ] Redirect to output once variables.dictionary exists in debug_folder
+- [ ] Redirect to output once variables.dictionary exists in `debug_folder`
 - [ ] Consider allowing alt text for ImageView
 - [ ] Update documentation
 - [ ] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
