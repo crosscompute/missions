@@ -676,16 +676,20 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 - [Done] Update load_file_data and remove FILE_TEXT_CACHE
 - [Done] Write test for load_file_data
 
+## Saturday 20220521-1030 - 20220521-1045: 15 minutes
+
+## Monday 20220523-1500 - 20220523-1515: 15 minutes
+
+## Wednesday 20220525-1130 - 20220525-1145: 15 minutes
+
+- [Done] Implement authorizations.json
+
 # Schedule
-
-- [4] Restrict visible automations and batches and change script behavior using cookies
-
-# Schedule
-
-- [30] Restore upload functionality
 
 # Tasks
 
+- [4] Restrict visible automations and batches and change script behavior using cookies
+- [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
 - [ ] Implement qrcode view
