@@ -684,11 +684,14 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 
 - [Done] Implement authorizations.json
 
+## Thursday 20220526-2100 - 20220526-2115: 15 minutes
+
+- [Done] Restrict visible automations and batches and change script behavior using cookies
+
 # Schedule
 
 # Tasks
 
-- [4] Restrict visible automations and batches and change script behavior using cookies
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
