@@ -690,6 +690,8 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 
 # Schedule
 
+- [ ] Consider renaming `base_path` to `root_path`
+
 # Tasks
 
 - [30] Restore upload functionality
