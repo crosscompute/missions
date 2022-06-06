@@ -688,9 +688,20 @@ For example, UTF-8 is based on 8-bit code units. Therefore, each character can b
 
 - [Done] Restrict visible automations and batches and change script behavior using cookies
 
+## Saturday 20220604-1830 - 20220604-1845: 15 minutes
+
+- [Done] Consider renaming `base_path` to `root_path`
+
+The question is whether we should use volumes or transfer the data in and out. I think we need to transfer the data because then we could potentially delegate to more workers. We would probably need to write to a kind of database if there are multiple workers though.
+
+    Option 1: Run using the script command
+    _ Option 2: Run using a copy of crosscompute inside the container
+
+I don't think that crosscompute should be inside the container because its dependencies could potentially contaminate the runtime environment.
+
 # Schedule
 
-- [ ] Consider renaming `base_path` to `root_path`
+- [ ] Write a script that will run add-numbers using a container
 
 # Tasks
 
