@@ -699,8 +699,93 @@ The question is whether we should use volumes or transfer the data in and out. I
 
 I don't think that crosscompute should be inside the container because its dependencies could potentially contaminate the runtime environment.
 
+## Tuesday 20220607-1515 - 20220607-1530: 15 minutes
+
+We'll put containers into the open source version, which will be more secure when running untrusted scripts.
+
+    _ Option 1: Run on a timer
+    _ Option 2: Run while a file exists
+    _ Option 3: Run while a file does not exist
+    Option 4: Loop forever using sleep infinity
+
+I did a little research and it seems that `sleep infinity` will be better than `while true loop forever`. We can kill the container from the outside and in general I do not think we should rely on internal mechanisms to kill the container.
+
+```
+vim Containerfile
+    FROM python
+    RUN \
+    useradd user
+    USER user
+    WORKDIR /home/user
+    COPY --chown=user:user x.txt .
+    CMD ["sleep", "infinity"]
+vim Containerfile
+    FROM python
+    RUN \
+    useradd user
+    USER user
+    WORKDIR /home/user
+    COPY --chown=user:user a .
+    CMD ["sleep", "infinity"]
+```
+
+Is it necessary to run the process as non root? It seems like it is. I'm not sure about how to handle cases where the user wants to install system packages that need sudo to run. And should we allow arbitrary images or whitelist those that are allowed?
+
+- [Done] Check permissions created by COPY file after USER
+- [Done] Check permissions created by COPY folder after USER
+
+In both cases, the resulting file and folder are owned by user, which is what we want.
+
+The question is, how often will the vendor need to install packages via sudo? Maybe the vendor can use pkcon?
+
+[The following article seems to indicate that letting an unprivileged user install system packages is dangerous](https://sysdream.com/news/lab/2020-05-25-abusing-packagekit-on-fedora-centos-for-fun-profit-from-wheel-to-root/).
+
+It seems like pkcon is not available by default from the default python container.
+
+- [Done] Check whether pkcon is runnable from the default python container
+
+```
+FROM python
+CMD ["sleep", "infinity"]
+```
+
+```
+apt install -y packagekit-tools
+```
+
+Well, it seems like we cannot run systemd inside a container. Or running systemd is possible, but it seems to be complicated ([see link](https://zauner.nllk.net/post/0038-running-systemd-inside-a-docker-container)).
+
+- [Done] Install pycon
+
+[It seems like PackageKit was abandoned lately](https://blogs.gnome.org/hughsie/2019/02/14/packagekit-is-dead-long-live-well-something-else). Instead, people are using something called flatpak.
+
+The flatpak command is installable. But flatpak seems to be a way to package desktop apps, which is not what we need. I think the majority of use cases can be covered by official images. We can prepare images with whitelisted system packages for the edge caseso
+
+Or maybe we can allow dnf/apt installs if the software is in certain approved repositories like the default packages or rpmfusion.
+
+```
+environment:
+  image: fedora
+  packages:
+    - id: pandas
+      manager: pip
+    - id: chromium
+      manager: dnf
+    - id: ffmpeg
+      manager: dnf
+      repository: rpmfusion-free
+```
+
 # Schedule
 
+- [ ] Make a dummy container using the source image
+- [ ] Install setup packages
+- [ ] Have the container sleep infinity
+- [ ] Construct run.sh
+- [ ] Run container
+- [ ] Put files into the container
+- [ ] Get files from the container
+- [ ] Kill the container
 - [ ] Write a script that will run add-numbers using a container
 
 # Tasks
