@@ -776,11 +776,59 @@ environment:
       repository: rpmfusion-free
 ```
 
+## Saturday 20220611-0945 - 20220611-1000: 15 minutes
+
+Yesterday, we ran a number of experiments with podman containers. I think that today we can finish integrating containers with the public framework.
+
+```
+environment:
+  image: fedora
+  packages:
+    - id: chromium
+      manager: dnf
+  container: podman
+```
+
+```
+FROM fedora
+RUN
+dnf install chromium -y && \
+dnf clean all && \
+useradd user
+USER user
+WORKDIR /home/user
+CMD ["sleep", "infinity"]
+```
+
+```
+FROM python
+RUN useradd user
+USER user
+WORKDIR /home/user
+COPY --chown=user:user . .
+CMD ["sleep", "infinity"]
+```
+
+```
+IMAGE_TAG=add-numbers:0.1.0
+podman build -t $IMAGE_TAG -f .containerfile
+CONTAINER_ID=$(podman run -d $IMAGE_TAG)
+podman cp runs/2-3 $CONTAINER_ID:runs/
+```
+
+Score!
+
+- [Done] Copy custom batch into container
+- [Done] Make a dummy container using the source image
+- [Done] Have the container sleep infinity
+
 # Schedule
 
-- [ ] Make a dummy container using the source image
+- [ ] Run a custom batch
+- [ ] Extract batch folder
+- [ ] Integrate into framework
+
 - [ ] Install setup packages
-- [ ] Have the container sleep infinity
 - [ ] Construct run.sh
 - [ ] Run container
 - [ ] Put files into the container
