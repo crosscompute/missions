@@ -822,19 +822,99 @@ Score!
 - [Done] Make a dummy container using the source image
 - [Done] Have the container sleep infinity
 
+## Sunday 20220612-0900 - 20220612-0915: 15 minutes
+
+```
+# .containerignore
+.containerfile
+.containerignore
+.gitignore
+batches/
+runs/
+tests/
+```
+
+```
+podman exec $CONTAINER_ID ls --color -la
+```
+
+```
+FROM python
+RUN useradd user --create-home
+USER user
+WORKDIR /home/user
+RUN mkdir runs
+COPY --chown=user:user . .
+CMD ["sleep", "infinity"]
+```
+
+- [Cancelled] Option 1: Use run.sh to make folders
+- [Cancelled] Option 2: Use exec to make folders
+- Option 3: Make folders in runs/2-3 ahead of time
+
+```
+podman build -t $IMAGE_TAG -f .containerfile
+CONTAINER_ID=$(podman run -d $IMAGE_TAG)
+# BEGIN prepare runs/2-3 
+mkdir runs/2-3/input runs/2-3/output -p
+# END prepare runs/2-3
+podman cp runs/2-3 $CONTAINER_ID:runs/
+podman exec $CONTAINER_ID python run.py runs/2-3/input runs/2-3/output
+podman cp $CONTAINER_ID:runs/2-3 runs
+```
+
+- [Done] Run a custom batch
+- [Done] Extract batch folder
+
+## Sunday 20220612-0930 - 20220612-0945: 15 minutes
+
+In this bit, we will integrate what we have learned into the framework. We will make it work with the add-numbers example first. Then I think we will have to add support for dependencies.
+
+```
+environment:
+  image: fedora
+  container: podman
+
+container:
+  image: fedora
+  manager: podman
+  packages:
+    - id: chromium
+      manager: dnf
+```
+
+I am debating whether container should be separate from environment. The reason is that certain options should be strictly relative to the container. I do agree that those options should be inside container. Now the question is whether container is inside environment. I think container should be inside environment. It is part of the execution environment.
+
+I am thinking, however, that maybe manager is specified outside and not inside. The reason is that it would be hard to have different automations using different managers e.g. podman.
+
+```
+crosscompute --run --engine podman
+_ crosscompute --run --container podman
+_ crosscompute --run --container-manager podman
+_ crosscompute --run --manager podman
+```
+
+To remove ambiguity between container managers and package managers, we'll just call it the container engine or engine for short. Other options could be subprocess or docker or kubectl/kubernetes.
+
+- [Cancelled] Construct run.sh
+- [Done] Define container configuration in add-numbers
+
 # Schedule
 
-- [ ] Run a custom batch
-- [ ] Extract batch folder
-- [ ] Integrate into framework
-
-- [ ] Install setup packages
-- [ ] Construct run.sh
+- [ ] Prepare .containerfile and .containerignore
 - [ ] Run container
 - [ ] Put files into the container
 - [ ] Get files from the container
 - [ ] Kill the container
-- [ ] Write a script that will run add-numbers using a container
+- [ ] Prototype script that runs a batch using the container
+
+- [ ] Parse container configuration
+- [ ] Add new command line option called engine
+- [ ] Have the run command respect engine
+- [ ] Integrate prototyped script
+
+- [ ] Install container packages
+- [ ] Integrate into framework
 
 # Tasks
 
