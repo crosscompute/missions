@@ -924,10 +924,20 @@ ipython
 - [Done] Kill the container
 - [Done] Prototype script that runs a batch using the container
 
+## Friday 20220617-1500 - 20220617-1515: 15 minutes
+
+- [Cancelled] Option 1 is to monkeypatch `_run_batch` based on engine
+- [Cancelled] Option 2 is to set a constant based on engine
+- Option 3 is to pass an argument based on engine
+
+I added a command line option called engine.
+
+- [Done] Add new command line option called engine
+- [Done] Show warning if engine is raw
+
 # Schedule
 
 - [ ] Parse container configuration to get container base image and command arguments
-- [ ] Add new command line option called engine
 - [ ] Have the run command respect engine
 - [ ] Integrate prototyped script
 
