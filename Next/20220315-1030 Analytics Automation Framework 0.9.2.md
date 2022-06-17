@@ -899,6 +899,8 @@ To remove ambiguity between container managers and package managers, we'll just 
 - [Cancelled] Construct run.sh
 - [Done] Define container configuration in add-numbers
 
+## Friday 20220617-1200 - 20220617-1215: 15 minutes
+
 # Schedule
 
 - [ ] Prepare .containerfile and .containerignore
