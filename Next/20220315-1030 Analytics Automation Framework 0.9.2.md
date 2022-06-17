@@ -901,16 +901,32 @@ To remove ambiguity between container managers and package managers, we'll just 
 
 ## Friday 20220617-1200 - 20220617-1215: 15 minutes
 
+- [Done] Prepare .containerfile and .containerignore
+- [Done] Build container
+
+I can make the folders on the local side, but then there might be files that get copied unnecessarily if the folders like output already exist and are uploaded into the container. I think it is better to make the folders in the container in advance.
+
+- [Done] Put files into the container
+- [Done] Run container
+
+It seems like I can run the podman service via API if I don't want to use subprocess. I think subprocess is fine for now.
+
+```
+pip install podman
+podman system service -t 120 &
+ipython
+    from podman import PodmanClient
+    with PodmanClient() as client:
+        print(client.version())
+```
+
+- [Done] Get files from the container
+- [Done] Kill the container
+- [Done] Prototype script that runs a batch using the container
+
 # Schedule
 
-- [ ] Prepare .containerfile and .containerignore
-- [ ] Run container
-- [ ] Put files into the container
-- [ ] Get files from the container
-- [ ] Kill the container
-- [ ] Prototype script that runs a batch using the container
-
-- [ ] Parse container configuration
+- [ ] Parse container configuration to get container base image and command arguments
 - [ ] Add new command line option called engine
 - [ ] Have the run command respect engine
 - [ ] Integrate prototyped script
