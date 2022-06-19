@@ -949,6 +949,8 @@ I added a command line option called engine.
 
 I think passing the function will be easier to test. I think this design pattern is called dependency injection, to use an academic term.
 
+I am revisiting the decision on whether to specify batch concurrency in the configuration file or command line. I think the batch concurrency configuration belongs in the configuration file because an automation might be designed to only run one at a time.
+
 # Schedule
 
 - [ ] Have the run command respect engine
