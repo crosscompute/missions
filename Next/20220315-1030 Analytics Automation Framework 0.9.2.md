@@ -935,17 +935,30 @@ I added a command line option called engine.
 - [Done] Add new command line option called engine
 - [Done] Show warning if engine is raw
 
+## Saturday 20220618-0930 - 20220618-0945: 15 minutes
+
+- [Done] Parse container configuration to get container base image and command arguments
+
+    run_batch_raw
+    run_batch_podman
+    run_batch_with_raw
+    run_batch_with_podman
+
+- Option 1: Pass `run_batch`
+- [Cancelled] Option 1: Pass engine
+
+I think passing the function will be easier to test. I think this design pattern is called dependency injection, to use an academic term.
+
 # Schedule
 
-- [ ] Parse container configuration to get container base image and command arguments
 - [ ] Have the run command respect engine
 - [ ] Integrate prototyped script
-
 - [ ] Install container packages
 - [ ] Integrate into framework
 
 # Tasks
 
+- [ ] Introduce a new locking mechanism because flock won't work
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
