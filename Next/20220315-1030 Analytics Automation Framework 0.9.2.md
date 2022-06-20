@@ -951,8 +951,14 @@ I think passing the function will be easier to test. I think this design pattern
 
 I am revisiting the decision on whether to specify batch concurrency in the configuration file or command line. I think the batch concurrency configuration belongs in the configuration file because an automation might be designed to only run one at a time.
 
+## Sunday 20220619-1130 - 20220619-1145: 15 minutes
+
+- [Done] Define get_automation_engine
+
 # Schedule
 
+- [ ] Define UnsafeEngine
+- [ ] Define PodmanEngine
 - [ ] Have the run command respect engine
 - [ ] Integrate prototyped script
 - [ ] Install container packages
