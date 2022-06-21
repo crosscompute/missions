@@ -960,8 +960,18 @@ I am revisiting the decision on whether to specify batch concurrency in the conf
 - [Done] Have the run command respect engine
 - [Done] Define UnsafeEngine
 
+```
+environment:
+  container:
+    image: fedora
+    packages:
+      - id: chromium
+        manager: dnf
+```
+
 # Schedule
 
+- [ ] Get container_definition
 - [ ] Define PodmanEngine
 - [ ] Integrate prototyped script
 - [ ] Install container packages
