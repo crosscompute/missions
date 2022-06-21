@@ -955,11 +955,14 @@ I am revisiting the decision on whether to specify batch concurrency in the conf
 
 - [Done] Define get_automation_engine
 
+## Monday 20220620-1445 - 20220620-1500: 15 minutes
+
+- [Done] Have the run command respect engine
+- [Done] Define UnsafeEngine
+
 # Schedule
 
-- [ ] Define UnsafeEngine
 - [ ] Define PodmanEngine
-- [ ] Have the run command respect engine
 - [ ] Integrate prototyped script
 - [ ] Install container packages
 - [ ] Integrate into framework
