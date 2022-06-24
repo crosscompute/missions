@@ -969,6 +969,29 @@ environment:
         manager: dnf
 ```
 
+## Friday 20220624-1045 - 20220624-1100: 15 minutes
+
+```
+environment:
+  image: fedora
+  packages:
+    - id: chromium
+      manager: dnf
+```
+
+```
+map-mapbox-location
+```
+
+## Friday 20220624-1645 - 20220624-1700: 15 minutes
+
+```
+[Cancelled] Option 1: Store center in hidden input on map move
+    ADV: Can be used by other widgets on page
+    DIS: causes unnecessary slow down
+Option 2: Get center on save by having look up dictionary by element id
+```
+
 # Schedule
 
 - [ ] Get container_definition
