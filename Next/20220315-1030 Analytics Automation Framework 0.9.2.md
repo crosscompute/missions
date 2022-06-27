@@ -1014,9 +1014,17 @@ I am thinking that using an env file might be safer.
 - [Done] Finishing remaining TODO for podman integration
 - [Done] Install container packages
 
+## Monday 20220627-1645 - 20220627-1700: 15 minutes
+
+    --no-restart
+    --no-refresh
+    --no-rebuild
+
 # Schedule
 
-- [ ] Implement `--no-patience`
+- [ ] Rename --production to --no-restart
+- [ ] Rename --static to --no-refresh
+- [ ] Implement --no-rebuild
 - [ ] Update map-mapbox-location marker placement
 - [ ] Update example forms
 
