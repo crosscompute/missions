@@ -992,17 +992,36 @@ map-mapbox-location
 Option 2: Get center on save by having look up dictionary by element id
 ```
 
+## Monday 20220627-1100 - 20220627-1115: 15 minutes
+
+Let's focus on finishing the podman integration first, implement `--no-patience`, update map-mapbox-location marker placement, implement the outage map, update all example forms.
+
+    --no-patience
+    --no-browser
+
+- [Cancelled] Get container_definition
+- [Done] Define PodmanEngine
+- [Done] Integrate prototyped script
+- [Cancelled] Introduce a new locking mechanism because flock won't work
+
+```
+Option 1: Use --env
+Option 2: Use --env-file
+```
+
+I am thinking that using an env file might be safer.
+
+- [Done] Finishing remaining TODO for podman integration
+- [Done] Install container packages
+
 # Schedule
 
-- [ ] Get container_definition
-- [ ] Define PodmanEngine
-- [ ] Integrate prototyped script
-- [ ] Install container packages
-- [ ] Integrate into framework
+- [ ] Implement `--no-patience`
+- [ ] Update map-mapbox-location marker placement
+- [ ] Update example forms
 
 # Tasks
 
-- [ ] Introduce a new locking mechanism because flock won't work
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
