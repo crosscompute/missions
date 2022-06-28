@@ -1020,11 +1020,14 @@ I am thinking that using an env file might be safer.
     --no-refresh
     --no-rebuild
 
+## Tuesday 20220628-1545 - 20220628-1600: 15 minutes
+
+- [Done] Rename --production to --no-restart
+- [Done] Rename --static to --no-refresh
+- [Done] Implement --no-rebuild
+
 # Schedule
 
-- [ ] Rename --production to --no-restart
-- [ ] Rename --static to --no-refresh
-- [ ] Implement --no-rebuild
 - [ ] Update map-mapbox-location marker placement
 - [ ] Update example forms
 
