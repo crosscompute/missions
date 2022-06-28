@@ -20,8 +20,8 @@ The framework is a self-contained server that analysts can use to prototype thei
 N/A
 
 # Objectives
-1. Restrict visible automations and batches and change script behavior using cookies.
-2. Implement script.schedule.
+1. [Done] Restrict visible automations and batches and change script behavior using cookies.
+2. [Done] Implement script.schedule.
 3. Restore upload functionality.
 
 # Habits
