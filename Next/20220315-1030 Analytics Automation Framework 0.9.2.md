@@ -1026,9 +1026,25 @@ I am thinking that using an env file might be safer.
 - [Done] Rename --static to --no-refresh
 - [Done] Implement --no-rebuild
 
+## Friday 20220708-1930 - 20220708-1945: 15 minutes
+
+- [Done] Update map-mapbox-location marker placement
+
+    Option 1: Define function for getWeight
+    Option 2: Define dictionary key for getWeight
+    Option 3: Define function return value for getWeight
+
+    configuration:
+      position: d => d[0], d[1]
+      position: d => d.slice(0, 2)
+      _ position: 0, 1
+      _ position: d[0], d[1]
+      weight: d => d[2]
+      _ weight: 2
+      _ weight: d[2]
+
 # Schedule
 
-- [ ] Update map-mapbox-location marker placement
 - [ ] Update example forms
 
 # Tasks
