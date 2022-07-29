@@ -1043,6 +1043,11 @@ I am thinking that using an env file might be safer.
       _ weight: 2
       _ weight: d[2]
 
+## Friday 20220729-1300 - 20220729-1315: 15 minutes
+
+    _ Option 1: Store automation_definition.parent_definition
+    Option 2: Inherit group_definitions from parent
+
 # Schedule
 
 - [ ] Update example forms
