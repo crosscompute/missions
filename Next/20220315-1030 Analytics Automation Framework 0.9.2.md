@@ -1048,12 +1048,33 @@ I am thinking that using an env file might be safer.
     _ Option 1: Store automation_definition.parent_definition
     Option 2: Inherit group_definitions from parent
 
+## Sunday 20220807-1430 - 20220807-1445: 15 minutes
+
+## Monday 20220808-1430 - 20220808-1445: 15 minutes
+
+- [Done] Test frameview
+- [Done] Implement FrameView
+
+## Tuesday 20220809-1100 - 20220809-1115: 15 minutes
+
+    {'code': 'v', 'id': 'x', 'uri': ''}
+    _ {'code': 'v', 'ids': ['x'], 'uri': ''}
+
+The former will keep the possibility of sending a rendered update.
+
+The latter is more efficient, but will result in more API requests, which is actually more expensive. If we send a rendered update, then that will cut the number of back and forth requests.
+
+## Wednesday 20220810-1245 - 20220810-1300: 15 minutes
+
+- [Done] Implement log transition
+
 # Schedule
 
-- [ ] Update example forms
+- [ ] Support ports
 
 # Tasks
 
+- [ ] Update example forms
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
