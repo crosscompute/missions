@@ -1068,13 +1068,16 @@ The latter is more efficient, but will result in more API requests, which is act
 
 - [Done] Implement log transition
 
-# Schedule
+## Wednesday 20220928-2100 - 20220928-2115: 15 minutes
 
-- [ ] Support ports
+- [Done] Support ports
+- [Done] Update example forms
+- [Done] Process tasks
+
+# Schedule
 
 # Tasks
 
-- [ ] Update example forms
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
@@ -1099,7 +1102,7 @@ The latter is more efficient, but will result in more API requests, which is act
 - [ ] Update the framework to make it possible to define a script.schedule
 - [ ] Implement programmable forms with progressive disclosure in the framework 
 - [ ] Create a checkbox input view
-- [ ] Handle http errors using add_exception_view
+- [ ] Handle http errors using `add_exception_view`
 - [ ] Need to be able to see errors
 - [ ] Document steps for creating a new automation
 - [ ] Pull from repository if option is enabled
