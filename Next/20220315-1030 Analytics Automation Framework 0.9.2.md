@@ -1074,7 +1074,19 @@ The latter is more efficient, but will result in more API requests, which is act
 - [Done] Update example forms
 - [Done] Process tasks
 
+## Monday 20221003-0015 - 20221003-0030: 15 minutes
+
+- [Canceled] Option 1: Define `default_templates` and `custom_templates`
+- Option 2: Define custom loader that maps template names to paths
+
+The decision is to define a custom loader, then override the loader in the jinja2 environment.
+
 # Schedule
+
+- [ ] Define custom loader
+- [ ] Override loader
+- [ ] Test that override works
+- [ ] Remove references to process and web
 
 # Tasks
 
