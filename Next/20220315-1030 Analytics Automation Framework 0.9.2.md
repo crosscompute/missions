@@ -1081,12 +1081,17 @@ The latter is more efficient, but will result in more API requests, which is act
 
 The decision is to define a custom loader, then override the loader in the jinja2 environment.
 
+## Friday 20221007-0100 - 20221007-0115: 15 minutes
+
+- [Done] Define custom loader
+
 # Schedule
 
-- [ ] Define custom loader
 - [ ] Override loader
 - [ ] Test that override works
 - [ ] Remove references to process and web
+- [ ] List automations in root
+- [ ] Update default styling for automations
 
 # Tasks
 
