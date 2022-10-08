@@ -1085,6 +1085,10 @@ The decision is to define a custom loader, then override the loader in the jinja
 
 - [Done] Define custom loader
 
+## Saturday 20221008-0315 - 20221008-0330: 15 minutes
+
+
+
 # Schedule
 
 - [ ] Override loader
