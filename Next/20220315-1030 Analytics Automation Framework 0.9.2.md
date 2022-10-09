@@ -1087,11 +1087,51 @@ The decision is to define a custom loader, then override the loader in the jinja
 
 ## Saturday 20221008-0315 - 20221008-0330: 15 minutes
 
+## Sunday 20221009-1515 - 20221009-1530: 15 minutes
 
+- [Canceled] Option 1: Use folder if path is not absolute
+- Option 2: Require all paths to be absolute
+
+I could really go either way here. I think that PathLoader should just require all paths to be absolute. However, this might prevent templates from having relative paths. Let me check.
+
+- [Done] Review `configuration.get_template_path`
+
+As I suspected, PathLoader currently cannot handle relative paths that are defined inside templates. The question is whether to use the existing loaders or if we should continue defining our own. I think it is good practice to enforce explicit template paths then. What is the likelihood that a template will want to reference templates that are in a different package? I don't think it is likely. Let's stick with the simple option then of just requiring all paths to be absolute. We will probably have to modify the templates that do have relative references.
+
+- [Canceled] Option 1: Support `crosscompute:templates/modeBody.js`
+- [Canceled] Option 2: Use `{{ TEMPLATES_FOLDER }}/modeBody.js`
+- [Canceled] Option 3: Use `{{ CROSSCOMPUTE_TEMPLATES_FOLDER }}/modeBody.js`
+- Option 4: Override `Environment.join_path` to support `modeBody.js`
+
+Shouldn't relative paths for jinja2 templates be allowed? [It looks like this is supported](https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment.join_path).
+
+- [Done] Check whether PathLoader allows templates with relative paths
+- [Done] Define `RelativeEnvironment`
+- [Done] Update `configuration.get_template_path` to return absolute paths
+
+## Sunday 20221009-1730 - 20221009-1745: 15 minutes
+
+I am trying to understand what is the benefit of using `starlette.Jinja2Templates` instead of just using raw HTMLResponse with a jinja2 environment. It seems like `_TemplateResponse` makes it possible for middleware to intercept or at least be aware of the template rendering via this conditional:
+
+```
+if "http.response.template" in extensions:
+	await send({
+		"type": "http.response.template",
+		"template": self.template,
+		"context": self.context,
+	})
+```
+
+We don't technically need such middleware to work, but who knows maybe there is some use to it down the road. Then let's do this... Let's use the default unless the user wants to override. If the user wants to override, then override the loader with PathLoader. I would also need to adjust `get_template_path` to return relative paths.
+
+- Option 1: Use PathLoader by default
+- [Canceled] Option 2: Use PathLoader only if there is an override
+
+I think we should use PathLoader by default. This would simplify the code because we can assume that the path is an absolute path.
 
 # Schedule
 
-- [ ] Override loader
+- [ ] Override loader to use PathLoader
 - [ ] Test that override works
 - [ ] Remove references to process and web
 - [ ] List automations in root
