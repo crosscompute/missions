@@ -1129,7 +1129,16 @@ We don't technically need such middleware to work, but who knows maybe there is 
 
 I think we should use PathLoader by default. This would simplify the code because we can assume that the path is an absolute path.
 
+## Thursday 20221027-1115 - 20221027-1130: 15 minutes
+
+- [Canceled] Option 1: Change run button name in template
+- Option 2: Change run button name in configuration file
+
 # Schedule
+
+- [ ] Make it possible to hide some bits when `for_embed == True`
+- [ ] Make it possible to rename Run to Apply or Submit or Send
+- [ ] Merge into fastapi branch
 
 - [ ] Override loader to use PathLoader
 - [ ] Test that override works
@@ -1139,6 +1148,7 @@ I think we should use PathLoader by default. This would simplify the code becaus
 
 # Tasks
 
+- [ ] Embed css in page for local css
 - [30] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
