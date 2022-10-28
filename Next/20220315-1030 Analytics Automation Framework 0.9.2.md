@@ -1154,6 +1154,8 @@ Let's comment-code it in to see what it might look like.
 - [Canceled] Define `split_css`
 - [Done] Prepare `css_text` and `css_uris`
 
+Ok, that's it for now. Next time we will finish the migration to fastapi.
+
 # Schedule
 
 - [ ] Override loader to use PathLoader
