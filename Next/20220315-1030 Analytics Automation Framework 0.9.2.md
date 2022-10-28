@@ -1134,11 +1134,20 @@ I think we should use PathLoader by default. This would simplify the code becaus
 - [Canceled] Option 1: Change run button name in template
 - Option 2: Change run button name in configuration file
 
+## Friday 20221028-1115 - 20221028-1130: 15 minutes
+
+- [Done] Make it possible to hide some bits when `for_embed == True`
+- [Done] Make it possible to rename Run to Apply or Submit or Send
+- [Done] Merge into fastapi branch
+
+```
+_ css_text, css_uris = split_css(css_text, css_uris)
+css_uris, css_text = split_css(css_uris, css_text)
+```
+
 # Schedule
 
-- [ ] Make it possible to hide some bits when `for_embed == True`
-- [ ] Make it possible to rename Run to Apply or Submit or Send
-- [ ] Merge into fastapi branch
+- [ ] Define `split_css`
 
 - [ ] Override loader to use PathLoader
 - [ ] Test that override works
