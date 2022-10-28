@@ -1186,6 +1186,7 @@ I think we should use PathLoader by default. This would simplify the code becaus
 - [ ] Consider compatibility with gunicorn
 - [ ] Autogenerate datasets/batches.csv if requested during configure
 - [ ] Implement count/index variables
+- [ ] Consider making it possible to embed via ajax instead of iframe
 
 # Milestones
 # Lessons
