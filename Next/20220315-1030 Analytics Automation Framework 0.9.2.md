@@ -1145,9 +1145,16 @@ _ css_text, css_uris = split_css(css_text, css_uris)
 css_uris, css_text = split_css(css_uris, css_text)
 ```
 
-# Schedule
+## Friday 20221028-1245 - 20221028-1300: 15 minutes
 
-- [ ] Define `split_css`
+On second thought, it might be better to prepare `css_text` and `css_uris` when loading the configuration.
+
+Let's comment-code it in to see what it might look like.
+
+- [Canceled] Define `split_css`
+- [Done] Prepare `css_text` and `css_uris`
+
+# Schedule
 
 - [ ] Override loader to use PathLoader
 - [ ] Test that override works
