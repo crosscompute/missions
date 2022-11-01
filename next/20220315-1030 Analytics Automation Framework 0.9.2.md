@@ -1156,11 +1156,16 @@ Let's comment-code it in to see what it might look like.
 
 Ok, that's it for now. Next time we will finish the migration to fastapi.
 
+## Tuesday 20221101-1730 - 20221101-1745: 15 minutes
+
+- [Done] Remove references to process and web
+
+I am thinking how to pass the app configuration to fastapi. With pyramid, I can call a function to make the app. And I can pass the configuration to the pyramid function. However, fastapi has a structure similar to flask where the app configuration is supposed to be configured globally.
+
 # Schedule
 
 - [ ] Override loader to use PathLoader
 - [ ] Test that override works
-- [ ] Remove references to process and web
 - [ ] List automations in root
 - [ ] Update default styling for automations
 
