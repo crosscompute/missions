@@ -1162,7 +1162,29 @@ Ok, that's it for now. Next time we will finish the migration to fastapi.
 
 I am thinking how to pass the app configuration to fastapi. With pyramid, I can call a function to make the app. And I can pass the configuration to the pyramid function. However, fastapi has a structure similar to flask where the app configuration is supposed to be configured globally.
 
+## Friday 20221104-1145 - 20221104-1200: 15 minutes
+
+It seems the fastapi/starlette configuration philosophy is intentional to get people to put configuration in environment variables. I guess that tests will have to use monkeypatching.
+
+I liked node's approach better where the server is configured with a function. Actually, I don't know if I like the fastapi/starlette design.
+
+- [Done] Use `configuration.get_template_path` in `see_root`
+
+- [Canceled] Option 1: Define `variables.ROOT_TEMPLATE_PATH`
+- Option 2: Define `variables.TEMPLATE_PATH_BY_ID`
+    - ADV: might be faster
+    - DIS
+- Option 3: Use `configuration.get_template_path`
+    - ADV: can have two separate apps/configurations in the same process
+    - DIS
+
+I guess the real question is whether there are other cases where we need to call configuration within a view/route. And do we really need to be able to run two separate apps in the same process? The only case I see here is with parallel testing but we can use monkeypatching.
+
+It seems that if we migrate to fastapi or some other similar framework where the routes are defined using decorators, we will need to move app specific configuration into global variables. Fine.
+
 # Schedule
+
+- [ ] Set `variables.configuration`
 
 - [ ] Override loader to use PathLoader
 - [ ] Test that override works
