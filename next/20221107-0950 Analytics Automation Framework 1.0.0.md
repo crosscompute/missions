@@ -30,6 +30,7 @@ We need a way to accelerate the process of creating, updating and publishing a s
 
 # Tasks
 
+- [ ] Consider making it possible to load identities without groups
 - [ ] check requests dependency
 - [ ] Use websockets > eventstream > polling
 - [ ] Test that we can override root template
