@@ -22,7 +22,7 @@ N/A
 # Objectives
 1. [Done] Restrict visible automations and batches and change script behavior using cookies.
 2. [Done] Implement script.schedule.
-3. Restore upload functionality.
+3. [Postponed] Restore upload functionality.
 
 # Habits
 
@@ -1182,56 +1182,13 @@ I guess the real question is whether there are other cases where we need to call
 
 It seems that if we migrate to fastapi or some other similar framework where the routes are defined using decorators, we will need to move app specific configuration into global variables. Fine.
 
+## Monday 20221107-0945 - 20221107-1000: 15 minutes
+
+- [Canceled] Set `variables.configuration`
+- [Done] Override loader to use PathLoader
+- [Canceled] Implement ipynb forms
+
 # Schedule
-
-- [ ] Set `variables.configuration`
-
-- [ ] Override loader to use PathLoader
-- [ ] Test that override works
-- [ ] List automations in root
-- [ ] Update default styling for automations
-
 # Tasks
-
-- [ ] Embed css in page for local css
-- [30] Restore upload functionality
-- [ ] Restore missing examples
-- [ ] Consider making it possible to set break-inside auto for table label and table
-- [ ] Implement qrcode view
-- [ ] Implement checkbox view
-- [ ] Implement ipynb forms
-- [ ] Review issues for crosscompute
-- [ ] Restore select view
-- [ ] Make it possible to make a tool from a spreadsheet
-- [ ] Create example with multiple scripts
-- [ ] Consider specifying empty environment variables for send-emails
-- [ ] Document TableView
-- [ ] Consider caching a run if caching is enabled in configuration
-- [ ] Redirect to log if it is defined
-- [ ] Redirect to output once variables.dictionary exists in `debug_folder`
-- [ ] Consider allowing alt text for ImageView
-- [ ] Update documentation
-- [ ] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
-- [ ] Consider using cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
-- [ ] Load the token from a cookie or from the url
-- [ ] Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-- [ ] Update the framework to make it possible to define a script.schedule
-- [ ] Implement programmable forms with progressive disclosure in the framework 
-- [ ] Create a checkbox input view
-- [ ] Handle http errors using `add_exception_view`
-- [ ] Need to be able to see errors
-- [ ] Document steps for creating a new automation
-- [ ] Pull from repository if option is enabled
-- [ ] Make it possible for author to override mapbox version
-- [ ] Review legacy code to check whether we missed anything
-- [ ] Consider crosscompute:// url scheme
-- [ ] Make it possible to click on different svg elements and show information
-- [ ] Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
-- [ ] Consider cookiecutter
-- [ ] Consider compatibility with gunicorn
-- [ ] Autogenerate datasets/batches.csv if requested during configure
-- [ ] Implement count/index variables
-- [ ] Consider making it possible to embed via ajax instead of iframe
-
 # Milestones
 # Lessons
