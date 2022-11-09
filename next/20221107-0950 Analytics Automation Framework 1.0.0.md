@@ -24,6 +24,10 @@ We need a way to accelerate the process of creating, updating and publishing a s
 - [Done] Update `automations` from configuration
 - [Done] List automations in root
 
+## Tuesday 20221108-1730 - 20221108-1745: 15 minutes
+
+I think that today I will finish the fastapi migration so that we can return to work on the platform.
+
 # Schedule
 
 - [ ] Implement qrcode view
