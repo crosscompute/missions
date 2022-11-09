@@ -28,8 +28,14 @@ We need a way to accelerate the process of creating, updating and publishing a s
 
 I think that today I will finish the fastapi migration so that we can return to work on the platform.
 
+## Wednesday 20221109-1630 - 20221109-1645: 15 minutes
+
+- Option 1: Have the GET request save token in cookie
+- Option 2: Relay `_token` to POST
+
 # Schedule
 
+- [ ] Let scripts have different behavior with or without identities
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
 - [ ] Implement basic `see_automation_batch_mode_variable`
