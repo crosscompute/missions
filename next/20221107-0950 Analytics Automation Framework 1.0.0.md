@@ -30,6 +30,10 @@ I think that today I will finish the fastapi migration so that we can return to 
 
 # Schedule
 
+- [ ] Implement basic `see_automation`
+- [ ] Implement basic `see_automation_batch_mode`
+- [ ] Implement basic `see_automation_batch_mode_variable`
+- [ ] Implement basic `run_automation`
 - [ ] Implement qrcode view
 
 # Tasks
