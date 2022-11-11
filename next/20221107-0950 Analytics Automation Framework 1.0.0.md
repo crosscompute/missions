@@ -31,10 +31,24 @@ I think that today I will finish the fastapi migration so that we can return to 
 ## Wednesday 20221109-1630 - 20221109-1645: 15 minutes
 
 - Option 1: Have the GET request save token in cookie
-- Option 2: Relay `_token` to POST
+- [Canceled] Option 2: Relay `_token` to POST
+
+## Friday 20221111-1515 - 20221111-1530: 15 minutes
+
+I realized that the way it is implemented now, the parent configuration defines the tokens and the child configuration tokens are ignored. I think this is the right behavior actually.
+
+On second thought, no. The child configurations should be able to define identities independently.
+
+In both cases, the parent configuration should override the child configurations where there is an overlap.
+
+## Friday 20221111-1615 - 20221111-1630: 15 minutes
+
+We found an issue where tokens can keep uniqueness but cookies can't.
 
 # Schedule
 
+- [ ] Reconsider token vs cookie
+- [ ] Option 1: Have the GET request save token in cookie
 - [ ] Let scripts have different behavior with or without identities
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
