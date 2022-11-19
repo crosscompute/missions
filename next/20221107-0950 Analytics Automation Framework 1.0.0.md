@@ -45,9 +45,13 @@ In both cases, the parent configuration should override the child configurations
 
 We found an issue where tokens can keep uniqueness but cookies can't.
 
+## Saturday 20221119-1245 - 20221119-1300: 15 minutes
+
+- [Done] Consider restoring separate style css or force style reload on change
+- [Done] Pass `root_uri` in template environment
+
 # Schedule
 
-- [ ] Consider restoring separate style css or force style reload on change
 - [ ] Reconsider token vs cookie
 - [ ] Option 1: Have the GET request save token in cookie
 - [ ] Let scripts have different behavior with or without identities
