@@ -47,6 +47,7 @@ We found an issue where tokens can keep uniqueness but cookies can't.
 
 # Schedule
 
+- [ ] Consider restoring separate style css or force style reload on change
 - [ ] Reconsider token vs cookie
 - [ ] Option 1: Have the GET request save token in cookie
 - [ ] Let scripts have different behavior with or without identities
