@@ -394,3 +394,4 @@ I don't think puppeteer can really be used asynchronously.
 - [ ] Update extension to show render uri
 - [ ] Implement print
 - [ ] Document `pip install jupyterlab-spreadsheet-editor`
+- [ ] Add links to open scripts in side panel
