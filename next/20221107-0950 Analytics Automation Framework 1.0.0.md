@@ -50,8 +50,34 @@ We found an issue where tokens can keep uniqueness but cookies can't.
 - [Done] Consider restoring separate style css or force style reload on change
 - [Done] Pass `root_uri` in template environment
 
+## Tuesday 20221206-0945 - 20221206-1000: 15 minutes
+
+It seems like datalist is an extension of the input element.
+
+- [Done] Experiment with the html5 datalist
+
+```
+_ view: text-checkbox
+_ view: checkboxes
+_ view: checkbox2text
+_ view: dynamic-checkbox
+_ view: checkbox-dynamic
+_ view: checkbox-text
+view: checkbox
+view: datetime
+```
+
+- [Canceled] Prototype js to populate checkboxes based on query string
+
+```
+Option 1: configuration['options'] is standard
+_ Option 2: configuration['options'] is view-specific
+```
+
 # Schedule
 
+- [ ] Prototype dynamic checkbox
+- [ ] Finish migration to fastapi
 - [ ] Reconsider token vs cookie
 - [ ] Option 1: Have the GET request save token in cookie
 - [ ] Let scripts have different behavior with or without identities
