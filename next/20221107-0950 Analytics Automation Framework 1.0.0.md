@@ -74,6 +74,22 @@ Option 1: configuration['options'] is standard
 _ Option 2: configuration['options'] is view-specific
 ```
 
+## Wednesday 20221207-1445 - 20221207-1500: 15 minutes
+
+I have been thinking about making it possible to configure checkboxes from GET parameters. On second thought, I don't think this is a good idea. What we need is a kind of multi step wizard, where the elements of the second form are dynamically generated based on the answers in the first form. This could of course be done with a custom app, but we are trying to make this possible with the framework.
+
+What are the options for dynamic checkboxes?
+
+```
+_ Option 1: GET parameters
+_ Option 2: output
+_ Option 3: log
+_ Option 4: input
+Option 5: configuration path
+```
+
+There is no reason to spread a template over multiple files only to be joined later. Separate template files means separate screens.
+
 # Schedule
 
 - [ ] Prototype dynamic checkbox
