@@ -90,22 +90,42 @@ Option 5: configuration path
 
 There is no reason to spread a template over multiple files only to be joined later. Separate template files means separate screens.
 
+## Thursday 20221208-1045 - 20221208-1100: 15 minutes
+
+The question is that when a RadioView renders as output, should we just get a text box or a disabled radio? I am thinking that it should be a disabled radio. It is the same for a checkbox.
+
+- [Done] Check that we can load checkbox
+- [Canceled] Prototype dynamic checkbox
+
+We decided that we can make a checkbox dynamic by updating the variable configuration file.
+
+- [Done] Implement qrcode view
+
+```
+$ function f() {console.log('hey'); return [1, 2]}
+$ for (const x of f()) {console.log(x)}
+hey
+1
+2
+```
+
+It seems that, at least in firefox, the second part of `of` is evaluated only once.
+
+- [Done] Check that we can save checkbox
+
 # Schedule
 
-- [ ] Prototype dynamic checkbox
 - [ ] Finish migration to fastapi
-- [ ] Reconsider token vs cookie
-- [ ] Option 1: Have the GET request save token in cookie
-- [ ] Let scripts have different behavior with or without identities
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
 - [ ] Implement basic `see_automation_batch_mode_variable`
 - [ ] Implement basic `run_automation`
-- [ ] Implement qrcode view
 
 # Tasks
 
+- [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
+- [ ] Reconsider token vs cookie
 - [ ] check requests dependency
 - [ ] Use websockets > eventstream > polling
 - [ ] Test that we can override root template
