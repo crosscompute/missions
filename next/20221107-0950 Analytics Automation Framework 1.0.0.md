@@ -113,8 +113,38 @@ It seems that, at least in firefox, the second part of `of` is evaluated only on
 
 - [Done] Check that we can save checkbox
 
+## Friday 20221209-1045 - 20221209-1100: 15 minutes
+
+```
+_ variable_definition.parent_mode
+_ variable_definition.child_mode
+_ variable_definition.route_mode
+_ variable_definition.page_mode
+_ variable_definition.element_mode
+_ variable_definition.mode_name
+_ variable_definition.page
+_ variable_definition.mode
+_ variable_definition.render_mode
+
+variable_definition.page_id
+variable_definition.mode_name
+
+see_automation_batch
+_ see_automation_batch_mode
+see_automation_batch_page
+_ see_automation_batch_type
+_ see_automation_batch_section
+_ see_automation_batch_part
+
+step
+_ phase
+_ part
+_ mode
+```
+
 # Schedule
 
+- [ ] Differentiate between `mode_name` for location vs `mode_name` for rendering
 - [ ] Finish migration to fastapi
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
