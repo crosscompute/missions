@@ -125,8 +125,9 @@ _ variable_definition.mode_name
 _ variable_definition.page
 _ variable_definition.mode
 _ variable_definition.render_mode
+_ variable_definition.page_id
 
-variable_definition.page_id
+variable_definition.step_name
 variable_definition.mode_name
 
 see_automation_batch
