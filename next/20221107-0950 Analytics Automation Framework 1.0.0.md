@@ -143,9 +143,12 @@ _ part
 _ mode
 ```
 
+## Saturday 20221210-1515 - 20221210-1530: 15 minutes
+
+- [Done] Differentiate between `mode_name` for location vs `mode_name` for rendering
+
 # Schedule
 
-- [ ] Differentiate between `mode_name` for location vs `mode_name` for rendering
 - [ ] Finish migration to fastapi
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
