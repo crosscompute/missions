@@ -54,20 +54,116 @@ We found an issue where tokens can keep uniqueness but cookies can't.
 
 The only time I can really get work done is in the morning. Once my afternoon babysitting shift starts, all bets are off!
 
+## Tuesday 20221206-0945 - 20221206-1000: 15 minutes
+
+It seems like datalist is an extension of the input element.
+
+- [Done] Experiment with the html5 datalist
+
+```
+_ view: text-checkbox
+_ view: checkboxes
+_ view: checkbox2text
+_ view: dynamic-checkbox
+_ view: checkbox-dynamic
+_ view: checkbox-text
+view: checkbox
+view: datetime
+```
+
+- [Canceled] Prototype js to populate checkboxes based on query string
+
+```
+Option 1: configuration['options'] is standard
+_ Option 2: configuration['options'] is view-specific
+```
+
+## Wednesday 20221207-1445 - 20221207-1500: 15 minutes
+
+I have been thinking about making it possible to configure checkboxes from GET parameters. On second thought, I don't think this is a good idea. What we need is a kind of multi step wizard, where the elements of the second form are dynamically generated based on the answers in the first form. This could of course be done with a custom app, but we are trying to make this possible with the framework.
+
+What are the options for dynamic checkboxes?
+
+```
+_ Option 1: GET parameters
+_ Option 2: output
+_ Option 3: log
+_ Option 4: input
+Option 5: configuration path
+```
+
+There is no reason to spread a template over multiple files only to be joined later. Separate template files means separate screens.
+
+## Thursday 20221208-1045 - 20221208-1100: 15 minutes
+
+The question is that when a RadioView renders as output, should we just get a text box or a disabled radio? I am thinking that it should be a disabled radio. It is the same for a checkbox.
+
+- [Done] Check that we can load checkbox
+- [Canceled] Prototype dynamic checkbox
+
+We decided that we can make a checkbox dynamic by updating the variable configuration file.
+
+- [Done] Implement qrcode view
+
+```
+$ function f() {console.log('hey'); return [1, 2]}
+$ for (const x of f()) {console.log(x)}
+hey
+1
+2
+```
+
+It seems that, at least in firefox, the second part of `of` is evaluated only once.
+
+- [Done] Check that we can save checkbox
+
+## Friday 20221209-1045 - 20221209-1100: 15 minutes
+
+```
+_ variable_definition.parent_mode
+_ variable_definition.child_mode
+_ variable_definition.route_mode
+_ variable_definition.page_mode
+_ variable_definition.element_mode
+_ variable_definition.mode_name
+_ variable_definition.page
+_ variable_definition.mode
+_ variable_definition.render_mode
+_ variable_definition.page_id
+
+variable_definition.step_name
+variable_definition.mode_name
+
+see_automation_batch
+_ see_automation_batch_mode
+see_automation_batch_page
+_ see_automation_batch_type
+_ see_automation_batch_section
+_ see_automation_batch_part
+
+step
+_ phase
+_ part
+_ mode
+```
+
+## Saturday 20221210-1515 - 20221210-1530: 15 minutes
+
+- [Done] Differentiate between `mode_name` for location vs `mode_name` for rendering
+
 # Schedule
 
-- [ ] Reconsider token vs cookie
-- [ ] Option 1: Have the GET request save token in cookie
-- [ ] Let scripts have different behavior with or without identities
+- [ ] Finish migration to fastapi
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
 - [ ] Implement basic `see_automation_batch_mode_variable`
 - [ ] Implement basic `run_automation`
-- [ ] Implement qrcode view
 
 # Tasks
 
+- [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
+- [ ] Reconsider token vs cookie
 - [ ] check requests dependency
 - [ ] Use websockets > eventstream > polling
 - [ ] Test that we can override root template
