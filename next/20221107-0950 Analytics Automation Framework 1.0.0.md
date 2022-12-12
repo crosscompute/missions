@@ -50,6 +50,10 @@ We found an issue where tokens can keep uniqueness but cookies can't.
 - [Done] Consider restoring separate style css or force style reload on change
 - [Done] Pass `root_uri` in template environment
 
+## Tuesday 20221206-0630 - 20221206-0645: 15 minutes
+
+The only time I can really get work done is in the morning. Once my afternoon babysitting shift starts, all bets are off!
+
 # Schedule
 
 - [ ] Reconsider token vs cookie
