@@ -151,9 +151,18 @@ _ mode
 
 - [Done] Differentiate between `mode_name` for location vs `mode_name` for rendering
 
+## Wednesday 20221214-1415 - 20221214-1430: 15 minutes
+
+Checkboxes do not render for input for a run.
+
+```
+_ Option 1: Get configuration from first batch
+Option 2: Make options from values.
+```
+
 # Schedule
 
-- [ ] Finish migration to fastapi
+- [ ] Finish migration from pyramid to fastapi
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
 - [ ] Implement basic `see_automation_batch_mode_variable`
