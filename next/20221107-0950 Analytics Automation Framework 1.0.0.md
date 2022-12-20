@@ -160,6 +160,18 @@ _ Option 1: Get configuration from first batch
 Option 2: Make options from values.
 ```
 
+## Tuesday 20221220-1445 - 20221220-1500: 15 minutes
+
+```
+_ site_settings
+_ site_values
+_ site_dictionary
+_ site_mutables
+site_variables
+constants
+variables
+```
+
 # Schedule
 
 - [ ] Finish migration from pyramid to fastapi
