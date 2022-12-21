@@ -172,8 +172,36 @@ constants
 variables
 ```
 
+## Wednesday 20221221-1430 - 20221221-1445: 15 minutes
+
+Current Flow
+
+1. Server detects change in configuration, template, style or variable
+2. Server looks up URI corresponding to change, URI = which automation, which batch, which step
+3. Client keeps asking server whether my page changed (polling or server side events or websockets)
+4. Server sends mutation information to tell the client that is on the page URI that it has changed
+5. Client retrieves changes
+
+- Option 1: Server only notifies changes but does not send change content
+- Option 2: Server sends change content at the same time of the notification
+
+Reason chose option 1 is a) security and b) bandwidth.
+
+## Wednesday 20221221-1615 - 20221221-1630: 15 minutes
+
+```
+if code == InfoCode.CONFIGURATION:
+if code == Info.CONFIGURATION:
+if code == CONFIGURATION_CODE:
+if code == CONFIGURATION_INFO_CODE:
+if code == INFO_CODE_BY_NAME['configuration']:
+if code == CONFIGURATION_CODE:
+if code == 'c':
+```
+
 # Schedule
 
+- [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Finish migration from pyramid to fastapi
 - [ ] Implement basic `see_automation`
 - [ ] Implement basic `see_automation_batch_mode`
