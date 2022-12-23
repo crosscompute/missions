@@ -199,8 +199,34 @@ if code == CONFIGURATION_CODE:
 if code == 'c':
 ```
 
+## Thursday 20221222-1715 - 20221222-1730: 15 minutes
+
+Actually, `root_path`/`root_uri` seems to be working properly. There is a difference between `uri_prefix` and `root_uri` for proxies. One note is that the nginx reverse proxy needs a trailing slash:
+
+```
+  location /api/v1 {
+    # proxy_pass http://localhost:8000/app;
+    proxy_pass http://localhost:8000/;
+    # proxy_pass http://localhost:8000; <-- does not work
+  }
+```
+
+## Thursday 20221222-2215 - 20221222-2230: 15 minutes
+
+- [Done] Remove `request_params` from DiskBatch
+
+When there are no expected updates:
+1. is production (stable configuration, templates, styles)
+2. no update interval defined
+3. all variables have loaded
+
+`--no-development`
+
 # Schedule
 
+- [ ] combine with refresh and with restart into `with_production`
+- [ ] Stop mutations if there are no expected updates
+- [ ] Pass `request_params` to `_get_step_page_outer_dictionary`
 - [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Finish migration from pyramid to fastapi
 - [ ] Implement basic `see_automation`
