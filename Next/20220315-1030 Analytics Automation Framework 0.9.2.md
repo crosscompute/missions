@@ -1068,11 +1068,74 @@ The latter is more efficient, but will result in more API requests, which is act
 
 - [Done] Implement log transition
 
+## Friday 20220902-0445 - 20220902-0500: 15 minutes
+
+- [Done] Support ports
+
+## Saturday 20230114-0615 - 20230114-0630: 15 minutes
+
+I would really like to finish the migration to fastapi as well as deal with some other issues with the framework. Then we can finally return to upgrading the platform into a proper marketplace.
+
+A few days ago, Kashfi and I found that there are issues with refreshing the map, radio button and checkboxes.
+
+- [Done] Make a dummy automation for testing map refresh
+
+I am not able to recreate the race condition locally, but here is the offending code:
+
+```
+v0.on('load', () => {
+  const m = v0;
+  m.addSource('v0', {'type': 'geojson', 'data': '/a/refresh-variables-test/b/standard/o/features'});
+  m.addLayer({'type': 'circle', 'paint': {'circle-color': 'yellow'}, 'id': 'v0', 'source': 'v0'});
+  jumpToBounds(m, [-30.073116676200726, -49.34924846903043, 79.9379367854184, -27.8821395183992]);
+});
+registerElement('features', async function () {
+  try {
+    await refreshMapMapbox('v0', '/a/refresh-variables-test/b/standard/o/features', v0);
+  } catch {
+  }
+});
+```
+
+## Saturday 20230114-1245 - 20230114-1300: 15 minutes
+
+- Option 1: Stall until load runs (uses cpu unnecessarily)
+- Option 2: Add callback if not loaded
+
+I can't think of other solutions.
+
+```
+# option 2
+on load
+  if flag set
+    refresh
+if loaded
+refresh right away
+if not loaded
+set flag
+```
+
+Option 1 would actually be simpler. Let's go with option 1.
+
+```
+# option 1
+while not loaded
+  sleep
+refresh
+```
+
 # Schedule
 
-- [ ] Support ports
+- [ ] Fix race condition when refreshing map
+- [ ] Fix radio refresh
+- [ ] Fix checkbox refresh
 
 # Tasks
+
+- [ ] Restore `see_root`
+- [ ] Restore `see_automations`
+- [ ] Restore `see_automation`
+- [ ] Restore `run_automation`
 
 - [ ] Update example forms
 - [30] Restore upload functionality
