@@ -22,7 +22,7 @@ N/A
 # Objectives
 1. [Done] Restrict visible automations and batches and change script behavior using cookies.
 2. [Done] Implement script.schedule.
-3. Restore upload functionality.
+3. [Postponed] Restore upload functionality.
 
 # Habits
 
@@ -1072,109 +1072,126 @@ The latter is more efficient, but will result in more API requests, which is act
 
 - [Done] Support ports
 
-## Saturday 20230114-0615 - 20230114-0630: 15 minutes
+## Wednesday 20220928-2100 - 20220928-2115: 15 minutes
 
-I would really like to finish the migration to fastapi as well as deal with some other issues with the framework. Then we can finally return to upgrading the platform into a proper marketplace.
+- [Done] Update example forms
+- [Done] Process tasks
 
-A few days ago, Kashfi and I found that there are issues with refreshing the map, radio button and checkboxes.
+## Monday 20221003-0015 - 20221003-0030: 15 minutes
 
-- [Done] Make a dummy automation for testing map refresh
+- [Canceled] Option 1: Define `default_templates` and `custom_templates`
+- Option 2: Define custom loader that maps template names to paths
 
-I am not able to recreate the race condition locally, but here is the offending code:
+The decision is to define a custom loader, then override the loader in the jinja2 environment.
+
+## Friday 20221007-0100 - 20221007-0115: 15 minutes
+
+- [Done] Define custom loader
+
+## Saturday 20221008-0315 - 20221008-0330: 15 minutes
+
+## Sunday 20221009-1515 - 20221009-1530: 15 minutes
+
+- [Canceled] Option 1: Use folder if path is not absolute
+- Option 2: Require all paths to be absolute
+
+I could really go either way here. I think that PathLoader should just require all paths to be absolute. However, this might prevent templates from having relative paths. Let me check.
+
+- [Done] Review `configuration.get_template_path`
+
+As I suspected, PathLoader currently cannot handle relative paths that are defined inside templates. The question is whether to use the existing loaders or if we should continue defining our own. I think it is good practice to enforce explicit template paths then. What is the likelihood that a template will want to reference templates that are in a different package? I don't think it is likely. Let's stick with the simple option then of just requiring all paths to be absolute. We will probably have to modify the templates that do have relative references.
+
+- [Canceled] Option 1: Support `crosscompute:templates/modeBody.js`
+- [Canceled] Option 2: Use `{{ TEMPLATES_FOLDER }}/modeBody.js`
+- [Canceled] Option 3: Use `{{ CROSSCOMPUTE_TEMPLATES_FOLDER }}/modeBody.js`
+- Option 4: Override `Environment.join_path` to support `modeBody.js`
+
+Shouldn't relative paths for jinja2 templates be allowed? [It looks like this is supported](https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment.join_path).
+
+- [Done] Check whether PathLoader allows templates with relative paths
+- [Done] Define `RelativeEnvironment`
+- [Done] Update `configuration.get_template_path` to return absolute paths
+
+## Sunday 20221009-1730 - 20221009-1745: 15 minutes
+
+I am trying to understand what is the benefit of using `starlette.Jinja2Templates` instead of just using raw HTMLResponse with a jinja2 environment. It seems like `_TemplateResponse` makes it possible for middleware to intercept or at least be aware of the template rendering via this conditional:
 
 ```
-v0.on('load', () => {
-  const m = v0;
-  m.addSource('v0', {'type': 'geojson', 'data': '/a/refresh-variables-test/b/standard/o/features'});
-  m.addLayer({'type': 'circle', 'paint': {'circle-color': 'yellow'}, 'id': 'v0', 'source': 'v0'});
-  jumpToBounds(m, [-30.073116676200726, -49.34924846903043, 79.9379367854184, -27.8821395183992]);
-});
-registerElement('features', async function () {
-  try {
-    await refreshMapMapbox('v0', '/a/refresh-variables-test/b/standard/o/features', v0);
-  } catch {
-  }
-});
+if "http.response.template" in extensions:
+	await send({
+		"type": "http.response.template",
+		"template": self.template,
+		"context": self.context,
+	})
 ```
 
-## Saturday 20230114-1245 - 20230114-1300: 15 minutes
+We don't technically need such middleware to work, but who knows maybe there is some use to it down the road. Then let's do this... Let's use the default unless the user wants to override. If the user wants to override, then override the loader with PathLoader. I would also need to adjust `get_template_path` to return relative paths.
 
-- Option 1: Stall until load runs (uses cpu unnecessarily)
-- Option 2: Add callback if not loaded
+- Option 1: Use PathLoader by default
+- [Canceled] Option 2: Use PathLoader only if there is an override
 
-I can't think of other solutions.
+I think we should use PathLoader by default. This would simplify the code because we can assume that the path is an absolute path.
 
-```
-# option 2
-on load
-  if flag set
-    refresh
-if loaded
-refresh right away
-if not loaded
-set flag
-```
+## Thursday 20221027-1115 - 20221027-1130: 15 minutes
 
-Option 1 would actually be simpler. Let's go with option 1.
+- [Canceled] Option 1: Change run button name in template
+- Option 2: Change run button name in configuration file
+
+## Friday 20221028-1115 - 20221028-1130: 15 minutes
+
+- [Done] Make it possible to hide some bits when `for_embed == True`
+- [Done] Make it possible to rename Run to Apply or Submit or Send
+- [Done] Merge into fastapi branch
 
 ```
-# option 1
-while not loaded
-  sleep
-refresh
+_ css_text, css_uris = split_css(css_text, css_uris)
+css_uris, css_text = split_css(css_uris, css_text)
 ```
+
+## Friday 20221028-1245 - 20221028-1300: 15 minutes
+
+On second thought, it might be better to prepare `css_text` and `css_uris` when loading the configuration.
+
+Let's comment-code it in to see what it might look like.
+
+- [Canceled] Define `split_css`
+- [Done] Prepare `css_text` and `css_uris`
+
+Ok, that's it for now. Next time we will finish the migration to fastapi.
+
+## Tuesday 20221101-1730 - 20221101-1745: 15 minutes
+
+- [Done] Remove references to process and web
+
+I am thinking how to pass the app configuration to fastapi. With pyramid, I can call a function to make the app. And I can pass the configuration to the pyramid function. However, fastapi has a structure similar to flask where the app configuration is supposed to be configured globally.
+
+## Friday 20221104-1145 - 20221104-1200: 15 minutes
+
+It seems the fastapi/starlette configuration philosophy is intentional to get people to put configuration in environment variables. I guess that tests will have to use monkeypatching.
+
+I liked node's approach better where the server is configured with a function. Actually, I don't know if I like the fastapi/starlette design.
+
+- [Done] Use `configuration.get_template_path` in `see_root`
+
+- [Canceled] Option 1: Define `variables.ROOT_TEMPLATE_PATH`
+- Option 2: Define `variables.TEMPLATE_PATH_BY_ID`
+    - ADV: might be faster
+    - DIS
+- Option 3: Use `configuration.get_template_path`
+    - ADV: can have two separate apps/configurations in the same process
+    - DIS
+
+I guess the real question is whether there are other cases where we need to call configuration within a view/route. And do we really need to be able to run two separate apps in the same process? The only case I see here is with parallel testing but we can use monkeypatching.
+
+It seems that if we migrate to fastapi or some other similar framework where the routes are defined using decorators, we will need to move app specific configuration into global variables. Fine.
+
+## Monday 20221107-0945 - 20221107-1000: 15 minutes
+
+- [Canceled] Set `variables.configuration`
+- [Done] Override loader to use PathLoader
+- [Canceled] Implement ipynb forms
 
 # Schedule
-
-- [ ] Fix race condition when refreshing map
-- [ ] Fix radio refresh
-- [ ] Fix checkbox refresh
-
 # Tasks
-
-- [ ] Restore `see_root`
-- [ ] Restore `see_automations`
-- [ ] Restore `see_automation`
-- [ ] Restore `run_automation`
-
-- [ ] Update example forms
-- [30] Restore upload functionality
-- [ ] Restore missing examples
-- [ ] Consider making it possible to set break-inside auto for table label and table
-- [ ] Implement qrcode view
-- [ ] Implement checkbox view
-- [ ] Implement ipynb forms
-- [ ] Review issues for crosscompute
-- [ ] Restore select view
-- [ ] Make it possible to make a tool from a spreadsheet
-- [ ] Create example with multiple scripts
-- [ ] Consider specifying empty environment variables for send-emails
-- [ ] Document TableView
-- [ ] Consider caching a run if caching is enabled in configuration
-- [ ] Redirect to log if it is defined
-- [ ] Redirect to output once variables.dictionary exists in `debug_folder`
-- [ ] Consider allowing alt text for ImageView
-- [ ] Update documentation
-- [ ] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
-- [ ] Consider using cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
-- [ ] Load the token from a cookie or from the url
-- [ ] Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-- [ ] Update the framework to make it possible to define a script.schedule
-- [ ] Implement programmable forms with progressive disclosure in the framework 
-- [ ] Create a checkbox input view
-- [ ] Handle http errors using add_exception_view
-- [ ] Need to be able to see errors
-- [ ] Document steps for creating a new automation
-- [ ] Pull from repository if option is enabled
-- [ ] Make it possible for author to override mapbox version
-- [ ] Review legacy code to check whether we missed anything
-- [ ] Consider crosscompute:// url scheme
-- [ ] Make it possible to click on different svg elements and show information
-- [ ] Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
-- [ ] Consider cookiecutter
-- [ ] Consider compatibility with gunicorn
-- [ ] Autogenerate datasets/batches.csv if requested during configure
-- [ ] Implement count/index variables
-
 # Milestones
 # Lessons
