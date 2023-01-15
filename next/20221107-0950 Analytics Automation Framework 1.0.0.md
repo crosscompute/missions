@@ -274,11 +274,15 @@ while not loaded
 refresh
 ```
 
-# Schedule
+## Saturday 20230114-2245 - 20230114-2300: 15 minutes
 
-- [ ] Fix race condition when refreshing map
-- [ ] Fix radio refresh
-- [ ] Fix checkbox refresh
+- [Done] Fix race condition when refreshing map
+- [Done] Fix radio refresh
+- [Done] Fix checkbox refresh
+
+## Sunday 20230115-0815 - 20230115-0830: 15 minutes
+
+# Schedule
 
 - [ ] combine with refresh and with restart into `with_production`
 - [ ] Stop mutations if there are no expected updates
