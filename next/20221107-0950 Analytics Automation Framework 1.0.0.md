@@ -282,9 +282,15 @@ refresh
 
 ## Sunday 20230115-0815 - 20230115-0830: 15 minutes
 
+## Monday 20230116-1400 - 20230116-1415: 15 minutes
+
+- [Done] Restrict variables to step
+
 # Schedule
 
-- [ ] combine with refresh and with restart into `with_production`
+- [ ] Replace `self.mode_name` with `element.mode_name`
+
+- [ ] Combine with refresh and with restart into `with_production`
 - [ ] Stop mutations if there are no expected updates
 - [ ] Pass `request_params` to `_get_step_page_outer_dictionary`
 - [ ] Consider replacing code == 'c' with either constant or enum
