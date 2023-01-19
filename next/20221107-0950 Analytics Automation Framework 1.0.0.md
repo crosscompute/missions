@@ -286,7 +286,13 @@ refresh
 
 - [Done] Restrict variables to step
 
+## Tuesday 20230117-2030 - 20230117-2045: 15 minutes
+
 # Schedule
+
+- [Done] Use `get_data_from`
+- [ ] Remove `b.get_data_from_request`
+
 
 - [ ] Replace `self.mode_name` with `element.mode_name`
 
