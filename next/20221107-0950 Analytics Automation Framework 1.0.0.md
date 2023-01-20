@@ -288,38 +288,41 @@ refresh
 
 ## Tuesday 20230117-2030 - 20230117-2045: 15 minutes
 
-# Schedule
+## Friday 20230120-1515 - 20230120-1530: 15 minutes
 
 - [Done] Use `get_data_from`
-- [ ] Remove `b.get_data_from_request`
+- [Done] Remove `b.get_data_from_request`
+- [Done] Replace `self.mode_name` with `element.mode_name`
+- [Done] Pass `request_params` to `_get_step_page_outer_dictionary`
+- [Done] Implement basic `see_automation`
+- [Done] Implement basic `see_automation_batch_mode`
+- [Done] Implement basic `see_automation_batch_mode_variable`
+- [Done] Implement basic `run_automation`
+- [Done] Check requests dependency
+- [Canceled] Embed css in page for local css
+- [Done] Implement checkbox view
+- [Done] Redirect to log if it is defined
+- [Done] Redirect to output once variables.dictionary exists in `debug_folder`
+- [Done] Update the framework to make it possible to define a script.schedule
 
-
-- [ ] Replace `self.mode_name` with `element.mode_name`
+# Schedule
 
 - [ ] Combine with refresh and with restart into `with_production`
 - [ ] Stop mutations if there are no expected updates
-- [ ] Pass `request_params` to `_get_step_page_outer_dictionary`
 - [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Finish migration from pyramid to fastapi
-- [ ] Implement basic `see_automation`
-- [ ] Implement basic `see_automation_batch_mode`
-- [ ] Implement basic `see_automation_batch_mode_variable`
-- [ ] Implement basic `run_automation`
 
 # Tasks
 
 - [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
 - [ ] Reconsider token vs cookie
-- [ ] check requests dependency
 - [ ] Use websockets > eventstream > polling
 - [ ] Test that we can override root template
 - [ ] Update default styling for automations
-- [ ] Embed css in page for local css
-- [30] Restore upload functionality
+- [ ] Restore upload functionality
 - [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
-- [ ] Implement checkbox view
 - [ ] Review issues for crosscompute
 - [ ] Restore select view
 - [ ] Make it possible to make a tool from a spreadsheet
@@ -327,17 +330,13 @@ refresh
 - [ ] Consider specifying empty environment variables for send-emails
 - [ ] Document TableView
 - [ ] Consider caching a run if caching is enabled in configuration
-- [ ] Redirect to log if it is defined
-- [ ] Redirect to output once variables.dictionary exists in `debug_folder`
 - [ ] Consider allowing alt text for ImageView
 - [ ] Update documentation
 - [ ] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
 - [ ] Consider using cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
 - [ ] Load the token from a cookie or from the url
 - [ ] Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-- [ ] Update the framework to make it possible to define a script.schedule
 - [ ] Implement programmable forms with progressive disclosure in the framework
-- [ ] Create a checkbox input view
 - [ ] Handle http errors using `add_exception_view`
 - [ ] Need to be able to see errors
 - [ ] Document steps for creating a new automation
@@ -352,12 +351,6 @@ refresh
 - [ ] Autogenerate datasets/batches.csv if requested during configure
 - [ ] Implement count/index variables
 - [ ] Consider making it possible to embed via ajax instead of iframe
-
-- [ ] Restore `see_root`
-- [ ] Restore `see_automations`
-- [ ] Restore `see_automation`
-- [ ] Restore `run_automation`
-
 - [ ] Update example forms
 - [ ] Implement ipynb forms
 
