@@ -305,7 +305,25 @@ refresh
 - [Done] Redirect to output once variables.dictionary exists in `debug_folder`
 - [Done] Update the framework to make it possible to define a script.schedule
 
+## Thursday 20230126-1215 - 20230126-1230: 15 minutes
+
+- [Done] Make test for refresh
+- [Done] Add console logs for each event
+
+I think what is happening is that an exception in a refreshVariable function is preventing other refreshVariables in the same pack from running.
+
+- [Canceled] Option 1: trust that each refresh variable callback will catch its errors
+- Option 2: have fallback
+
+I see that there is an error in refreshTable and that is preventing the rest of the code from runnning if the table does not exist.
+
+- [ ] check that each refresh variable catches
+- [ ] Fix json error
+
 # Schedule
+
+- [ ] https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
+
 
 - [ ] Combine with refresh and with restart into `with_production`
 - [ ] Stop mutations if there are no expected updates
