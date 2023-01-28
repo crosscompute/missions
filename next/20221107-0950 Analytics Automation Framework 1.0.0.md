@@ -305,6 +305,24 @@ refresh
 - [Done] Redirect to output once variables.dictionary exists in `debug_folder`
 - [Done] Update the framework to make it possible to define a script.schedule
 
+## Friday 20230127-1945 - 20230127-2000: 15 minutes
+
+```
+async function f() {
+  throw 'hey';
+}
+
+async function g() {
+  try {
+    await f();
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+g()
+```
+
 # Schedule
 
 - [ ] Combine with refresh and with restart into `with_production`
