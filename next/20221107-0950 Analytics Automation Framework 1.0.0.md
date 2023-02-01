@@ -338,6 +338,16 @@ async function g() {
 g()
 ```
 
+## Wednesday 20230201-0300 - 20230201-0315: 15 minutes
+
+```
+_ AssetFolder
+_ AssetCache
+AssetStorage
+_ AssetStore
+_ AssetMine
+```
+
 # Schedule
 
 - [ ] https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
