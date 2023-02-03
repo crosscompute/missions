@@ -348,6 +348,17 @@ _ AssetStore
 _ AssetMine
 ```
 
+## Wednesday 20230201-1945 - 20230201-2000: 15 minutes
+
+```
+_ crosscompute --production
+_ crosscompute --is-production
+_ crosscompute --no-development
+_ crosscompute --no-develop
+crosscompute --no-restart
+_ crosscompute --no-changes
+```
+
 # Schedule
 
 - [ ] https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
