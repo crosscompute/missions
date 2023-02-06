@@ -359,13 +359,24 @@ crosscompute --no-restart
 _ crosscompute --no-changes
 ```
 
+## Monday 20230206-1300 - 20230206-1315: 15 minutes
+
+```
+_ resolve_package_path
+_ get_package_path
+get_package_file_path
+get_asset_path
+```
+
+- [Done] Combine with refresh and with restart into `--no-restart`
+- [Done] Stop mutations if there are no expected updates
+- [Done] Finish migration from pyramid to fastapi
+- [Done] Read https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
+- [Done] Test that we can override root template
+
 # Schedule
 
-- [ ] https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
-- [ ] Combine with refresh and with restart into `with_production`
-- [ ] Stop mutations if there are no expected updates
 - [ ] Consider replacing code == 'c' with either constant or enum
-- [ ] Finish migration from pyramid to fastapi
 
 # Tasks
 
@@ -373,7 +384,6 @@ _ crosscompute --no-changes
 - [ ] Consider making it possible to load identities without groups
 - [ ] Reconsider token vs cookie
 - [ ] Use websockets > eventstream > polling
-- [ ] Test that we can override root template
 - [ ] Update default styling for automations
 - [ ] Restore upload functionality
 - [ ] Restore missing examples
