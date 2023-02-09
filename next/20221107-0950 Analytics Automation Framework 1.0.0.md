@@ -374,6 +374,25 @@ get_asset_path
 - [Done] Read https://advancedweb.hu/how-to-avoid-uncaught-async-errors-in-javascript/
 - [Done] Test that we can override root template
 
+## Wednesday 20230208-1800 - 20230208-1815: 15 minutes
+
+```
+Option 1: Update uris in `style_definitions` on refresh if with prefix
+    PRO:
+    CON: more memory use
+Option 2: Strip request uri if with prefix
+    PRO:
+    CON: might remove wrong part
+Option 3: Define left normalize function in `find_item`
+    PRO:
+    CON: adds some processing time
+```
+
+I think we should stick with option 2.
+
+- [Done] Check why style is not loading for jupyterlab launches
+- [Done] Fix favicon.ico when `root_uri` is defined
+
 # Schedule
 
 - [ ] Consider replacing code == 'c' with either constant or enum
