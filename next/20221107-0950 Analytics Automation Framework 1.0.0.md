@@ -395,6 +395,7 @@ I think we should stick with option 2.
 
 # Schedule
 
+- [ ] Show seconds ticking if in log
 - [ ] Consider replacing code == 'c' with either constant or enum
 
 # Tasks
