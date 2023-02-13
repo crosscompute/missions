@@ -393,13 +393,21 @@ I think we should stick with option 2.
 - [Done] Check why style is not loading for jupyterlab launches
 - [Done] Fix favicon.ico when `root_uri` is defined
 
-# Schedule
+## Monday 20230213-1515 - 20230213-1530: 15 minutes
 
-- [ ] Show seconds ticking if in log
-- [ ] Consider replacing code == 'c' with either constant or enum
+It looks like exceptions need to be handled within each process when using multiprocessing.
+
+## Monday 20230213-2030 - 20230213-2045: 15 minutes
+
+- [Done] Restore args.environment initialization
+- [Done] Kill podman containers if interrupted
+
+# Schedule
 
 # Tasks
 
+- [ ] Show seconds ticking if in log
+- [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
 - [ ] Reconsider token vs cookie
