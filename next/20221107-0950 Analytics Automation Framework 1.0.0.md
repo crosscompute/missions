@@ -402,6 +402,41 @@ It looks like exceptions need to be handled within each process when using multi
 - [Done] Restore args.environment initialization
 - [Done] Kill podman containers if interrupted
 
+## Wednesday 20230215-0515 - 20230215-0530: 15 minutes
+
+```
+crosscompute(236180)─┬─serve(236185)─┬─ZOMBIE(236189)─┬─{crosscompute}(236191)
+                     │               │                └─{crosscompute}(236217)
+                     │               ├─server(236198)─┬─worker(236204)
+                     │               │                ├─{crosscompute}(236209)
+                     │               │                ├─{crosscompute}(236210)
+                     │               │                ├─{crosscompute}(236211)
+                     │               │                └─{crosscompute}(236212)
+                     │               └─{crosscompute}(236219)
+                     └─run(236186)
+
+20230215-051820 DEBUG __init__.start:13 started serve process 236185
+20230215-051820 DEBUG __init__.start:13 started run process 236186
+20230215-051820 DEBUG __init__.start:13 started server process 236198
+20230215-051820 INFO automation.run_batch:173 Watch Machine 0.1.0 batches/standard running
+20230215-051820 DEBUG __init__.start:13 started worker process 236204
+
+HERE IS THE ZOMBIE PROCESS
+crosscompute(236189)---{crosscompute}(236191)
+```
+
+```
+crosscompute(237083)─┬─serve(237088)─┬─ZOMBIE(237091)─┬─{crosscompute}(237093)
+                     │               │                └─{crosscompute}(237119)
+                     │               ├─crosscompute(237104)─┬─worker(237109)
+                     │               │                      ├─{crosscompute}(237112)
+                     │               │                      ├─{crosscompute}(237113)
+                     │               │                      ├─{crosscompute}(237114)
+                     │               │                      └─{crosscompute}(237115)
+                     │               └─{crosscompute}(237107)
+                     └─run(237089)
+```
+
 # Schedule
 
 # Tasks
