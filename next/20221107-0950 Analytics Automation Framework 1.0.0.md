@@ -437,6 +437,26 @@ crosscompute(237083)─┬─serve(237088)─┬─ZOMBIE(237091)─┬─{cross
                      └─run(237089)
 ```
 
+## Thursday 20230216-0400 - 20230216-0415: 15 minutes
+
+Remember that KeyboardInterrupt is not of the Exception class.
+
+## Thursday 20230216-2230 - 20230216-2245: 15 minutes
+
+```
+view: json
+_ view: javascript
+_ view: js
+```
+
+## Friday 20230217-1200 - 20230217-1215: 15 minutes
+
+## Saturday 20230218-0445 - 20230218-0500: 15 minutes
+
+- [Done] Replace registerElement with registerFunction
+- [Done] Define registerCallback
+- [Done] Update refreshVariable
+
 # Schedule
 
 # Tasks
