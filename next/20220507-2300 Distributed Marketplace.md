@@ -6,10 +6,13 @@
 pip install fastapi[all]
 ```
 
+## Tuesday 20230228-1345 - 20230228-1400: 15 minutes
+
+- [Done] Work through fastapi tutorial
+
 # Schedule
 
 # Tasks
 
-- [ ] Work through fastapi tutorial
 - [ ] Prototype worker registration flow
 - [ ] Prototype work request flow

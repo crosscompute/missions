@@ -457,9 +457,19 @@ _ view: js
 - [Done] Define registerCallback
 - [Done] Update refreshVariable
 
+## Tuesday 20230228-1345 - 20230228-1400: 15 minutes
+
 # Schedule
 
+- [ ] Experiment with sse-starlette
+- [ ] Replace migrations polling with sse
+- [ ] Define view: pdf
+- [ ] Render input output print if defined
+
 # Tasks
+
+- [ ] Add guard to migrations sse
+- [ ] Send data from migrations sse
 
 - [ ] Show seconds ticking if in log
 - [ ] Consider replacing code == 'c' with either constant or enum
