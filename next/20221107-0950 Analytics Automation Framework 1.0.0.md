@@ -459,11 +459,71 @@ _ view: js
 
 ## Tuesday 20230228-1345 - 20230228-1400: 15 minutes
 
+## Wednesday 20230301-2000 - 20230301-2015: 15 minutes
+
+- [Done] Experiment with sse-starlette
+
+## Thursday 20230302-1515 - 20230302-1530: 15 minutes
+
+- [Done] Define dummy sse endpoint /streams/mutations.json
+
+There should only be a single point where the runs/prints are triggered otherwise there will be duplicates.
+
+```
+flags['/a/add-numbers/b/standard']['run'] = False
+flags['/a/add-numbers/b/standard']['print'] = True
+counts['/a/add-numbers/b/standard'] += 1
+
+When a batch connects,
+Check batch
+If the batch run is obsolete, reset flag and queue run and print
+If the batch print is obsolete, reset flag and queue print
+Add uri to counts
+
+When a batch disconnects,
+Remove uri from counts
+
+If there is a configuration or script change,
+Mark batch run obsolete
+Mark batch print obsolete
+
+If there is a template or style change,
+Mark batch print obsolete
+
+If there a batch run or batch print in the queue,
+if the flag is dirty,
+skip it
+```
+
+## Friday 20230303-0930 - 20230303-0945: 15 minutes
+
+## Friday 20230303-1100 - 20230303-1115: 15 minutes
+
+Specifying an event actually sends more data in a server side event than not specifying an event.
+
+```
+# use onmessage
+data: you
+
+VS
+
+# use addeventlistener
+event: hey
+data: you
+```
+
 # Schedule
 
-- [ ] Experiment with sse-starlette
-- [ ] Replace migrations polling with sse
+- [ ] Move mutations to streams
+- [ ] Print in worker queue
+
+- [ ] Update queue to support run and/or print
+- [ ] Update connection code
+- [ ] Update disconnection code
+- [ ] Trigger refresh if pdf changes
+
 - [ ] Define view: pdf
+- [ ] Replace migrations polling with sse
 - [ ] Render input output print if defined
 
 # Tasks
