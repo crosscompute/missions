@@ -512,21 +512,67 @@ event: hey
 data: you
 ```
 
+## Tuesday 20230307-1000 - 20230307-1015: 15 minutes
+
+- [Done] Move mutations to streams
+- [Done] Define view: pdf
+- [Done] Replace migrations polling with sse
+
+```
+Option 1: Print all but prioritize batches that are being watched
+    CON: Might run batches unnecessarily
+Option 2: Lazy load everything
+    CON: Causes user to wait
+Option 3: Trigger run and print if obsolete separate from worker queue
+```
+
+The absolute simplest thing might be to simply trigger a re-run whenever the pdf is loaded.
+
+How can we detect if a batch is obsolete?
+
+A run is obsolete when either a configuration or script changes. A print is obsolete when either a run changes or a template or style changes.
+
+Obsolete means that the internal change is newer than the external render. That means that we need to timestamp both the internal change and the external render. We have two kinds of renders: a run and a print. That means we need to timestamp the batch run and the batch print. We also timestamp the changes.
+
+Is a run obsolete? Get the timestamp of the batch run. Search the changes for the batch. If there are newer changes, then the batch run is obsolete. The same goes for print.
+
+```
+batch uri => run timestamp, print timestamp
+batch uri => changes => latest change timestamp
+if obsolete, then put batch run or print on queue (might result in duplicate runs)
+```
+
+The worker queue should probably check whether the run or print is already up-to-date and then skip it if it is. The timestamp of a run or print should be recorded when the run or print is started, not at the end.
+
+Actually, I think there are two worker queues, one for runs and another for batches. We should actually be paying attention to the batches, not the runs.
+
+## Tuesday 20230307-1415 - 20230307-1430: 15 minutes
+
+The problem is that the run has the old configuration. The run needs to restart when serve restarts.
+
+We also need to adjust run to be based on batches rather than automations.
+
+Should we separate the worker from the runner? No, I think they should be the same. But let's adjust the worker so that it is based on popping from a list.
+
 # Schedule
 
-- [ ] Move mutations to streams
-- [ ] Print in worker queue
+- [ ] Update work to pop from a list
+- [ ] Update run to push to a list
+- [ ] Update POST run to push to a list
+- [ ] Update streams to push to a list
 
-- [ ] Update queue to support run and/or print
+- [ ] Update queue for run + print or print only
+
 - [ ] Update connection code
 - [ ] Update disconnection code
 - [ ] Trigger refresh if pdf changes
 
-- [ ] Define view: pdf
-- [ ] Replace migrations polling with sse
 - [ ] Render input output print if defined
+- [ ] Restore upload functionality
 
 # Tasks
+
+- [ ] Restore missing examples
 
 - [ ] Add guard to migrations sse
 - [ ] Send data from migrations sse
@@ -538,8 +584,6 @@ data: you
 - [ ] Reconsider token vs cookie
 - [ ] Use websockets > eventstream > polling
 - [ ] Update default styling for automations
-- [ ] Restore upload functionality
-- [ ] Restore missing examples
 - [ ] Consider making it possible to set break-inside auto for table label and table
 - [ ] Review issues for crosscompute
 - [ ] Restore select view
@@ -568,7 +612,7 @@ data: you
 - [ ] Consider compatibility with gunicorn
 - [ ] Autogenerate datasets/batches.csv if requested during configure
 - [ ] Implement count/index variables
-- [ ] Consider making it possible to embed via ajax instead of iframe
+- [ ] Consider making it possible to embed via ajax instead of iframe for consistent styling
 - [ ] Update example forms
 - [ ] Implement ipynb forms
 
