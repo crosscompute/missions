@@ -554,6 +554,17 @@ We also need to adjust run to be based on batches rather than automations.
 
 Should we separate the worker from the runner? No, I think they should be the same. But let's adjust the worker so that it is based on popping from a list.
 
+## Friday 20230310-1500 - 20230310-1515: 15 minutes
+
+```
+Option 1: Handle recurring automations in `process_loop`
+Option 2: Have a separate process that feeds tasks into the worker
+```
+
+## Sunday 20230312-1045 - 20230312-1100: 15 minutes
+
+- [ ] Fix imports
+
 # Schedule
 
 - [ ] Update work to pop from a list
