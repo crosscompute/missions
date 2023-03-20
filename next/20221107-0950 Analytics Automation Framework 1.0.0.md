@@ -288,6 +288,10 @@ refresh
 
 ## Tuesday 20230117-2030 - 20230117-2045: 15 minutes
 
+## Thursday 20230119-0745 - 20230119-0800: 15 minutes
+
+I've been dragging on this fastapi migration. Let's finish it this week.
+
 ## Friday 20230120-1515 - 20230120-1530: 15 minutes
 
 - [Done] Use `get_data_from`
