@@ -563,9 +563,11 @@ Option 2: Have a separate process that feeds tasks into the worker
 
 ## Sunday 20230312-1045 - 20230312-1100: 15 minutes
 
-- [ ] Fix imports
+## Wednesday 20230322-2200 - 20230322-2215: 15 minutes
 
 # Schedule
+
+- [ ] Fix imports
 
 - [ ] Update work to pop from a list
 - [ ] Update run to push to a list
