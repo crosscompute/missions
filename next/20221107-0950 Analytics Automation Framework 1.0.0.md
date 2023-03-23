@@ -569,6 +569,19 @@ Option 2: Have a separate process that feeds tasks into the worker
 
 ## Wednesday 20230322-2200 - 20230322-2215: 15 minutes
 
+## Thursday 20230323-1530 - 20230323-1545: 15 minutes
+
+```
+/a/make-qr/b/abc/p/pdf
+_ /a/make-qr/b/abc/pdf
+
+batch['prints'] = [{
+    'uri':
+}]
+```
+
+I am thinking that pdf should be in the output page.
+
 # Schedule
 
 - [ ] Fix imports
