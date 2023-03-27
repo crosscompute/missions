@@ -292,10 +292,24 @@ refresh
 
 I've been dragging on this fastapi migration. Let's finish it this week.
 
-## Friday 20230120-1515 - 20230120-1530: 15 minutes
+## Thursday 20230119-1130 - 20230119-1145: 15 minutes
 
 - [Done] Use `get_data_from`
 - [Done] Remove `b.get_data_from_request`
+
+```
+_ uniquify_with_order
+_ deduplicate_with_order
+_ make_unique(xs)
+_ make_unique_with_order
+_ make_unique_order
+_ keep_unique_order
+get_unique
+get_unique_order
+```
+
+## Friday 20230120-1515 - 20230120-1530: 15 minutes
+
 - [Done] Replace `self.mode_name` with `element.mode_name`
 - [Done] Pass `request_params` to `_get_step_page_outer_dictionary`
 - [Done] Implement basic `see_automation`
@@ -582,11 +596,25 @@ batch['prints'] = [{
 
 I am thinking that pdf should be in the output page.
 
+## Sunday 20230326-0130 - 20230326-0145: 15 minutes
+
+- [Done] Fix imports
+- [Done] Update work to pop from a list
+
+## Sunday 20230326-1000 - 20230326-1015: 15 minutes
+
+I am trying to decide whether `print` is a step or if it is a separate section. On the one hand, print is a step because it happens after the output is generated. On the other hand, print is a separate section because unlike the other steps, the scripts do not have access to read or write the print variables.
+
+But if print is a step, the user can configure how the template is displayed. It is likely that the user will want to configure how the template is displayed, both in terms of text and style.
+
+I think print should be a step.
+
 # Schedule
 
-- [ ] Fix imports
+- [ ] Restore prints
+- [ ] Use prints folder instead of folder unless run
+- [ ] Restore upload functionality
 
-- [ ] Update work to pop from a list
 - [ ] Update run to push to a list
 - [ ] Update POST run to push to a list
 - [ ] Update streams to push to a list
