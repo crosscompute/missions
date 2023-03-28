@@ -609,22 +609,24 @@ But if print is a step, the user can configure how the template is displayed. It
 
 I think print should be a step.
 
+# Tuesday 20230328-1600 - 20230328-1615: 15 minutes
+
+- [Canceled] Restore prints
+- [Done] Use prints folder instead of folder unless run
+- [Canceled] Update run to push to a list
+- [Done] Update POST run to push to a list
+- [Canceled] Update streams to push to a list
+
+## Tuesday 20230328-1600 - 20230328-1615: 15 minutes
+
+I am thinking of an alternate structure. I am now thinking that the queue or list should be limited to only on-demand runs and that obsolete detection and interval re-runs should be done separately.
+
 # Schedule
 
-- [ ] Restore prints
-- [ ] Use prints folder instead of folder unless run
-- [ ] Restore upload functionality
-
-- [ ] Update run to push to a list
-- [ ] Update POST run to push to a list
-- [ ] Update streams to push to a list
-
 - [ ] Update queue for run + print or print only
-
 - [ ] Update connection code
 - [ ] Update disconnection code
 - [ ] Trigger refresh if pdf changes
-
 - [ ] Render input output print if defined
 - [ ] Restore upload functionality
 
