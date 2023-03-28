@@ -530,6 +530,10 @@ event: hey
 data: you
 ```
 
+## Monday 20230306-1515 - 20230306-1530: 15 minutes
+
+- [Done] Move mutations to streams
+
 ## Tuesday 20230307-1000 - 20230307-1015: 15 minutes
 
 - [Done] Move mutations to streams
