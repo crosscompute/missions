@@ -625,22 +625,23 @@ I think print should be a step.
 
 I am thinking of an alternate structure. I am now thinking that the queue or list should be limited to only on-demand runs and that obsolete detection and interval re-runs should be done separately.
 
+## Wednesday 20230329-1945 - 20230329-2000: 15 minutes
+
 # Schedule
 
-- [ ] Update queue for run + print or print only
-- [ ] Update connection code
-- [ ] Update disconnection code
-- [ ] Trigger refresh if pdf changes
-- [ ] Render input output print if defined
+- [ ] Set style for print page calc(100vh - 3.5em)
+- [ ] Set download filename for print page
+- [ ] Test refresh on config change
+- [ ] Test refresh on script change
+- [ ] Test refresh on template change
+- [ ] Test refresh on style change
 - [ ] Restore upload functionality
 
 # Tasks
 
 - [ ] Restore missing examples
-
 - [ ] Add guard to migrations sse
 - [ ] Send data from migrations sse
-
 - [ ] Show seconds ticking if in log
 - [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Let scripts have different behavior with or without identities
