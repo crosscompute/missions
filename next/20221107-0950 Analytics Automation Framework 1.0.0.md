@@ -635,6 +635,8 @@ I am thinking of an alternate structure. I am now thinking that the queue or lis
 - [ ] Test refresh on script change
 - [ ] Test refresh on template change
 - [ ] Test refresh on style change
+- [ ] Test automation interval
+- [ ] Test automation strict interval
 - [ ] Restore upload functionality
 
 # Tasks
