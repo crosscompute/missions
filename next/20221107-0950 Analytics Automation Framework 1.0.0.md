@@ -627,16 +627,31 @@ I am thinking of an alternate structure. I am now thinking that the queue or lis
 
 ## Wednesday 20230329-1945 - 20230329-2000: 15 minutes
 
+## Thursday 20230330-1315 - 20230330-1330: 15 minutes
+
+- Option 1: Use manager.list to pass definitions
+- Option 2: Modify definitions manually in both server and worker process
+
+Option 1 does not work because I am trying to modify a dictionary (`clock.time_by_key` that should actually be a manager dict. So I could pass the manager and initialize a clock for each. But in the end, I think I concluded that manual runs do not need live preview.
+
+- [Done] Regenerate print preview on save script, template, style
+- [Done] Use code == f for scripts to prevent page refresh
+
 # Schedule
 
 - [ ] Set style for print page calc(100vh - 3.5em)
-- [ ] Set download filename for print page
+- [ ] Detect command file path changes
+- [ ] Add download link to file that has customized download name for batch
+- [ ] Show link to open print preview for manual run
+- [ ] Consider restoring live print preview for manual run
+
 - [ ] Test refresh on config change
 - [ ] Test refresh on script change
 - [ ] Test refresh on template change
 - [ ] Test refresh on style change
 - [ ] Test automation interval
 - [ ] Test automation strict interval
+
 - [ ] Restore upload functionality
 
 # Tasks
