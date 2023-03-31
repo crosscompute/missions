@@ -637,22 +637,35 @@ Option 1 does not work because I am trying to modify a dictionary (`clock.time_b
 - [Done] Regenerate print preview on save script, template, style
 - [Done] Use code == f for scripts to prevent page refresh
 
+## Friday 20230331-1145 - 20230331-1200: 15 minutes
+
+## Friday 20230331-1345 - 20230331-1400: 15 minutes
+
+- [Done] Set style for print page calc(100vh - 3.5em)
+- [Canceled] Consider restoring live print preview for manual run
+- [Done] Detect command file path changes
+
+## Friday 20230331-1515 - 20230331-1530: 15 minutes
+
+- [Done] Show link to open print preview for manual run
+
 # Schedule
 
-- [ ] Set style for print page calc(100vh - 3.5em)
-- [ ] Detect command file path changes
+- [ ] Fix manual run
+- [ ] Find why add-numbers is not refreshing when batches is empty (because input is not listening)
 - [ ] Add download link to file that has customized download name for batch
-- [ ] Show link to open print preview for manual run
-- [ ] Consider restoring live print preview for manual run
+- [ ] Consider removing flicker when template is updated for print page
+- [ ] Add pygments css (either directly or via cdn) for syntax highlighting
 
-- [ ] Test refresh on config change
-- [ ] Test refresh on script change
-- [ ] Test refresh on template change
-- [ ] Test refresh on style change
-- [ ] Test automation interval
-- [ ] Test automation strict interval
+- [Done] Test refresh on config change
+- [Done] Test refresh on script change
+- [Done] Test refresh on template change
+- [Done] Test refresh on style change
+- [Done] Test automation interval
+- [Done] Test automation strict interval
+- [ ] Test manual run/print
 
-- [ ] Restore upload functionality
+- [ ] Restore upload functionality view=file
 
 # Tasks
 
