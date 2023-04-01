@@ -648,21 +648,42 @@ Option 1 does not work because I am trying to modify a dictionary (`clock.time_b
 ## Friday 20230331-1515 - 20230331-1530: 15 minutes
 
 - [Done] Show link to open print preview for manual run
+- [Done] Find why add-numbers is not refreshing when batches is empty
+
+## Saturday 20230401-1500 - 20230401-1515: 15 minutes
+
+Now the problem is that the input variables are getting saved during prepare batch, which is triggering a re-run.
+
+- [Canceled] Option 1: prepare batch when the run is created before task is created and have actual run wait until prepare batch finishes (will cause duplicate runs)
+- [Canceled] Option 2: re-save input variables only if there are changes (this will still trigger a refresh)
+- [Canceled] Option 3: start the run time exactly at the run time (this will cause duplicate runs and does not solve the problem)
+- [Canceled] Option 4: ignore input variable changes during run (may cause some valid refreshes to be skipped)
+- [Canceled] Option 5: ignore input variable changes completely
+- Option 6: skip input variable changes that happened during prepare batch by adding another timer for prepare batch
+- [Canceled] Option 7: unlearn input variable paths temporarily during prepare batch (i kind of like this option, but then prepare batch needs to know about memory, which is not clean code)
+
+## Saturday 20230401-1700 - 20230401-1715: 15 minutes
+
+- [Done] Fix manual run
+
+## Saturday 20230401-1915 - 20230401-1930: 15 minutes
+
+- [Done] Remove flicker when template is updated for print page
+
+## Saturday 20230401-1945 - 20230401-2000: 15 minutes
+
+- [Done] Add pygments css (either directly or via cdn) for syntax highlighting
 
 # Schedule
 
-- [ ] Fix manual run
-- [ ] Find why add-numbers is not refreshing when batches is empty (because input is not listening)
 - [ ] Add download link to file that has customized download name for batch
-- [ ] Consider removing flicker when template is updated for print page
-- [ ] Add pygments css (either directly or via cdn) for syntax highlighting
 
-- [Done] Test refresh on config change
-- [Done] Test refresh on script change
-- [Done] Test refresh on template change
-- [Done] Test refresh on style change
-- [Done] Test automation interval
-- [Done] Test automation strict interval
+- [ ] Test refresh on config change
+- [ ] Test refresh on script change
+- [ ] Test refresh on template change
+- [ ] Test refresh on style change
+- [ ] Test automation interval
+- [ ] Test automation strict interval
 - [ ] Test manual run/print
 
 - [ ] Restore upload functionality view=file
