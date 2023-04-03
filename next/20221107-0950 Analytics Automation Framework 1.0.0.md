@@ -676,17 +676,36 @@ Now the problem is that the input variables are getting saved during prepare bat
 
 ## Monday 20230403-0645 - 20230403-0700: 15 minutes
 
+## Monday 20230403-1200 - 20230403-1215: 15 minutes
+
+- [Done] Add download link to file that has customized download name for batch
+- [Done] Test refresh on config change
+- [Done] Test refresh on script change
+- [Done] Test refresh on template change
+- [Done] Test refresh on style change
+- [Done] Test automation interval
+- [Done] Test automation strict interval
+- [Done] Test manual run/print
+
+All tests pass with self testing. Now we will set up a server for internal testing.
+
+## Monday 20230403-1230 - 20230403-1245: 15 minutes
+
+- [Done] Consider replacing code == 'c' with either constant or enum
+- [Done] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
+- [Done] Load the token from a cookie or from the url
+- [Done] Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
+- [Done] Implement programmable forms with progressive disclosure in the framework
+- [Canceled] Handle http errors using `add_exception_view`
+- [Canceled] Make it possible for author to override mapbox version
+- [Canceled] Consider compatibility with gunicorn
+- [Canceled] Implement ipynb forms
+- [Done] Update example forms
+- [Done] Update label in all content
+
+## Monday 20230403-1400 - 20230403-1415: 15 minutes
+
 # Schedule
-
-- [ ] Add download link to file that has customized download name for batch
-
-- [ ] Test refresh on config change
-- [ ] Test refresh on script change
-- [ ] Test refresh on template change
-- [ ] Test refresh on style change
-- [ ] Test automation interval
-- [ ] Test automation strict interval
-- [ ] Test manual run/print
 
 - [ ] Restore upload functionality view=file
 
@@ -696,7 +715,6 @@ Now the problem is that the input variables are getting saved during prepare bat
 - [ ] Add guard to migrations sse
 - [ ] Send data from migrations sse
 - [ ] Show seconds ticking if in log
-- [ ] Consider replacing code == 'c' with either constant or enum
 - [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
 - [ ] Reconsider token vs cookie
@@ -712,26 +730,17 @@ Now the problem is that the input variables are getting saved during prepare bat
 - [ ] Consider caching a run if caching is enabled in configuration
 - [ ] Consider allowing alt text for ImageView
 - [ ] Update documentation
-- [ ] Update the framework to make it possible to restrict visible automations and batches based on a token via display.authorization.function = check.authorize and display.authorization.groups
 - [ ] Consider using cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
-- [ ] Load the token from a cookie or from the url
-- [ ] Save authorization keys into input folder or debug folder or auth folder or authorization path so that scripts can use it
-- [ ] Implement programmable forms with progressive disclosure in the framework
-- [ ] Handle http errors using `add_exception_view`
 - [ ] Need to be able to see errors
 - [ ] Document steps for creating a new automation
 - [ ] Pull from repository if option is enabled
-- [ ] Make it possible for author to override mapbox version
 - [ ] Review legacy code to check whether we missed anything
 - [ ] Consider crosscompute:// url scheme
 - [ ] Make it possible to click on different svg elements and show information
 - [ ] Consider splitting views into crosscompute-views to allow alternate versions of all the view plugins
 - [ ] Consider cookiecutter
-- [ ] Consider compatibility with gunicorn
 - [ ] Autogenerate datasets/batches.csv if requested during configure
 - [ ] Implement count/index variables
 - [ ] Consider making it possible to embed via ajax instead of iframe for consistent styling
-- [ ] Update example forms
-- [ ] Implement ipynb forms
 
 # Lessons
