@@ -705,9 +705,27 @@ All tests pass with self testing. Now we will set up a server for internal testi
 
 ## Monday 20230403-1400 - 20230403-1415: 15 minutes
 
+## Tuesday 20230404-1130 - 20230404-1145: 15 minutes
+
+- [Done] Differentiate between datasets and scripts
+- [Done] Check that dataset changes will trigger re-runs
+
+```bash
+while [ 1 ]; do ls -l run.ipynb; sleep 1; done
+```
+
+## Tuesday 20230404-1345 - 20230404-1400: 15 minutes
+
+- [Done] Refresh command string if script changed
+- [Done] Check 503 error after config file update (only redirect if 404)
+
 # Schedule
 
+- [ ] Add symbolic links in batches if prints are run from command line
+- [ ] Add more specific classes in css example
+- [ ] Check print after manual run
 - [ ] Restore upload functionality view=file
+- [ ] Communicate when something is running/printing
 
 # Tasks
 
