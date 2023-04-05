@@ -721,7 +721,12 @@ while [ 1 ]; do ls -l run.ipynb; sleep 1; done
 
 ## Wednesday 20230405-1230 - 20230405-1245: 15 minutes
 
+## Wednesday 20230405-1545 - 20230405-1600: 15 minutes
 
+We are running into a problematic race condition when the script runs too fast and the input variable is marked as having been modified after the run finishes. This creates an endless loop.
+
+- Option 1: Ignore changes to input variables
+- Option 2: Expand time window by disk poll time
 
 # Schedule
 
