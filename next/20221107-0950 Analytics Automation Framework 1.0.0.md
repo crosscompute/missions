@@ -719,8 +719,15 @@ while [ 1 ]; do ls -l run.ipynb; sleep 1; done
 - [Done] Refresh command string if script changed
 - [Done] Check 503 error after config file update (only redirect if 404)
 
+## Wednesday 20230405-1230 - 20230405-1245: 15 minutes
+
+
+
 # Schedule
 
+- [ ] Test print using pdf printer
+- [ ] Test crosscompute --print
+- [ ] Test print after manual
 - [ ] Add symbolic links in batches if prints are run from command line
 - [ ] Add more specific classes in css example
 - [ ] Check print after manual run
