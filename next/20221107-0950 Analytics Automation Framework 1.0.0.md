@@ -725,17 +725,32 @@ while [ 1 ]; do ls -l run.ipynb; sleep 1; done
 
 We are running into a problematic race condition when the script runs too fast and the input variable is marked as having been modified after the run finishes. This creates an endless loop.
 
-- Option 1: Ignore changes to input variables
+- [Canceled] Option 1: Ignore changes to input variables
 - Option 2: Expand time window by disk poll time
+
+## Wednesday 20230405-2230 - 20230405-2245: 15 minutes
+
+- [Done] Fix `remove_path`
+- [Done] Fix grok
+- [Done] Test crosscompute --print
+- [Done] Add symbolic links in batches if prints are run from command line
+- [Done] Check print after manual run
+- [Done] Test print using pdf printer
+- [Done] Add more specific classes in css example
+
+## Thursday 20230406-0200 - 20230406-0215: 15 minutes
+
+```
+{ uri: automation-x://324abc }
+_ { uri: crosscompute://324abc }
+_ { file: crosscompute://abc123 }
+_ { file: test-variable-views://abc123 }
+_ { file: automation-x://abc123 }
+_ { file: ABC }
+```
 
 # Schedule
 
-- [ ] Test print using pdf printer
-- [ ] Test crosscompute --print
-- [ ] Test print after manual
-- [ ] Add symbolic links in batches if prints are run from command line
-- [ ] Add more specific classes in css example
-- [ ] Check print after manual run
 - [ ] Restore upload functionality view=file
 - [ ] Communicate when something is running/printing
 
