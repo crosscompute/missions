@@ -749,13 +749,29 @@ _ { file: automation-x://abc123 }
 _ { file: ABC }
 ```
 
-# Schedule
+## Friday 20230414-1500 - 20230414-1515: 15 minutes
 
-- [ ] Restore upload functionality view=file
-- [ ] Communicate when something is running/printing
+```
+_ { "uri": "crosscompute://a/automation-x/f/abc123" }
+_ { "uri": "crosscompute://automation-x/abc123" }
+_ { "uri": "crosscompute://automation-x/f/abc123" }
+_ { "uri": "crosscompute://f/abc123" }
+_ { "uri": "crosscompute://abc123" }
+_ { "uri": "file://abc123" }
+_ { "uri": "google://abc123" }
+_ { "uri": "/files/abc123" }
+{ "uri": "/f/abc123" }
+```
+
+## Friday 20230414-1630 - 20230414-1645: 15 minutes
+
+- [Done] Restore upload functionality view=file
+
+# Schedule
 
 # Tasks
 
+- [ ] Communicate when something is running/printing
 - [ ] Restore missing examples
 - [ ] Add guard to migrations sse
 - [ ] Send data from migrations sse
