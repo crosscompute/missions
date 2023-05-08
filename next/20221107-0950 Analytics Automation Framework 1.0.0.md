@@ -767,7 +767,11 @@ _ { "uri": "/files/abc123" }
 
 - [Done] Restore upload functionality view=file
 
+## Saturday 20230506-1130 - 20230506-1145: 15 minutes
+
 # Schedule
+
+- [ ] Make button text specific
 
 # Tasks
 
