@@ -767,7 +767,16 @@ _ { "uri": "/files/abc123" }
 
 - [Done] Restore upload functionality view=file
 
+## Monday 20230515-1530 - 20230515-1545: 15 minutes
+
+The issue is that the link text is rendered when the output page is rendered, not when the link is refreshed.
+
+- [Canceled] Option 1: Refresh link using await
+- Option 2: Send link information in sse
+
 # Schedule
+
+- [ ] Send value and configuration in sse
 
 # Tasks
 
