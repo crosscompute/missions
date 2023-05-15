@@ -769,6 +769,8 @@ _ { "uri": "/files/abc123" }
 
 ## Monday 20230515-1530 - 20230515-1545: 15 minutes
 
+- [Done] Make button text specific
+
 The issue is that the link text is rendered when the output page is rendered, not when the link is refreshed.
 
 - [Canceled] Option 1: Refresh link using await
