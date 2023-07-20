@@ -783,6 +783,22 @@ The issue is that the link text is rendered when the output page is rendered, no
 - [Done] Update default styling for automations
 - [Done] Consider making it possible to set break-inside auto for table label and table
 
+## Thursday 20230720-1730 - 20230720-1745: 15 minutes
+
+```
+_ can_send_data
+_ can_send_value
+_ has_data_value
+_ in_server_sent_event
+_ in_sse
+_ send_data_value
+_ should_send_value
+_ with_data_value
+_ with_data_inline
+_ with_value_inline
+with_inline_value
+```
+
 # Schedule
 
 - [ ] Fix map views
