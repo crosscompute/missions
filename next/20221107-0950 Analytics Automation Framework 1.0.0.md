@@ -776,9 +776,17 @@ The issue is that the link text is rendered when the output page is rendered, no
 - [Canceled] Option 1: Refresh link using await
 - Option 2: Send link information in sse
 
+## Thursday 20230720-1230 - 20230720-1245: 15 minutes
+
+- [Done] Send value and configuration in sse
+- [Canceled] Show seconds ticking if in log
+- [Done] Update default styling for automations
+- [Done] Consider making it possible to set break-inside auto for table label and table
+
 # Schedule
 
-- [ ] Send value and configuration in sse
+- [ ] Fix map views
+- [ ] Review chart views
 
 # Tasks
 
@@ -786,13 +794,10 @@ The issue is that the link text is rendered when the output page is rendered, no
 - [ ] Restore missing examples
 - [ ] Add guard to migrations sse
 - [ ] Send data from migrations sse
-- [ ] Show seconds ticking if in log
 - [ ] Let scripts have different behavior with or without identities
 - [ ] Consider making it possible to load identities without groups
 - [ ] Reconsider token vs cookie
 - [ ] Use websockets > eventstream > polling
-- [ ] Update default styling for automations
-- [ ] Consider making it possible to set break-inside auto for table label and table
 - [ ] Review issues for crosscompute
 - [ ] Restore select view
 - [ ] Make it possible to make a tool from a spreadsheet
@@ -802,7 +807,7 @@ The issue is that the link text is rendered when the output page is rendered, no
 - [ ] Consider caching a run if caching is enabled in configuration
 - [ ] Consider allowing alt text for ImageView
 - [ ] Update documentation
-- [ ] Consider using cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
+- [ ] Consider cookie prefixes for secure authentication https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie_prefixes
 - [ ] Need to be able to see errors
 - [ ] Document steps for creating a new automation
 - [ ] Pull from repository if option is enabled
