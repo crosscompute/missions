@@ -799,8 +799,13 @@ _ with_value_inline
 with_inline_value
 ```
 
+## Tuesday 20230725-1400 - 20230725-1415: 15 minutes
+
+- [Done] Show felt raw html
+
 # Schedule
 
+- [ ] Put nebula configuration in variable configuration
 - [ ] Fix map views
 - [ ] Review chart views
 
