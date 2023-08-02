@@ -9,7 +9,7 @@
     _ Start a JupyterLab extension project from scratch using extension-cookiecutter-js
     + Start a JupyterLab extension project from scratch using extension-cookiecutter-ts
 
-It seems like what we need to do is name the python project as jupyterlab_crosscompute and then later change the pypi package name.
+It seems like what we need to do is name the python project as `jupyterlab_crosscompute` and then later change the pypi package name.
 
     + Set name as jupyterlab-crosscompute
 
@@ -374,7 +374,7 @@ I don't think puppeteer can really be used asynchronously.
 
 ## Monday 20220307-1130 - 20220307-1145: 15 minutes
 
-- [Done] Write a python script that checks whether debug has return_code
+- [Done] Write a python script that checks whether debug has `return_code`
 - [Done] Write a python script that takes batches.json and checks debug then prints output
 
 ## Monday 20220307-1145 - 20220307-1200: 15 minutes
