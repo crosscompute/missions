@@ -803,14 +803,22 @@ with_inline_value
 
 - [Done] Show felt raw html
 
+## Thursday 20240516-1415 - 20240516-1445: 30 minutes
+
+- [Done] Merge develop into merge-all
+- [Done] Merge main into merge-all
+
 # Schedule
+
+- [ ] Merge abstraction into merge-all
+- [ ] Merge map-input into merge-all
+- [ ] Merge bg into merge-all
+
+# Tasks
 
 - [ ] Put nebula configuration in variable configuration
 - [ ] Fix map views
 - [ ] Review chart views
-
-# Tasks
-
 - [ ] Communicate when something is running/printing
 - [ ] Restore missing examples
 - [ ] Add guard to migrations sse
