@@ -807,10 +807,11 @@ with_inline_value
 
 - [Done] Merge develop into merge-all
 - [Done] Merge main into merge-all
+- [Done] Merge abstraction into merge-all
 
 # Schedule
 
-- [ ] Merge abstraction into merge-all
+- [ ] Merge abstraction properly
 - [ ] Merge map-input into merge-all
 - [ ] Merge bg into merge-all
 
