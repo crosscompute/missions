@@ -809,11 +809,13 @@ with_inline_value
 - [Done] Merge main into merge-all
 - [Done] Merge abstraction into merge-all
 
-# Schedule
+## Thursday 20240801-1545 - 20240801-1615: 30 minutes
 
-- [ ] Merge abstraction properly
-- [ ] Merge map-input into merge-all
-- [ ] Merge bg into merge-all
+- [Done] Merge abstraction properly
+- [Done] Merge map-input into merge-all
+- [Done] Merge bg into merge-all
+
+# Schedule
 
 # Tasks
 
